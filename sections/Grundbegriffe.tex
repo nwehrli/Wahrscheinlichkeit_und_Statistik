@@ -1,4 +1,5 @@
 \section{Grundbegriffe}
+\subsection{Wahrscheinlichkeitsraum}
 \begin{mainbox}{Axiome von Kolmogorov}
     Das Tuple $(\Omega, \A, \P)$ ist ein \textbf{Wahrscheinlichkeitsraum} mit 
     \begin{enumerate}[label=\Roman*.]
@@ -31,3 +32,48 @@ und für $A, B \in \A$
     \item $A \subseteq B \implies \P(A) \leq \P(B)$
     \item $\P(A \cup B) = \P(A)+\P(B)-\P(A \cap B)$
 \end{enumerate}
+Sei $A_1,A_2, \dots \in \A$, dann gilt:\\
+\textbf{Union Bound}
+    $$\P\left(\bigcup_{i=1}^{\infty} A_i \right) \leq \sum_{i=1}^{\infty}\P(A_i)$$
+\textbf{Siebformel}
+    $$\P\left(\bigcup_{i=1}^{n}A_i\right) = \sum_{k = 1}^{n}\sum_{1\leq i_1 < \dots < i_k \leq n} \P(A_{i_1} \cap \dots \cap A_{i_k})$$
+\subsection{Bedingte Wahrscheinlichkeiten}
+ Sei $(\Omega, \A, \P)$ ein Wahrscheinlichkeitsraum.
+ \begin{mainbox}{Bedingte Wahrscheinlichkeit}
+    Sei $A, B \in \A$ und $\P(B) > 0$, dann ist die \textbf{bedingte Wahrscheinlichkeit von $A$ gegeben $B$}
+    $$\P(A|B) = \frac{\P(A \cap B)}{\P(B)}$$
+ \end{mainbox}
+\textbf{Satz der totalen Wahrscheinlichkeit}
+
+Sei $(B_i){i\in I}$ eine Partition von $\Omega$. Dann gilt für jedes beliebige $A \in \A$
+$$\P(A) = \sum_{i:\ \P(B_i)>0} \P(A|B_i)\P(B_i)$$
+\textbf{Satz von Bayes}
+
+Aus der Definition der bedingten W'keit folgt sofort die Bayessche Formel, welche den Zusammenhang zwischen $\P(A|B)$ und $\P(B|A)$ beschreibt:
+$$\P(B|A) = \frac{\P(A|B)\P(B)}{\P(A)}$$
+Mit dem \textbf{Satz der totalen W'keit} können wir $\P(A)$ umschreiben und kommen auf folgende Form:
+
+Sei $(B_i)_{i\in I}$ eine \textbf{Partition} von $\Omega$. Dann gilt für jedes beliebige $A \in \A, \P(A) > 0$
+$$\P(B_i|A) = \frac{\P(A|B_i)\cdot\P(B_i)}{\sum_{j:\ \P(B_j)>0}\P(A|B_j)\cdot \P(B_j)}$$
+\textbf{Intuition Bayessche Statistik}
+
+In dieser Form würde man $A$ als das \textbf{eingetretene Ereignis} und die $B_i$ als die verschiedene \textbf{Hypothesen} verstehen. 
+
+In der Bayesschen Statistik versucht man die Hypothese zu finden, so dass $\P(B_i|A)$ \textbf{maximiert} wird.
+
+(Wurde in der Vorlesung nicht weiter behandelt)
+\subsection{Unabhängigkeit} 
+\begin{mainbox}{Unabhängigkeit von zwei Ereignissen}
+    Zwei Ereignisse $A, B \in \A$ heissen \textbf{unabhängig}, wenn 
+    $$\P(A\cap B) = \P(A) \cdot \P(B)$$
+\end{mainbox}
+
+Wenn $\P(A) > 0, \P(B) > 0$ gilt:\\
+ $A,B$ unabhängig $\iff$ $\P(A|B)=\P(A)$ $\iff$ $\P(B|A)=\P(B)$
+\\
+\\
+Wir können die Definition der Unabhängigkeit auf beliebige Mengen von Ereignissen erweitern.
+\begin{mainbox}{Allgemeine Unabhängigkeit}
+    Eine Kollektion von Ereignissen $(A_i; i \in I)$ heisst \textbf{(stochastisch) unabhängig}, wenn 
+    $$J \subseteq I \text{endlich} \implies \P\left(\bigcap_{i\in J}\right) = \prod_{i \in J} \P(A_i)$$
+\end{mainbox}

@@ -1,0 +1,102 @@
+\ProvidesPackage{defaultcheatsheetstyle}
+
+
+\usepackage[nswissgerman]{babel}
+
+% 3 column landscape layout with fewer margins
+\usepackage[landscape, left=0.75cm, top=1cm, right=0.75cm, bottom=1.5cm, footskip=5pt]{geometry}
+\usepackage{flowfram}
+\ffvadjustfalse
+\setlength{\columnsep}{1cm}
+\Ncolumn{3}
+
+%saving space around section headers and customising them
+\usepackage[compact]{titlesec}  
+% \titlespacing{\section}{0pt}{2pt}{0pt}
+% \titlespacing{\subsection}{0pt}{2pt}{0pt}
+% \titlespacing{\subsubsection}{0pt}{2pt}{0pt}
+% \titleformat{\section}{\large\bfseries}
+% \titleformat*{\subsection}{\normalsize\bfseries}
+% \titleformat*{\subsubsection}{\small\bfseries}
+
+
+% define nice looking boxes
+\usepackage[many]{tcolorbox}
+
+% a base set, that is then customised
+\tcbset {
+  base/.style={
+    boxrule=0.3mm,
+    boxsep = 1mm,
+    leftrule=1mm,
+    left=0.5mm,
+    arc=0mm, 
+    fonttitle=\bfseries, 
+    colbacktitle=black!10!white, 
+    coltitle=black, 
+    toptitle=0.0mm, 
+    bottomtitle=0.0mm,
+    title={#1}
+  }
+}
+
+\definecolor{nicegreen}{rgb}{0.004, 0.5, 0.35}
+\newtcolorbox{mainbox}[1]{
+  colframe=nicegreen, 
+  base={#1}
+}
+
+\newtcolorbox{subbox}[1]{
+  colframe=black!20!white,
+  base={#1}
+}
+
+% Mathematical typesetting & symbols
+\usepackage{amsthm, mathtools, amssymb} 
+\usepackage{marvosym, wasysym, dsfont}
+\usepackage{derivative}
+\allowdisplaybreaks
+
+% Tables
+\usepackage{tabularx, multirow}
+\usepackage{booktabs}
+
+% Make enumerations more compact
+\usepackage{enumitem}
+\setitemize{itemsep=0.5pt}
+\setenumerate{itemsep=0.75pt}
+
+%Checkboxes for multiple choice
+\newlist{Checkboxes}{itemize}{2}
+\setlist[Checkboxes]{label=$\square$}
+\usepackage{pifont}
+\newcommand{\cmark}{\ding{51}}%
+\newcommand{\correct}{\rlap{$\square$}{\raisebox{2pt}{\hspace{1pt}\cmark}}\hspace{-2.5pt}}
+
+
+% To include sketches & PDFs
+\usepackage{graphicx}
+
+% For hyperlinks
+\usepackage{hyperref}
+\hypersetup{
+  colorlinks=true
+}
+
+% Math helper stuff
+\def\limn{\lim_{n\to \infty}}
+\def\limxo{\lim_{x\to 0}}
+\def\limxi{\lim_{x\to\infty}}
+\def\limxn{\lim_{x\to-\infty}}
+\def\sumk{\sum_{k=1}^\infty}
+\def\sumn{\sum_{n=0}^\infty}
+\def\R{\mathbb{R}}
+\def\C{\mathbb{C}}
+\def\Q{\mathbb{Q}}
+\def\N{\mathbb{N}}
+\def\X{\underline{\overline{X}}}
+\def\dx{\text{ d}x}
+\def\Pset{\mathcal{P}}
+\def\P{\mathbb{P}}
+\def\A{\mathcal{A}}
+\def\F{\mathcal{F}}

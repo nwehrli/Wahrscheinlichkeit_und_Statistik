@@ -1,0 +1,33 @@
+\section{Grundbegriffe}
+\begin{mainbox}{Axiome von Kolmogorov}
+    Das Tuple $(\Omega, \A, \P)$ ist ein \textbf{Wahrscheinlichkeitsraum} mit 
+    \begin{enumerate}[label=\Roman*.]
+        \item \textbf{Grundraum} $\Omega$ mit $\Omega \neq \emptyset$, wobei $\omega \in \Omega$ ein Elementarereignis ist.
+        \item \textbf{$\sigma$-Algebra} $\A \subseteq \Pset(\Omega)$ wobei gilt:
+        \begin{enumerate}[label=\arabic*.]
+            \item $\Omega \in \A$
+            \item $A \in \A \implies A^\complement \in \A$
+            \item $A_1,A_2,\dots \in \A \implies \bigcup_i A_i \in \A$
+        \end{enumerate}
+        \item \textbf{Wahrscheinlichkeitsmass} $\P$ auf $(\Omega, \A)$ ist eine Abbildung $\P: \A \mapsto [0,1]$, wobei gilt:
+        \begin{enumerate}[label=\arabic*.]
+            \item $\P(\Omega) = 1$
+            \item $A_1, A_2, \dots \in \A, \forall i \neq j: A_i \cap A_j = \emptyset \\ \implies \P(\bigcup_i A_i) = \sum_{i= 1}^\infty \P(A_i)$
+        \end{enumerate}
+    \end{enumerate}
+\end{mainbox}
+\begin{subbox}{De-Morgan}
+    Sei $(A_i)_{i \geq 1}$ eine Folge von beliebigen Mengen. Dann gilt
+    $$\left(\bigcup_{i = 1}^{\infty}A_i\right)^\complement = \bigcap_{i = 1}^{\infty} (A_i)^\complement$$
+\end{subbox}
+Daraus folgt
+\begin{enumerate}[label=\arabic*.]
+    \item $A_1,A_2, \dots \in \A \implies \bigcap_{i=1}^{\infty}A_i \in \A$
+    \item $A,B \in \A \implies (A \cup B), (A \cap B) \in \A$
+\end{enumerate}
+und für $A, B \in \A$
+\begin{enumerate}[label=\arabic*.]
+    \item $\P(A^\complement) = 1 - \P(A)$
+    \item $A \subseteq B \implies \P(A) \leq \P(B)$
+    \item $\P(A \cup B) = \P(A)+\P(B)-\P(A \cap B)$
+\end{enumerate}

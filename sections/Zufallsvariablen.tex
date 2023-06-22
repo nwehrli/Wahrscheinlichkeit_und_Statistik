@@ -1,0 +1,59 @@
+\section{Zufallsvariablen}
+Sei ($\Omega, \A, \P$) ein diskreter Wahrscheinlichkeitsraum.
+\begin{mainbox}{Zufallsvariable}
+    Eine (reellwertige) \textbf{Zufallsvariable} auf $\Omega$ ist eine messbare Funktion $X: \Omega \to \R$.
+    $$X: \Omega \to \R \textbf{ messbar} \iff \forall x \in \R: X^{-1}(\{x\}) \in \A$$
+ 
+    Die Eigenschaft \textbf{messbar} ist bezüglich dem Wahrscheinlichkeitsmass $\P$ relevant (i.e. dann ist $\P(X = x) := \P(\{\omega \in \Omega \mid X(\omega) = x\})$ wohldefiniert).
+\end{mainbox}
+Diese Definition von \textbf{messbar} ist für diskrete $\Omega$ äquivalent zu derjenigen der Vorlesung, die die rechte Seite vom '$\iff$' für alle abgeschlossenen Teilmengen $B \subset \R$ fordert. 
+
+Für die Messbarkeit von $X$ ist nur $X(\Omega) \subseteq \R$ entscheidend und jede Teilmenge $A \subseteq X(\Omega)$ ist abzählbar (da $\Omega$ abzählbar). Somit kann $X^{-1}(A)$ als abzählbare Vereinigung von $\bigcup_{x \in A} X^{-1}(\{x\})$ geschrieben werden. 
+\\($\implies X^{-1}(A) \in \A$ per Def. $\sigma$-Algebra)
+\\ \\ \textbf{Verteilungsfunktion}
+
+Die \textbf{Verteilungsfunktion} ist die Abbildung $F_X : \R \to [0,1]$ definiert durch:
+$$F_X(t) := \P(X \leq t), \forall t \in \R$$
+\vfill\break
+Die Funktion erfüllt folgende Eigenschaften:
+\begin{enumerate}
+    \item $F_X$ ist monoton wachsend 
+    \item $F_X$ ist rechtsstetig, i.e. $\lim_{h \downarrow 0}F_X(x+h) = F_X(x)$
+    \item $\lim_{x \to -\infty}F_X(x) = 0$ und $\lim_{x \to \infty}F_X(x) = 1$
+    \item $\forall a,b \in \R, a < b: \P(a < X \leq b) = F_X(b) -F_X(a)$ 
+\end{enumerate}
+
+\textbf{Linksstetigkeit}
+
+Die Verteilungsfunktion ist nicht immer linksstetig.
+\\Sei $F_X(a-) := \lim_{h \downarrow 0}F_X(a-h)$ für $a \in \R$ beliebig.
+
+Dann gilt:
+$$\P(X = a) = F_X(a) - F_X(a-)$$
+
+Intuitiv folgt daraus
+\begin{itemize}
+    \item Wenn $F_X$ in einem Punkt $a \in \R$ nicht stetig ist, dann ist die ''Sprunghöhe'' $F_X(a)-F_X(a-)$ gleich der Wahrscheinlichkeit $\P(X = a)$.
+    \item Falls $F_X$ stetig in einem Punkt $a \in \R$, dann gilt $\P(X = a) = 0$. 
+\end{itemize}
+
+\begin{mainbox}{Unabhängigkeit von Zufallsvariablen}
+    Seien $X_1, ...,X_n$ Zufallsvariablen auf einem Wahrscheinlichkeitsraum $(\Omega, \A, \P)$. Dann heissen $X_1, ...,X_n$ \textbf{unabhängig}, falls
+    \begin{align*}
+        &\forall x_1, ..., x_n \in \R:\\
+        &\P(X_1 \leq x_1, ..., X_n \leq x_n) = \P(X_1 \leq x_1)\cdot ... \cdot \P(X_n \leq x_n).
+    \end{align*} 
+\end{mainbox}
+
+
+
+
+\begin{mainbox}{Stetig verteilte Zufallsvariablen, Dichte}
+    Eine Zufallsvariable $X: \Omega \to \R$ heisst \textbf{stetig}, wenn ihre Verteilungsfunktion $F_X$ wie folgt geschrieben werden kann
+    $$F_X(a) = \int_{-\infty}^{a}f(x)\dx = \text{ für alle }a \in \R.$$
+    wobei $f: \R \to \R^+$ eine nicht-negative Funktion ist. $f$ wird dann als \textbf{Dichte} von $X$ benannt.
+\end{mainbox}
+
+\begin{mainbox}{Erwartungswert}
+    
+\end{mainbox}

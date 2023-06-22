@@ -17,10 +17,13 @@
         \end{enumerate}
     \end{enumerate}
 \end{mainbox}
-\begin{subbox}{De-Morgan}
-    Sei $(A_i)_{i \geq 1}$ eine Folge von beliebigen Mengen. Dann gilt
+
+\textbf{De-Morgan}
+    
+Sei $(A_i)_{i \geq 1}$ eine Folge von beliebigen Mengen. Dann gilt
     $$\left(\bigcup_{i = 1}^{\infty}A_i\right)^\complement = \bigcap_{i = 1}^{\infty} (A_i)^\complement$$
-\end{subbox}
+
+
 Daraus folgt
 \begin{enumerate}[label=\arabic*.]
     \item $A_1,A_2, \dots \in \A \implies \bigcap_{i=1}^{\infty}A_i \in \A$
@@ -37,6 +40,19 @@ Sei $A_1,A_2, \dots \in \A$, dann gilt:\\
     $$\P\left(\bigcup_{i=1}^{\infty} A_i \right) \leq \sum_{i=1}^{\infty}\P(A_i)$$
 \textbf{Siebformel}
     $$\P\left(\bigcup_{i=1}^{n}A_i\right) = \sum_{k = 1}^{n}\sum_{1\leq i_1 < \dots < i_k \leq n} \P(A_{i_1} \cap \dots \cap A_{i_k})$$
+
+    \begin{subbox}{Atome}
+        Sei $\Omega$ nicht leer und diskret. Sei $\F$ eine beliebige $\sigma$-Algebra über $\Omega$. 
+    
+        Eine nichtleere Menge $A \in \F$ heisst \textbf{atomare} Mengee von $\F$ falls für alle $B \in \F$ gilt:
+        $$B \subseteq A \implies B = \emptyset \lor B = A$$
+        (Intuitiv: $A$ ist die kleinste nichtleere Menge bezüglich der Inklusion in $\F$)
+    
+        Die Menge der atomaren Mengen von $\F$ bezeichnen wir mit Atom$(\F)$.
+    
+        Jedes Element von $\F$ lässt sich als abzählbare Vereinigung von Elementen aus Atom$(\F)$ schreiben.
+    \end{subbox}
+    
 \subsection{Bedingte Wahrscheinlichkeiten}
  Sei $(\Omega, \A, \P)$ ein Wahrscheinlichkeitsraum.
  \begin{mainbox}{Bedingte Wahrscheinlichkeit}
@@ -45,7 +61,7 @@ Sei $A_1,A_2, \dots \in \A$, dann gilt:\\
  \end{mainbox}
 \textbf{Satz der totalen Wahrscheinlichkeit}
 
-Sei $(B_i){i\in I}$ eine Partition von $\Omega$. Dann gilt für jedes beliebige $A \in \A$
+Sei $(B_i)_{i\in I}$ eine Partition von $\Omega$. Dann gilt für jedes beliebige $A \in \A$
 $$\P(A) = \sum_{i:\ \P(B_i)>0} \P(A|B_i)\P(B_i)$$
 \textbf{Satz von Bayes}
 
@@ -55,6 +71,7 @@ Mit dem \textbf{Satz der totalen W'keit} können wir $\P(A)$ umschreiben und kom
 
 Sei $(B_i)_{i\in I}$ eine \textbf{Partition} von $\Omega$. Dann gilt für jedes beliebige $A \in \A, \P(A) > 0$
 $$\P(B_i|A) = \frac{\P(A|B_i)\cdot\P(B_i)}{\sum_{j:\ \P(B_j)>0}\P(A|B_j)\cdot \P(B_j)}$$
+
 \textbf{Intuition Bayessche Statistik}
 
 In dieser Form würde man $A$ als das \textbf{eingetretene Ereignis} und die $B_i$ als die verschiedene \textbf{Hypothesen} verstehen. 
@@ -67,7 +84,11 @@ In der Bayesschen Statistik versucht man die Hypothese zu finden, so dass $\P(B_
     Zwei Ereignisse $A, B \in \A$ heissen \textbf{unabhängig}, wenn 
     $$\P(A\cap B) = \P(A) \cdot \P(B)$$
 \end{mainbox}
-
+\begin{itemize}
+    \item $\P(A) \in \{0, 1\} \implies A \text{ zu jedem Ereignis unabhängig}$
+    \item $A$ zu sich selbst unabhängig $\implies \P(A) \in \{0,1\}$
+    \item $A, B$ unabhängig $\implies$ $A, B^\complement$ unabhängig
+\end{itemize}
 Wenn $\P(A) > 0, \P(B) > 0$ gilt:\\
  $A,B$ unabhängig $\iff$ $\P(A|B)=\P(A)$ $\iff$ $\P(B|A)=\P(B)$
 \\
@@ -75,5 +96,6 @@ Wenn $\P(A) > 0, \P(B) > 0$ gilt:\\
 Wir können die Definition der Unabhängigkeit auf beliebige Mengen von Ereignissen erweitern.
 \begin{mainbox}{Allgemeine Unabhängigkeit}
     Eine Kollektion von Ereignissen $(A_i; i \in I)$ heisst \textbf{(stochastisch) unabhängig}, wenn 
-    $$J \subseteq I \text{endlich} \implies \P\left(\bigcap_{i\in J}\right) = \prod_{i \in J} \P(A_i)$$
+    $$J \subseteq I \text{ endlich} \implies \P\left(\bigcap_{i\in J} A_i\right) = \prod_{i \in J} \P(A_i)$$
 \end{mainbox}
+

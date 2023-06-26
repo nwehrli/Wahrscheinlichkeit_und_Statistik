@@ -45,15 +45,110 @@ Intuitiv folgt daraus
     \end{align*} 
 \end{mainbox}
 
+\begin{subbox}{Unendlich viele Bernoulli-Experimente}
+    TBD
+\end{subbox}
+
+\subsection{Diskrete Zufallsvariablen}
+Sei $A \in \F$ ein Ereignis. \\
+Wir sagen $A$ tritt \textbf{fast sicher (f.s.)} ein, falls $\P(A)= 1$.
+\\ \\
+Seien $X, Y: \Omega \to \R$ Zufallsvariablen: \\$X \leq Y$ f.s. $\iff$ $\P(X \leq Y)=1$
 
 
+\begin{mainbox}{Diskrete Zufallsvariable}
+    Eine Zufallsvariable $X: \Omega \to \R$ heisst \textbf{diskret}, falls eine endliche oder abzählbare Menge $W \subset \R$ existiert, sodass
+    $$\P(X \in W) = 1$$
+    Falls $\Omega$ endlich oder abzählbar ist, dann ist $X$ immer diskret.
+\end{mainbox}
+Die \textbf{Verteilungsfunktion} einer diskreten ZV $X$: $$F_X(x)= \P(X \leq x)= \sum_{y\in W}p(y)\cdot \mathds{1}_{y\leq x}$$
+Die \textbf{Gewichtsfunktion} einer diskreten ZV $X$: $$\forall x \in X(\Omega): p(x)= \P(X=x) \text{ wobei} \sum_{x \in X(\Omega)}p(x)= 1$$
 
-\begin{mainbox}{Stetig verteilte Zufallsvariablen, Dichte}
+\subsection{Diskrete Verteilungen}
+\textbf{Bernoulli-Verteilung} ($X \sim \text{Ber}(p)$): 
+
+$X(\Omega)= \{0, 1\}$ und die Gewichtsfunktion ist definiert durch
+$$p(1):= \P(X = 1) = p \text{ und } p(0):=\P(X = 0) = 1 - p.$$
+\textbf{Binomialverteilung} ($X \sim \text{Bin}(n, p)$): 
+
+Wiederholung von $n$ unabhängigen Bernoulli-Experimenten mit gleichem Parameter $p$. 
+$$p(k):= \P(X = k) = \binom{n}{k} \cdot p^k \cdot (1-p)^{n-k} \quad \forall k \in \{0,1,\ldots, n\}$$
+\textbf{Geometrische Verteilung} ($X \sim \text{Geo}(p)$): 
+
+Warten auf den $1$-ten Erfolg. 
+$$p(k):= \P(X = k) = (1-p)^{k-1}\cdot p \quad \forall k \in \N\setminus\{0\}$$
+\textbf{Poisson-Verteilung} ($X \sim \text{Poisson}(\lambda)$): 
+
+Grenzwert der Binomialverteilung für grosse $n$ und kleine $p$. 
+$$p(k) := \P(X = k) = \frac{\lambda^k}{k!}\cdot e^{-\lambda} \quad \forall k \in \N_0, \lambda > 0$$
+\begin{enumerate}
+    \item Für $X_n \sim \text{Bin}(n, \frac{\lambda}{n})$ gilt $\lim_{n \to \infty}\P(X_n = k) = \P(Y = k)$ wobei $Y \sim \text{Poisson}(\lambda)$.
+    \item Seien $X_1 \sim \text{Poisson}(\lambda_1)$ und $X_2 \sim \text{Poisson}(\lambda_2)$ unabhängig. Dann gilt $(X_1 + X_2) \sim \text{Poisson}(\lambda_1 +\lambda_2)$.
+\end{enumerate}
+
+\subsection{Stetige Zufallsvariablen}
+\begin{mainbox}{Stetige Zufallsvariablen, Dichte}
     Eine Zufallsvariable $X: \Omega \to \R$ heisst \textbf{stetig}, wenn ihre Verteilungsfunktion $F_X$ wie folgt geschrieben werden kann
     $$F_X(a) = \int_{-\infty}^{a}f(x)\dx = \text{ für alle }a \in \R.$$
-    wobei $f: \R \to \R^+$ eine nicht-negative Funktion ist. $f$ wird dann als \textbf{Dichte} von $X$ benannt.
+    wobei $f: \R \to \R^+$ eine nicht-negative Funktion ist. $f$ wird dann als \textbf{Dichte} von $X$ benannt.\\
+    Wenn $f: (\R, \mathcal{B}) \to (\R, \mathcal{B})$ messbar ist, ist die Zufallsvariable $X$ \textbf{absolut stetig}.
+\end{mainbox}
+\textbf{Intuition:} $f(x)\dx$ ist die Wahrscheinlichkeit, dass $X \in [x, x + \dx]$.
+\\ \\
+\textbf{Von $F_X$ zu $f$:} 
+
+Sei $X$ eine Zufallsvariable mit stetiger Verteilungsfunktion $F_X$ und $F_X$ stückweise $\mathcal{C}^1$, d.h. es gibt $x_0 = - \infty < \ldots < x_{n-1} < x_n = +\infty$, sodass $F_X$ auf jedem Intervall $(x_i, x_{i+1})$ Element von $\mathcal{C}^1$ ist. 
+
+Dann ist $X$ eine stetige Zufallsvariable und die Dichte $f$ kann wie folgt konstruiert werden:
+$$\forall x \in (x_i, x_{i+1}) \quad f(x) = F'_X(x).$$
+
+\subsection{Stetige Verteilungen}
+\textbf{Gleichverteilung} ($X \sim \mathcal{U}([a,b])$): 
+
+Die Dichte ist auf dem Intervall $[a, b]$ gleich. 
+$$f_{a,b}(x) = \begin{cases}
+    0 & x \notin [a,b]\\
+    \frac{1}{b-a} & x \in [a,b]
+\end{cases}$$
+\textbf{Exponentialverteilung} ($T \sim \text{Exp}(\lambda)$): 
+
+Lebensdauer oder Wartezeit eines allg. Ereignisses (Stetiges Äquivalent zur Geometrischen Verteilung). 
+$$f_\lambda(x) = \begin{cases}
+    \lambda e^{-\lambda x} & x \ge 0,\\
+    0 & x < 0.
+\end{cases}$$ 
+\textbf{Normalverteilung} ($X \sim \mathcal{N}(m, \sigma^2)$): 
+
+Häufig verwendete Verteilung. Undefiniert für $\sigma = 0$.
+$$f_{m, \sigma}(x) = \frac{1}{\sqrt{2\pi\sigma^2}}e^{-\frac{(x-m)^2}{2\sigma^2}}$$
+\begin{enumerate}
+    \item Seien $X_1, \ldots, X_n$ \textbf{unabhängige} normalverteilte ZV mit Parametern $(m_1,\sigma_1^2), \ldots, (m_n, \sigma_n^2)$, dann ist 
+    $$Z = m_0 + \lambda_1 X_1 + \ldots + \lambda_n X_n$$
+    eine normalverteilte ZV mit Parametern $m = m_0 + \lambda_1 m_1 + \ldots + \lambda_n m_n$ und $\sigma^2 = \lambda_1^2 \sigma_1^2 + \ldots + \lambda_n^2 \sigma_n^2$.
+    \item Sei $Z \sim \mathcal{N}(0,1)$ eine \textbf{standardnormalverteilte} Zufallsvariable. Dann gilt für $X \sim \mathcal{N}(m, \sigma^2)$ 
+    $$X = m + \sigma \cdot Z$$   
+\end{enumerate}
+
+\subsection{Erwartungswert}
+\begin{mainbox}{Erwartungswert - Diskrete ZV}
+    Sei $X: \Omega \to \R$ eine diskrete Zufallsvariable, $W_X := X(\Omega)$ und $\phi: \R \to \R$ eine Abbildung. Falls die Summe wohldefiniert ist, gilt: 
+    $$\mathbb{E}(\phi(X)) := \sum_{x \in W_X} \phi(x) \cdot \P(X = x)$$
+    Wenn $X: \Omega \to \N_0$, kann man auch den Erwartungswert als
+    $$\mathbb{E}(X) = \sum_{n = 0}^{\infty}\P(X > n)$$
+    schreiben.
+\end{mainbox}
+\begin{mainbox}{Erwartungswert - Stetige ZV}
+    Sei $X: \Omega \to \R$ eine stetige Zufallsvariable mit Dichte $f$. Sei $\phi: \R \to \R$ eine Abbildung, sodass $\phi(X)$ eine Zufallsvariable ist. Dann gilt
+    $$\mathbb{E}(\phi(X))= \int_{-\infty}^\infty \phi(x)f(x)\dx,$$
+    solange das Integral wohldefiniert ist. 
 \end{mainbox}
 
-\begin{mainbox}{Erwartungswert}
-    
-\end{mainbox}
+\subsection{Rechnen mit Erwartungswerten}
+\textbf{Linearität des Erwartungswertes}: 
+
+Seien $X, Y: \Omega \to \R$ ZV mit $\lambda \in \R$, Falls die Erwartungswerte wohldefiniert sind, gilt:
+$$\mathbb{E}(\lambda \cdot X + Y) = \lambda \cdot \mathbb{E}(X) + \mathbb{E}(Y)$$
+
+Falls $X, Y$ \textbf{unabhängig}, dann gilt auch:
+$$\mathbb{E}(X \cdot Y) = \mathbb{E}(X) \cdot \mathbb{E}(Y)$$
+

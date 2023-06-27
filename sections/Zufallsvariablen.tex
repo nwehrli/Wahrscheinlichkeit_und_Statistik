@@ -101,6 +101,8 @@ Sei $X$ eine Zufallsvariable mit stetiger Verteilungsfunktion $F_X$ und $F_X$ st
 Dann ist $X$ eine stetige Zufallsvariable und die Dichte $f$ kann wie folgt konstruiert werden:
 $$\forall x \in (x_i, x_{i+1}) \quad f(x) = F'_X(x).$$
 
+\textbf{Beispielrechnung -Dichte finden}
+
 \subsection{Stetige Verteilungen}
 \textbf{Gleichverteilung} ($X \sim \mathcal{U}([a,b])$): 
 
@@ -208,6 +210,9 @@ Für ein beliebiges $B \in A, \P(B) > 0$ definieren wir den \textbf{bedingten Er
     &= \sum_{\omega \in \Omega}X(\omega)\P(\{\omega\}\mid B)
 \end{align*}
 
+\textbf{Beispielrechnung}
+
+
 \textbf{Bedingter Erwartungswert als Zufallsvariable}\\
 Wir betrachten eine Partition $\mathcal{B} = (B_i)_{i \in I}$ von $\Omega$ ($B_i$ sind disjunkt und nichtleer, $I$ abzählbar). 
 
@@ -216,4 +221,42 @@ $$\E(X \mid \mathcal{B})(\omega) = \sum_{i \in I, \P(B_i > 0)} \E(X \mid B_i) \m
 \begin{enumerate}
     \item \textbf{Intuition:} Die Information, die durch die Partition gegeben ist, ist dass eines der $B_i$ eintreten wird. Bei der Realisierung durch das Eintreten des Elementarereignisses $\omega$ wird $\E(X \mid \mathcal{B})$ zu dem $\E(X \mid B_i)$ realisiert, bei welchem $\omega \in B_i$.
     \item \textbf{Bemerkung:} Das $\mathcal{B}$ hat in der Vorlesung 2 verschiedene Bedeutungen. Es wird als Variable für sowohl die Borelsche $\sigma$-Algebra als auch die Partition von $\Omega$ verwendet.
+\end{enumerate}
+\textbf{Beispielrechnung}
+
+\subsection{Mehrere Zufallsvariablen}
+Die \textbf{gemeinsame Verteilungsfunktion} von $n$ Zufallsvariablen $X_1, \ldots, X_n$ (stetig oder diskret) ist die Abbildung $F: \R^n \to [0,1]$,
+$$(x_1, \ldots, x_n) \mapsto F(x_1, \ldots, x_n) := \P(X_1 \leq x_1, \ldots, X_n \leq x_n)$$
+
+\begin{mainbox}{Diskreter Fall - Gewichtsfunktion}
+    Für $n$ diskrete ZV $X_1, \ldots, X_n$ definieren wir ihre \textbf{gemeinsame Gewichtsfunktion} $p: \R^n \to [0,1]$ durch
+    $$p(x_1, \ldots, x_n) := \P(X_1 = x_1, \ldots, X_n = x_n)$$
+    Aus der gemeinsamen Gewichtsfunktion $p$ bekommt man die gemeinsame Verteilungsfunktion mit
+    \begin{align*}
+        F(x_1, \ldots, x_n) &= \P(X_1 \leq x_1, \ldots, X_n \leq x_n)\\
+        &= \sum_{y_1 \leq x_1, \ldots, y_n \leq x_n}\P(X_1 = y_1, \ldots, X_n = y_n)\\
+        &= \sum_{y_1 \leq x_1, \ldots, y_n \leq x_n}p(y_1, \ldots,y_n)
+    \end{align*}    
+\end{mainbox}
+
+\begin{subbox}{Konstruktion einer ZV}
+    Seien $X_1, \ldots, X_n$ diskrete Zufallsvariablen in $(\Omega, \F, \P)$, sodass $X_1 \in W_1, \ldots, X_n \in W_n$ f.s. für $W_1, \ldots, W_n \subset \R$ endlich oder abzählbar.
+
+    Für $\phi: \R^n \to \R$ beliebig, ist $Z = \phi(X_1, \ldots, X_n)$ eine diskrete Zufallsvariable mit $Z \in W = \phi(W_1 \times \ldots \times W_n)$ f.s. . 
+
+    Die Gewichtsfunktion von $Z$ ist gegeben durch $p_Z: W \to [0,1]$:
+    $$p_Z(t) := \P(Z = t) = \sum_{\substack{x_1 \in W_1, \ldots, x_n \in W_n\\ \phi(x_1, \ldots, x_n) = t}} p(x_1, \ldots, x_n)$$
+\end{subbox}
+\begin{enumerate}
+    \item Mit dem vorherigen Satz können wir aus der gemeinsamen Verteilung die \textbf{Randverteilung} einer Zufallsvariablen extrahieren (wegsummieren). Wir verwenden dafür einfach die Funktion 
+    $$\phi(x_1, \ldots, x_n) = x_i$$
+    \item Der Erwartungswert des Bildes der Funktion $\phi: \R^n \to \R$ ist
+    $$\E(\phi(X_1, \ldots, X_n)) = \sum_{x_1, \ldots, x_n}\phi(x_1, \ldots, x_n)p(x_1, \ldots, x_n)$$
+    \item Wir haben eine Äquvalenz: 
+    \begin{align*}
+        &X_1, \ldots, X_n \text{unabhängig}\\
+        &\quad \iff \\
+        &\forall x_1 \in W_1, \ldots, x_n \in W_n\\
+        &p(x_1, \ldots, x_n) = \P(X_1 = x_1) \cdot \ldots \cdot \P(X_n = x_n)
+    \end{align*}
 \end{enumerate}

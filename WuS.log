@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 23.5) (preloaded format=pdflatex 2023.5.9)  27 JUN 2023 12:39
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 23.5) (preloaded format=pdflatex 2023.5.9)  27 JUN 2023 23:37
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -881,28 +881,29 @@ Underfull \hbox (badness 10000) in paragraph at lines 95--98
  []
 
 
-Overfull \hbox (9.87752pt too wide) in paragraph at lines 114--115
+Overfull \hbox (9.87752pt too wide) in paragraph at lines 116--117
 []\OT1/cmr/m/n/8 Lebensdauer oder War-te-zeit ei-nes allg. Er-eig-nis-ses (Ste-ti-ges []Aquivalent
  []
 
-[2]) [3
+[2] [3]) [4
+
 
 ] (WuS.aux)
 Package rerunfilecheck Info: File `WuS.out' has not changed.
-(rerunfilecheck)             Checksum: 90846376E710A29AB344ECBCC5DD4045;2311.
+(rerunfilecheck)             Checksum: 543CB6D8C82CB899949C49654E2D19B6;2493.
  ) 
 Here is how much of TeX's memory you used:
- 31573 strings out of 476315
- 652841 string characters out of 5787197
+ 31582 strings out of 476315
+ 652951 string characters out of 5787197
  1902068 words of memory out of 5000000
- 51447 multiletter control sequences out of 15000+600000
+ 51451 multiletter control sequences out of 15000+600000
  522261 words of font info for 71 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 104i,13n,108p,614b,530s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 104i,13n,108p,614b,639s stack positions out of 10000i,1000n,20000p,200000b,200000s
  <C:\Users\nshar\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tcrm0800.pk><C:/Users/nshar/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Users/nshar/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx8.pfb><C:/Users/nshar/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cmextra/cmex8.pfb><C:/Users/nshar/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi5.pfb><C:/Users/nshar/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi6.pfb><C:/Users/nshar/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Users/nshar/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Users/nshar/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr17.pfb><C:/Users/nshar/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr5.pfb><C:/Users/nshar/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr6.pfb><C:/Users/nshar/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Users/nshar/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy5.pfb><C:/Users/nshar/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy6.pfb><C:/Users/nshar/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy8.pfb><C:/Users/nshar/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmti8.pfb><C:/Users/nshar/AppData/Local/Programs/MiKTeX/fonts/type1/public/doublestroke/dsrom8.pfb><C:/Users/nshar/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/symbols/msam7.pfb><C:/Users/nshar/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/symbols/msbm10.pfb><C:/Users/nshar/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/symbols/msbm7.pfb>
-Output written on WuS.pdf (3 pages, 249977 bytes).
+Output written on WuS.pdf (4 pages, 256203 bytes).
 PDF statistics:
- 221 PDF objects out of 1000 (max. 8388607)
- 47 named destinations out of 1000 (max. 500000)
- 133 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 233 PDF objects out of 1000 (max. 8388607)
+ 52 named destinations out of 1000 (max. 500000)
+ 141 words of extra memory for PDF output out of 10000 (max. 10000000)
 

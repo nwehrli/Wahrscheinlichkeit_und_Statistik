@@ -1242,6 +1242,7 @@ INPUT C:\Users\nshar\AppData\Local\Programs\MiKTeX\tex\latex\doublestroke\udsrom
 INPUT C:\Users\nshar\AppData\Local\Programs\MiKTeX\fonts\tfm\public\doublestroke\dsrom8.tfm
 INPUT C:\Users\nshar\AppData\Local\Programs\MiKTeX\fonts\tfm\public\doublestroke\dsrom8.tfm
 INPUT C:\Users\nshar\AppData\Local\Programs\MiKTeX\fonts\tfm\public\doublestroke\dsrom8.tfm
+INPUT C:\Users\nshar\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmti8.tfm
 INPUT WuS.aux
 INPUT .\WuS.out
 INPUT .\WuS.out
@@ -1275,6 +1276,8 @@ INPUT C:\Users\nshar\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\c
 INPUT C:\Users\nshar\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmsy6.pfb
 INPUT C:\Users\nshar\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmsy8.pfb
 INPUT C:\Users\nshar\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmsy8.pfb
+INPUT C:\Users\nshar\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmti8.pfb
+INPUT C:\Users\nshar\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmti8.pfb
 INPUT C:\Users\nshar\AppData\Local\Programs\MiKTeX\fonts\type1\public\doublestroke\dsrom8.pfb
 INPUT C:\Users\nshar\AppData\Local\Programs\MiKTeX\fonts\type1\public\doublestroke\dsrom8.pfb
 INPUT C:\Users\nshar\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\symbols\msam7.pfb

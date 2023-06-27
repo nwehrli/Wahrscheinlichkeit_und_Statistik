@@ -10,8 +10,7 @@ Diese Definition von \textbf{messbar} ist für diskrete $\Omega$ äquivalent zu 
 
 Für die Messbarkeit von $X$ ist nur $X(\Omega) \subseteq \R$ entscheidend und jede Teilmenge $A \subseteq X(\Omega)$ ist abzählbar (da $\Omega$ abzählbar). Somit kann $X^{-1}(A)$ als abzählbare Vereinigung von $\bigcup_{x \in A} X^{-1}(\{x\})$ geschrieben werden. 
 \\($\implies X^{-1}(A) \in \A$ per Def. $\sigma$-Algebra)
-\\ \\ \textbf{Verteilungsfunktion}
-
+\subsection{Verteilungsfunktion}
 Die \textbf{Verteilungsfunktion} ist die Abbildung $F_X : \R \to [0,1]$ definiert durch:
 $$F_X(t) := \P(X \leq t), \forall t \in \R$$
 \vfill\break
@@ -112,7 +111,7 @@ $$f_{a,b}(x) = \begin{cases}
 \end{cases}$$
 \textbf{Exponentialverteilung} ($T \sim \text{Exp}(\lambda)$): 
 
-Lebensdauer oder Wartezeit eines allg. Ereignisses (Stetiges Äquivalent zur Geometrischen Verteilung). 
+Lebensdauer oder Wartezeit eines allg. Ereignisses (Stetiges Äquivalent zur Geometrischen Verteilung).
 $$f_\lambda(x) = \begin{cases}
     \lambda e^{-\lambda x} & x \ge 0,\\
     0 & x < 0.
@@ -140,7 +139,9 @@ $$f_{m, \sigma}(x) = \frac{1}{\sqrt{2\pi\sigma^2}}e^{-\frac{(x-m)^2}{2\sigma^2}}
 \begin{mainbox}{Erwartungswert - Stetige ZV}
     Sei $X: \Omega \to \R$ eine stetige Zufallsvariable mit Dichte $f$. Sei $\phi: \R \to \R$ eine Abbildung, sodass $\phi(X)$ eine Zufallsvariable ist. Dann gilt
     $$\mathbb{E}(\phi(X))= \int_{-\infty}^\infty \phi(x)f(x)\dx,$$
-    solange das Integral wohldefiniert ist. 
+    solange das Integral wohldefiniert ist.
+    \\Sei $X$ eine stetige ZV mit $X \geq 0$ f.s., dann gilt:
+    $$\E(X)=\int_0^\infty \P(X > x)\dx$$ 
 \end{mainbox}
 
 \subsection{Rechnen mit Erwartungswerten}
@@ -152,3 +153,67 @@ $$\mathbb{E}(\lambda \cdot X + Y) = \lambda \cdot \mathbb{E}(X) + \mathbb{E}(Y)$
 Falls $X, Y$ \textbf{unabhängig}, dann gilt auch:
 $$\mathbb{E}(X \cdot Y) = \mathbb{E}(X) \cdot \mathbb{E}(Y)$$
 
+Eine generellere Form wäre folgende Äquivalenz:\\
+$X_1, X_2, ...,X_n$ unabhängig
+\\$\iff$
+\\Für jede $\phi_1: \R \to \R, \ldots, \phi_n: \R \to \R$ stückweise stetig, beschränkt gilt
+$$\E(\phi_1(X_1)\cdots\phi_n(X_n))=\E(\phi_1(X_1))\cdots\E(\phi_n(X_n))$$ 
+
+\subsection{Ungleichungen}
+\textbf{Monotonie}
+\\Seien $X, Y$ ZV mit $X \leq Y$ f.s., dann gilt:
+$$\E(X) \leq \E(Y)$$
+\textbf{Markov Ungleichung}
+\\Sei $X$ eine ZV und ferner $g: X(\Omega) \to [0, +\infty)$ eine wachsende Funktion. Für jedes $c \in \R$ mit $g(c) > 0$ gilt dann
+$$\P(X \geq c) \leq \frac{\E(g(X))}{g(c)}$$
+\\\textit{Einfache Version:}
+\\Sei $X$ eine ZV mit $X\geq 0$ f.s., dann gilt für jedes $t > 0$:
+$$\P(X \geq t) \leq \frac{\E(X)}{t}$$
+\textbf{Chebyshev Ungleichung}
+\\Sei $Y$ eine ZV mit endlicher Varianz. Für jedes $b > 0$ gilt dann
+$$\P(|Y - \E(Y)| \geq b) \leq \frac{\text{Var}(Y)}{b^2}$$
+\textbf{Jensen Ungleichung}
+\\Sei $X$ eine ZV und $\phi: \R \to \R$ eine konvexe Funktion, dann gilt:
+$$\phi(\E(X)) \leq \E(\phi(X))$$
+
+\subsection{Varianz}
+\begin{mainbox}{Varianz}
+    Sei $X$ eine ZV, sodass $\E(X^2)<\infty$. Die \textbf{Varianz} von $X$ ist definiert durch
+    $$\Var(X) = \sigma_X^2 = \E((X - m)^2) = \E(X^2)-\E(X)^2$$
+    wobei $m = \E(X)$. Dabei wird $\sigma_X$ als \textbf{Standardabweichung} von $X$ bezeichnet und beschreibt den Erwartungswert für die Distanz von $X$ zu $\E(X)$.
+\end{mainbox}
+
+\begin{enumerate}
+    \item Sei $X$ ein ZV, sodass $\E(X^2)<\infty$ und $\lambda \in \R$:
+    $$\Var(a\cdot X + b) = a^2 \cdot \Var(X)$$
+    \item Seien $X_1, ..., X_n$ paarweise unabhängig. Dann gilt
+    $$\Var(X_1 + \ldots + X_n) = \Var(X_1)+\ldots +\Var(X_n)$$
+\end{enumerate}
+
+\begin{mainbox}{Kovarianz}
+    Seien $X, Y$ ZV mit $\E(X^2)<\infty, \E(Y^2) < \infty$. Wir definieren die \textbf{Kovarianz} zwischen $X$ und $Y$ durch
+    $$\text{Cov}(X,Y) := \E(XY) - \E(X)\E(Y)$$
+\end{mainbox}
+\begin{enumerate}
+    \item $\text{Cov}(X,X) = \Var(X)$
+    \item $X, Y$ unabhängig $\implies$ $\text{Cov}(X, Y) = 0$ (Die Umkehrung ist falsch!)
+    \item $\Var(X+Y) = \Var(X) + \Var(Y) + 2\text{Cov}(X, Y)$
+\end{enumerate}
+\subsection{Bedingter Erwartungswert}
+Sei $(\Omega, \A, \P)$ ein diskreter Wahrscheinlichkeitsraum und $X:\Omega \to \R$ eine Zufallsvariable. 
+
+Für ein beliebiges $B \in A, \P(B) > 0$ definieren wir den \textbf{bedingten Erwartungswert} $X$ bedingt durch $B$ als
+\begin{align*}
+    \E(X \mid B) = \frac{\E(\mathds{1}_B X)}{\P(B)} &= \sum_{x \in X(\Omega)}x\P(X = x\mid B)\\ 
+    &= \sum_{\omega \in \Omega}X(\omega)\P(\{\omega\}\mid B)
+\end{align*}
+
+\textbf{Bedingter Erwartungswert als Zufallsvariable}\\
+Wir betrachten eine Partition $\mathcal{B} = (B_i)_{i \in I}$ von $\Omega$ ($B_i$ sind disjunkt und nichtleer, $I$ abzählbar). 
+
+Dann definieren wir die \textbf{Zufallsvariable}
+$$\E(X \mid \mathcal{B})(\omega) = \sum_{i \in I, \P(B_i > 0)} \E(X \mid B_i) \mathds{1}_{B_i}(\omega)$$ 
+\begin{enumerate}
+    \item \textbf{Intuition:} Die Information, die durch die Partition gegeben ist, ist dass eines der $B_i$ eintreten wird. Bei der Realisierung durch das Eintreten des Elementarereignisses $\omega$ wird $\E(X \mid \mathcal{B})$ zu dem $\E(X \mid B_i)$ realisiert, bei welchem $\omega \in B_i$.
+    \item \textbf{Bemerkung:} Das $\mathcal{B}$ hat in der Vorlesung 2 verschiedene Bedeutungen. Es wird als Variable für sowohl die Borelsche $\sigma$-Algebra als auch die Partition von $\Omega$ verwendet.
+\end{enumerate}

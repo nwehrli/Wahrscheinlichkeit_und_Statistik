@@ -1,0 +1,174 @@
+\section{Mehrere Zufallsvariablen}
+\begin{mainbox}{Gemeinsame Verteilung}
+    Die \textbf{gemeinsame Verteilungsfunktion} von $n$ Zufallsvariablen $X_1, \ldots, X_n$ (stetig oder diskret) ist die Abbildung $F: \R^n \to [0,1]$,
+    $$(x_1, \ldots, x_n) \mapsto F(x_1, \ldots, x_n) := \P(X_1 \leq x_1, \ldots, X_n \leq x_n)$$
+\end{mainbox}
+\subsection{Diskreter Fall - Gewichtsfunktion}
+    Für $n$ diskrete ZV $X_1, \ldots, X_n$ definieren wir ihre \textbf{gemeinsame Gewichtsfunktion} $p: \R^n \to [0,1]$ durch
+    $$p(x_1, \ldots, x_n) := \P(X_1 = x_1, \ldots, X_n = x_n)$$
+    Aus der gemeinsamen Gewichtsfunktion $p$ bekommt man die gemeinsame Verteilungsfunktion mit
+    \begin{align*}
+        F(x_1, \ldots, x_n) &= \P(X_1 \leq x_1, \ldots, X_n \leq x_n)\\
+        &= \sum_{y_1 \leq x_1, \ldots, y_n \leq x_n}\P(X_1 = y_1, \ldots, X_n = y_n)\\
+        &= \sum_{y_1 \leq x_1, \ldots, y_n \leq x_n}p(y_1, \ldots,y_n)
+    \end{align*}    
+
+\begin{subbox}{Konstruktion einer ZV}
+    Seien $X_1, \ldots, X_n$ diskrete Zufallsvariablen in $(\Omega, \F, \P)$, sodass $X_1 \in W_1, \ldots, X_n \in W_n$ f.s. für $W_1, \ldots, W_n \subset \R$ endlich oder abzählbar.
+
+    Für $\phi: \R^n \to \R$ beliebig, ist $Z = \phi(X_1, \ldots, X_n)$ eine diskrete Zufallsvariable mit $Z \in W = \phi(W_1 \times \ldots \times W_n)$ f.s. . 
+
+    Die Gewichtsfunktion von $Z$ ist gegeben durch $p_Z: W \to [0,1]$:
+    $$p_Z(t) := \P(Z = t) = \sum_{\substack{x_1 \in W_1, \ldots, x_n \in W_n\\ \phi(x_1, \ldots, x_n) = t}} p(x_1, \ldots, x_n)$$
+\end{subbox}
+\begin{enumerate}
+    \item Mit dem vorherigen Satz können wir aus der gemeinsamen Verteilung die \textbf{Randverteilung} einer Zufallsvariablen extrahieren (wegsummieren). Wir verwenden dafür einfach die Funktion 
+    $$\phi(x_1, \ldots, x_n) = x_i$$
+    \item Der Erwartungswert des Bildes der Funktion $\phi: \R^n \to \R$ ist
+    $$\E(\phi(X_1, \ldots, X_n)) = \sum_{x_1, \ldots, x_n}\phi(x_1, \ldots, x_n)p(x_1, \ldots, x_n)$$
+    \item Wir haben eine Äquvalenz: 
+    \begin{align*}
+        &X_1, \ldots, X_n \text{unabhängig}\\
+        &\quad \iff \\
+        &\forall x_1 \in W_1, \ldots, x_n \in W_n\\
+        &p(x_1, \ldots, x_n) = \P(X_1 = x_1) \cdot \ldots \cdot \P(X_n = x_n)
+    \end{align*}
+\end{enumerate}
+
+\subsection{Stetiger Fall - Gemeinsame Dichte}
+\begin{mainbox}{Gemeinsame Dichte}
+    Falls die gemeinsame Verteilungsfunktion von $n$ Zufallsvariablen $X_1, \ldots, X_n$ sich schreiben lässt als
+    $$F(x_1, \ldots, x_n) = \int_{-\infty}^{x_1} \cdots \int_{-\infty}^{x_n}f(t_1, \ldots, t_n) \mathop{dt_n}\ldots\mathop{dt_1}$$
+    für eine Funktion $f: \R^n \to [0, \infty)$, so heisst $f(x_1, \ldots, x_n)$ die \textbf{gemeinsame Dichte} von $X_1, \ldots X_n$.
+\end{mainbox}
+   
+\begin{enumerate}
+    \item $f(x_1, \ldots, x_n) \geq 0$, und $ = 0$ ausserhalb von $\mathcal{W}(X_1, \ldots, X_n)$.
+    \item 
+    \begin{gather*}
+        \P((X_1, \ldots, X_n) \in A) = \idotsint\limits_{(x_1, \ldots, x_n) \in A} f(x_1, \ldots, x_n) \mathop{dx_n}\ldots\mathop{dx_1}
+    \end{gather*}
+    für $A \subseteq \R^n$ beliebig.
+    \item Haben $X, Y$ die gemeinsame Verteilungsfunktion $F_{X,Y}$, so ist $F_X: \R \to [0,1]$,
+    $$F_X(x) := \P(X \leq x) = \P(X \leq x, Y \leq \infty) = \lim_{y \to \infty}F_{X,Y}(x,y)$$
+    die Verteilungsfunktion der \textit{Randverteilung} von $X$. Analoges gilt für $F_Y$.
+    \item Falls $X,Y$ eine gemeinsame Dichte $f(x,y)$ haben, so haben auch die Randverteilungen von $X$ und $Y$ Dichten $f_X: \R \to [0, \infty)$ und $F_Y: \R \to [0, \infty)$.
+    $$f_X(x) = \int_{-\infty}^{\infty}f(x,y)\mathop{dy} \text{ bzw. } f_Y(y)=\int_{-\infty}^{\infty}f(x,y)\dx$$
+    Die \textbf{Dichtefunktion} einer Randverteilung (Randdichte) entsteht aus der gemeinsamen Dichtefunktion durch ''Wegintegrieren'' der anderen Variable(n).
+\end{enumerate}
+Wenn $X_1, \ldots, X_n$ stetige ZV mit Dichten $f_1, \ldots, f_n$, dann sind die folgenden Aussagen äquivalent:
+\begin{itemize}
+    \item $X_1, \ldots, X_n$ unabhängig
+    \item $(X_1, \ldots, X_n)$ ist stetig mit gemeinsamer Dichte $$f(x_1, \ldots, x_n) = f_1(x_1) \cdot \ldots \cdot f_n(x_n)$$
+    \item Für alle $\phi_1: \R \to \R, \ldots, \phi_n: \R \to \R$ die stückweise stetig und beschränkt sind, gilt 
+    $$\E(\phi_1(X_1)\cdot \ldots \cdot \phi_n(X_n)) = \E(\phi_1(X_1)) \cdot \ldots \cdot \E(\phi_n(X_n))$$
+\end{itemize}
+\subsection{Transformation von Zufallsvariablen}
+\begin{subbox}{Transformationssatz}
+    Sei $Z$ ein $n$-dimensionaler Zufallsvektor und $g: (\R^n, \mathcal{B}^n) \to (\R^m, \mathcal{B}^m)$ eine messbare Abbildung. Dann ist
+    $$H(\omega) = g(Z(\omega))$$
+    ein $m$-dimensionaler Zufallsvariable und ferner gilt
+    $$\P(H \in A) = \P(X \in g^{-1}(A)).$$
+    Wenn $g$ linear und umkehrbar (i.e. $g(x) = m + Bx$ mit det$(B) \neq 0$) und unter Vorraussetzung, dass die Verteilung von $Z$ absolut stetig ist, dann ist $H$ auch absolut stetig und es gilt:
+    $$f_H(x)=\frac{1}{|\text{det}(B)|}f_X(B^{-1}(x-m)).$$
+\end{subbox}
+\textbf{Beispielrechnung}
+
+$Z = (X, Y)$ $2$-dim Zufallsvektor. Wir wollen die Dichte von $X + Y$ berechnen.
+
+Man wäre versucht die Matrix $B$ und den Vektor $m$ wie folgt zu definieren:
+\begin{align*}
+    &B= 
+    \left(\begin{matrix}
+        1 & 1
+    \end{matrix}\right) 
+    \text{ und } 
+    \left(\begin{matrix}
+        0\\
+        0
+    \end{matrix}\right)\\
+    \implies &g((X,Y)) = 
+    \left(\begin{matrix}
+        1 & 1
+    \end{matrix}\right) \cdot 
+    \left(\begin{matrix}
+        X\\
+        Y
+    \end{matrix}\right) = X + Y
+\end{align*}
+Dann wäre aber $B$ (und somit $g$) nicht invertierbar!
+Deshalb wollen wir $B$ so wählen, dass $g((X,Y)) = (X, X + Y)$:
+\begin{align*}
+    &\left(\begin{matrix}
+        X\\
+        X + Y
+    \end{matrix}\right) 
+    = \left(\begin{matrix}
+        1 & 0\\
+        1 & 1
+    \end{matrix}\right)
+    \left(\begin{matrix}
+        X\\
+        Y
+    \end{matrix}\right)\\
+    \text{det}(B)&= 1 \neq 0 \implies B \text{ invertierbar}\\
+    &B^{-1} = \left(\begin{matrix}
+        1 & 0\\
+        -1 & 1
+    \end{matrix}\right)
+\end{align*}
+Nach dem Transformationssatz gilt
+\begin{align*}
+    f_{X, X+Y}(x, z) &= \frac{1}{|\text{det}(B)|}f_{X, Y}\left(B^{-1}\cdot 
+    \left(\begin{matrix}
+        x\\
+        z
+    \end{matrix}\right)\right)\\
+    &= 1 \cdot f_{X, Y}\left(\left(\begin{matrix}
+        1 & 0\\
+        -1 & 1
+    \end{matrix}\right)\left(\begin{matrix}
+        x\\
+        z
+    \end{matrix}\right)\right)\\
+    &= f_{X, Y}\left(x, z-x\right)
+\end{align*}
+Aus der gemeinsamen Dichte $f_{X, X + Y}$ können wir die Dichte $f_{X + Y}$ bestimmen.
+\begin{align*}
+    f_{X+Y}(z) &= \int_{-\infty}^{\infty}f_{X, X + Y}(x, z) \dx\\
+    &= \int_{-\infty}^{\infty} f_{X,Y}(x, z-x) \dx\\
+    \text{Falls $X$ und $Y$ unabhängig}\\
+    &= \int_{-\infty}^{\infty}f_X(x)\cdot f_Y(z-x) \dx
+\end{align*}
+\begin{subbox}{Transformation von Zufallsvariablen}
+    Sei $\phi: \R^n \to \R$ eine Abbildung und $X_1, \ldots, X_n$ ZV mit gemeinsamer Dichte $f$. 
+    Dann lässt sich $\E(Z)$ für die Zufallsvariable $Z=\phi(X_1, \ldots, X_n)$ mit 
+    $$\E(Z) =\idotsint\limits_{\R^n}\phi(x_1, \ldots, x_n)\cdot f(x_1, \ldots, x_n)\mathop{dx_n}\ldots\mathop{dx_1}$$
+    berechnen.
+\end{subbox}
+\textbf{Beispielrechnung}
+
+Wir können diese Art den Erwartungswert zu berechnen nutzen, um die Dichte einer transformierten Zufallsvariable zu berechnen.
+
+Seien $X$ und $Y$ zwei Zufallsvariablen mit gemeinsamer Dichtefunktion
+$$f(x,y) = \begin{cases}
+    \frac{1}{x^2y^2} \text{ für } x \geq 1, y \geq 1\\
+    0 \text{ sonst.}
+\end{cases}$$
+Bestimme die Dichtefunktion $f_V$ der Zufallsvariable $V = XY$.
+
+Wir definieren $\phi(x, y) = xy$ und berechnen 
+\begin{align*}
+    \E(V) = \E(\phi(X,Y)) &= \int_{-\infty}^{\infty}\int_{-\infty}^{\infty}\phi(x,y)f(x,y)\dx\mathop{dy}\\
+    &= \int_{1}^{\infty}\int_{1}^{\infty}\phi(xy)\frac{1}{x^2y^2}\dx\mathop{dy}\\
+    &\text{Substition } v = xy, \mathop{dv} = y\mathop{dx}\\
+    &= \int_{1}^{\infty}\int_{y}^{\infty}\frac{v}{y}\frac{1}{v^2}\mathop{dv}\mathop{dy}\\
+    A = \{(v, y) \in \R^2 &\mid 1 \leq y < \infty, y \leq v < \infty\}\\
+    = \{(v, y) \in \R^2 &\mid 1 \leq y \leq v, 1 \leq v < \infty\}\\
+    \text{Zeichnung hilft ;)}\\
+    &= \int_{1}^{\infty}\int_{1}^{v}\frac{1}{vy}\mathop{dy}\mathop{dv}\\
+    &= \int_{1}^{\infty}\frac{\ln(v)}{v}\mathop{dv}\\
+    &= \int_{-\infty}^{\infty}v \cdot \frac{\ln(v)}{v^2}\mathds{1}_{v \in [1,\infty)}\mathop{dv}
+\end{align*}
+$$\implies f_V(t) = \frac{\ln(v)}{v^2}\mathds{1}_{v \in [1,\infty)}$$
+

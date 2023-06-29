@@ -49,7 +49,7 @@ Intuitiv folgt daraus
 \end{subbox}
 
 \subsection{Diskrete Zufallsvariablen}
-Sei $A \in \F$ ein Ereignis. \\
+Sei $A \in \F$ ein Ereignis.\\
 Wir sagen $A$ tritt \textbf{fast sicher (f.s.)} ein, falls $\P(A)= 1$.
 \\ \\
 Seien $X, Y: \Omega \to \R$ Zufallsvariablen: \\$X \leq Y$ f.s. $\iff$ $\P(X \leq Y)=1$
@@ -101,7 +101,7 @@ Sei $X$ eine Zufallsvariable mit stetiger Verteilungsfunktion $F_X$ und $F_X$ st
 Dann ist $X$ eine stetige Zufallsvariable und die Dichte $f$ kann wie folgt konstruiert werden:
 $$\forall x \in (x_i, x_{i+1}) \quad f(x) = F'_X(x).$$
 
-\textbf{Beispielrechnung -Dichte finden}
+\textbf{TODO: Beispielrechnung -Dichte finden}
 
 \subsection{Stetige Verteilungen}
 \textbf{Gleichverteilung} ($X \sim \mathcal{U}([a,b])$): 
@@ -130,133 +130,4 @@ $$f_{m, \sigma}(x) = \frac{1}{\sqrt{2\pi\sigma^2}}e^{-\frac{(x-m)^2}{2\sigma^2}}
     $$X = m + \sigma \cdot Z$$   
 \end{enumerate}
 
-\subsection{Erwartungswert}
-\begin{mainbox}{Erwartungswert - Diskrete ZV}
-    Sei $X: \Omega \to \R$ eine diskrete Zufallsvariable, $W_X := X(\Omega)$ und $\phi: \R \to \R$ eine Abbildung. Falls die Summe wohldefiniert ist, gilt: 
-    $$\mathbb{E}(\phi(X)) := \sum_{x \in W_X} \phi(x) \cdot \P(X = x)$$
-    Wenn $X: \Omega \to \N_0$, kann man auch den Erwartungswert als
-    $$\mathbb{E}(X) = \sum_{n = 0}^{\infty}\P(X > n)$$
-    schreiben.
-\end{mainbox}
-\begin{mainbox}{Erwartungswert - Stetige ZV}
-    Sei $X: \Omega \to \R$ eine stetige Zufallsvariable mit Dichte $f$. Sei $\phi: \R \to \R$ eine Abbildung, sodass $\phi(X)$ eine Zufallsvariable ist. Dann gilt
-    $$\mathbb{E}(\phi(X))= \int_{-\infty}^\infty \phi(x)f(x)\dx,$$
-    solange das Integral wohldefiniert ist.
-    \\Sei $X$ eine stetige ZV mit $X \geq 0$ f.s., dann gilt:
-    $$\E(X)=\int_0^\infty \P(X > x)\dx$$ 
-\end{mainbox}
 
-\subsection{Rechnen mit Erwartungswerten}
-\textbf{Linearität des Erwartungswertes}: 
-
-Seien $X, Y: \Omega \to \R$ ZV mit $\lambda \in \R$, Falls die Erwartungswerte wohldefiniert sind, gilt:
-$$\mathbb{E}(\lambda \cdot X + Y) = \lambda \cdot \mathbb{E}(X) + \mathbb{E}(Y)$$
-
-Falls $X, Y$ \textbf{unabhängig}, dann gilt auch:
-$$\mathbb{E}(X \cdot Y) = \mathbb{E}(X) \cdot \mathbb{E}(Y)$$
-
-Eine generellere Form wäre folgende Äquivalenz:\\
-$X_1, X_2, ...,X_n$ unabhängig
-\\$\iff$
-\\Für jede $\phi_1: \R \to \R, \ldots, \phi_n: \R \to \R$ stückweise stetig, beschränkt gilt
-$$\E(\phi_1(X_1)\cdots\phi_n(X_n))=\E(\phi_1(X_1))\cdots\E(\phi_n(X_n))$$ 
-
-\subsection{Ungleichungen}
-\textbf{Monotonie}
-\\Seien $X, Y$ ZV mit $X \leq Y$ f.s., dann gilt:
-$$\E(X) \leq \E(Y)$$
-\textbf{Markov Ungleichung}
-\\Sei $X$ eine ZV und ferner $g: X(\Omega) \to [0, +\infty)$ eine wachsende Funktion. Für jedes $c \in \R$ mit $g(c) > 0$ gilt dann
-$$\P(X \geq c) \leq \frac{\E(g(X))}{g(c)}$$
-\\\textit{Einfache Version:}
-\\Sei $X$ eine ZV mit $X\geq 0$ f.s., dann gilt für jedes $t > 0$:
-$$\P(X \geq t) \leq \frac{\E(X)}{t}$$
-\textbf{Chebyshev Ungleichung}
-\\Sei $Y$ eine ZV mit endlicher Varianz. Für jedes $b > 0$ gilt dann
-$$\P(|Y - \E(Y)| \geq b) \leq \frac{\text{Var}(Y)}{b^2}$$
-\textbf{Jensen Ungleichung}
-\\Sei $X$ eine ZV und $\phi: \R \to \R$ eine konvexe Funktion, dann gilt:
-$$\phi(\E(X)) \leq \E(\phi(X))$$
-
-\subsection{Varianz}
-\begin{mainbox}{Varianz}
-    Sei $X$ eine ZV, sodass $\E(X^2)<\infty$. Die \textbf{Varianz} von $X$ ist definiert durch
-    $$\Var(X) = \sigma_X^2 = \E((X - m)^2) = \E(X^2)-\E(X)^2$$
-    wobei $m = \E(X)$. Dabei wird $\sigma_X$ als \textbf{Standardabweichung} von $X$ bezeichnet und beschreibt den Erwartungswert für die Distanz von $X$ zu $\E(X)$.
-\end{mainbox}
-
-\begin{enumerate}
-    \item Sei $X$ ein ZV, sodass $\E(X^2)<\infty$ und $\lambda \in \R$:
-    $$\Var(a\cdot X + b) = a^2 \cdot \Var(X)$$
-    \item Seien $X_1, ..., X_n$ paarweise unabhängig. Dann gilt
-    $$\Var(X_1 + \ldots + X_n) = \Var(X_1)+\ldots +\Var(X_n)$$
-\end{enumerate}
-
-\begin{mainbox}{Kovarianz}
-    Seien $X, Y$ ZV mit $\E(X^2)<\infty, \E(Y^2) < \infty$. Wir definieren die \textbf{Kovarianz} zwischen $X$ und $Y$ durch
-    $$\text{Cov}(X,Y) := \E(XY) - \E(X)\E(Y)$$
-\end{mainbox}
-\begin{enumerate}
-    \item $\text{Cov}(X,X) = \Var(X)$
-    \item $X, Y$ unabhängig $\implies$ $\text{Cov}(X, Y) = 0$ (Die Umkehrung ist falsch!)
-    \item $\Var(X+Y) = \Var(X) + \Var(Y) + 2\text{Cov}(X, Y)$
-\end{enumerate}
-\subsection{Bedingter Erwartungswert}
-Sei $(\Omega, \A, \P)$ ein diskreter Wahrscheinlichkeitsraum und $X:\Omega \to \R$ eine Zufallsvariable. 
-
-Für ein beliebiges $B \in A, \P(B) > 0$ definieren wir den \textbf{bedingten Erwartungswert} $X$ bedingt durch $B$ als
-\begin{align*}
-    \E(X \mid B) = \frac{\E(\mathds{1}_B X)}{\P(B)} &= \sum_{x \in X(\Omega)}x\P(X = x\mid B)\\ 
-    &= \sum_{\omega \in \Omega}X(\omega)\P(\{\omega\}\mid B)
-\end{align*}
-
-\textbf{Beispielrechnung}
-
-
-\textbf{Bedingter Erwartungswert als Zufallsvariable}\\
-Wir betrachten eine Partition $\mathcal{B} = (B_i)_{i \in I}$ von $\Omega$ ($B_i$ sind disjunkt und nichtleer, $I$ abzählbar). 
-
-Dann definieren wir die \textbf{Zufallsvariable}
-$$\E(X \mid \mathcal{B})(\omega) = \sum_{i \in I, \P(B_i > 0)} \E(X \mid B_i) \mathds{1}_{B_i}(\omega)$$ 
-\begin{enumerate}
-    \item \textbf{Intuition:} Die Information, die durch die Partition gegeben ist, ist dass eines der $B_i$ eintreten wird. Bei der Realisierung durch das Eintreten des Elementarereignisses $\omega$ wird $\E(X \mid \mathcal{B})$ zu dem $\E(X \mid B_i)$ realisiert, bei welchem $\omega \in B_i$.
-    \item \textbf{Bemerkung:} Das $\mathcal{B}$ hat in der Vorlesung 2 verschiedene Bedeutungen. Es wird als Variable für sowohl die Borelsche $\sigma$-Algebra als auch die Partition von $\Omega$ verwendet.
-\end{enumerate}
-\textbf{Beispielrechnung}
-
-\subsection{Mehrere Zufallsvariablen}
-Die \textbf{gemeinsame Verteilungsfunktion} von $n$ Zufallsvariablen $X_1, \ldots, X_n$ (stetig oder diskret) ist die Abbildung $F: \R^n \to [0,1]$,
-$$(x_1, \ldots, x_n) \mapsto F(x_1, \ldots, x_n) := \P(X_1 \leq x_1, \ldots, X_n \leq x_n)$$
-
-\begin{mainbox}{Diskreter Fall - Gewichtsfunktion}
-    Für $n$ diskrete ZV $X_1, \ldots, X_n$ definieren wir ihre \textbf{gemeinsame Gewichtsfunktion} $p: \R^n \to [0,1]$ durch
-    $$p(x_1, \ldots, x_n) := \P(X_1 = x_1, \ldots, X_n = x_n)$$
-    Aus der gemeinsamen Gewichtsfunktion $p$ bekommt man die gemeinsame Verteilungsfunktion mit
-    \begin{align*}
-        F(x_1, \ldots, x_n) &= \P(X_1 \leq x_1, \ldots, X_n \leq x_n)\\
-        &= \sum_{y_1 \leq x_1, \ldots, y_n \leq x_n}\P(X_1 = y_1, \ldots, X_n = y_n)\\
-        &= \sum_{y_1 \leq x_1, \ldots, y_n \leq x_n}p(y_1, \ldots,y_n)
-    \end{align*}    
-\end{mainbox}
-
-\begin{subbox}{Konstruktion einer ZV}
-    Seien $X_1, \ldots, X_n$ diskrete Zufallsvariablen in $(\Omega, \F, \P)$, sodass $X_1 \in W_1, \ldots, X_n \in W_n$ f.s. für $W_1, \ldots, W_n \subset \R$ endlich oder abzählbar.
-
-    Für $\phi: \R^n \to \R$ beliebig, ist $Z = \phi(X_1, \ldots, X_n)$ eine diskrete Zufallsvariable mit $Z \in W = \phi(W_1 \times \ldots \times W_n)$ f.s. . 
-
-    Die Gewichtsfunktion von $Z$ ist gegeben durch $p_Z: W \to [0,1]$:
-    $$p_Z(t) := \P(Z = t) = \sum_{\substack{x_1 \in W_1, \ldots, x_n \in W_n\\ \phi(x_1, \ldots, x_n) = t}} p(x_1, \ldots, x_n)$$
-\end{subbox}
-\begin{enumerate}
-    \item Mit dem vorherigen Satz können wir aus der gemeinsamen Verteilung die \textbf{Randverteilung} einer Zufallsvariablen extrahieren (wegsummieren). Wir verwenden dafür einfach die Funktion 
-    $$\phi(x_1, \ldots, x_n) = x_i$$
-    \item Der Erwartungswert des Bildes der Funktion $\phi: \R^n \to \R$ ist
-    $$\E(\phi(X_1, \ldots, X_n)) = \sum_{x_1, \ldots, x_n}\phi(x_1, \ldots, x_n)p(x_1, \ldots, x_n)$$
-    \item Wir haben eine Äquvalenz: 
-    \begin{align*}
-        &X_1, \ldots, X_n \text{unabhängig}\\
-        &\quad \iff \\
-        &\forall x_1 \in W_1, \ldots, x_n \in W_n\\
-        &p(x_1, \ldots, x_n) = \P(X_1 = x_1) \cdot \ldots \cdot \P(X_n = x_n)
-    \end{align*}
-\end{enumerate}

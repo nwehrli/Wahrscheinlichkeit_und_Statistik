@@ -1,5 +1,5 @@
 # Fdb version 4
-["pdflatex"] 1687901874 "c:/Users/nshar/OneDrive/Dokumente/GitHub/Wahrscheinlichkeit_und_Statistik/WuS.tex" "WuS.pdf" "WuS" 1687901878 0
+["pdflatex"] 1688073278 "c:/Users/nshar/OneDrive/Dokumente/GitHub/Wahrscheinlichkeit_und_Statistik/WuS.tex" "WuS.pdf" "WuS" 1688073281 0
   "C:/Users/nshar/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map" 1683669102 82873 6710b06857b15f591213c883985d4b5a ""
   "C:/Users/nshar/AppData/Local/MiKTeX/fonts/pk/ljfour/jknappen/ec/dpi600/tcrm0800.pk" 1656925663 9292 abd0b353f0da25fc955a1ca5d7338b47 ""
   "C:/Users/nshar/AppData/Local/MiKTeX/miktex/data/le/pdftex/pdflatex.fmt" 1683668698 23183116 2bb07d07a4440a907519af35e9aaa554 ""
@@ -224,13 +224,16 @@
   "C:/Users/nshar/AppData/Local/Programs/MiKTeX/tex/latex/xcolor/xcolor.sty" 1656236890 56148 51a9a8571c07b9921892ae11063ae853 ""
   "C:/Users/nshar/AppData/Local/Programs/MiKTeX/tex/latex/xfor/xfor.sty" 1233853356 2689 44855b72da58344b1c1d9b3087bce6ca ""
   "C:/Users/nshar/AppData/Local/Programs/MiKTeX/tex/latex/xkeyval/xkeyval.sty" 1656236919 4937 4ce600ce9bd4ec84d0250eb6892fcf4f ""
-  "WuS.aux" 1687901877 2670 c04b8f78c4b883fffe5ff17c57a9f273 "pdflatex"
-  "WuS.out" 1687901878 2493 543cb6d8c82cb899949c49654e2d19b6 "pdflatex"
-  "WuS.tex" 1687367595 431 c4a0f7bd41c3c5fb5afafc5d4b60c84d ""
-  "c:/Users/nshar/OneDrive/Dokumente/GitHub/Wahrscheinlichkeit_und_Statistik/WuS.tex" 1687367595 431 c4a0f7bd41c3c5fb5afafc5d4b60c84d ""
-  "defaultcheatsheetstyle.sty" 1687856692 2462 6a0692e2acd1dacee19ab8c50b154aef ""
+  "WuS.aux" 1688073280 3180 7ea442a2d6cf47fabd88534e2def571e "pdflatex"
+  "WuS.out" 1688073280 3286 6d88569e7db10aee77cf0f328db1d0cd "pdflatex"
+  "WuS.tex" 1688073274 541 3c6c89a04a91f4d18e8512a6b8caff30 ""
+  "c:/Users/nshar/OneDrive/Dokumente/GitHub/Wahrscheinlichkeit_und_Statistik/WuS.tex" 1688073274 541 3c6c89a04a91f4d18e8512a6b8caff30 ""
+  "defaultcheatsheetstyle.sty" 1688048214 2464 34ad5c51e92609e30202e2668e321615 ""
+  "sections/Erwartungswert.tex" 1688072656 4892 faae20e3dc2d4c7a78500639fbfca7ea ""
+  "sections/Grenzwertsätze.tex" 1688073229 243 e3fc12361da7d1e67638161f0035edf6 ""
   "sections/Grundbegriffe.tex" 1687367531 4991 740bdba78011c0cf5582fe7447fa02ab ""
-  "sections/Zufallsvariablen.tex" 1687901870 14295 aa6fddbc27279b468a40a0fc9427e48a ""
+  "sections/Mehrere Zufallsvariablen.tex" 1688073231 8702 f9932d24da4d80dc136ec20a7414f92f ""
+  "sections/Zufallsvariablen.tex" 1688072670 7156 8937838244ec45372878d3bbb52e0589 ""
   (generated)
   "WuS.aux"
   "WuS.log"

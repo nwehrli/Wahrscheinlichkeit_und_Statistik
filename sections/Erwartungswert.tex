@@ -1,0 +1,93 @@
+\section{Erwartungswert}
+\begin{mainbox}{Erwartungswert - Diskrete ZV}
+    Sei $X: \Omega \to \R$ eine diskrete Zufallsvariable, $W_X := X(\Omega)$ und $\phi: \R \to \R$ eine Abbildung. Falls die Summe wohldefiniert ist, gilt: 
+    $$\mathbb{E}(\phi(X)) := \sum_{x \in W_X} \phi(x) \cdot \P(X = x)$$
+    Wenn $X: \Omega \to \N_0$, kann man auch den Erwartungswert als
+    $$\mathbb{E}(X) = \sum_{n = 0}^{\infty}\P(X > n)$$
+    schreiben.
+\end{mainbox}
+\begin{mainbox}{Erwartungswert - Stetige ZV}
+    Sei $X: \Omega \to \R$ eine stetige Zufallsvariable mit Dichte $f$. Sei $\phi: \R \to \R$ eine Abbildung, sodass $\phi(X)$ eine Zufallsvariable ist. Dann gilt
+    $$\mathbb{E}(\phi(X))= \int_{-\infty}^\infty \phi(x)f(x)\dx,$$
+    solange das Integral wohldefiniert ist.
+    \\Sei $X$ eine stetige ZV mit $X \geq 0$ f.s., dann gilt:
+    $$\E(X)=\int_0^\infty \P(X > x)\dx$$ 
+\end{mainbox}
+
+\subsection{Rechnen mit Erwartungswerten}
+\textbf{Linearität des Erwartungswertes}: 
+
+Seien $X, Y: \Omega \to \R$ ZV mit $\lambda \in \R$, Falls die Erwartungswerte wohldefiniert sind, gilt:
+$$\mathbb{E}(\lambda \cdot X + Y) = \lambda \cdot \mathbb{E}(X) + \mathbb{E}(Y)$$
+
+Falls $X, Y$ \textbf{unabhängig}, dann gilt auch:
+$$\mathbb{E}(X \cdot Y) = \mathbb{E}(X) \cdot \mathbb{E}(Y)$$
+
+Eine generellere Form wäre folgende Äquivalenz:\\
+$X_1, X_2, ...,X_n$ unabhängig
+\\$\iff$
+\\Für jede $\phi_1: \R \to \R, \ldots, \phi_n: \R \to \R$ stückweise stetig, beschränkt gilt
+$$\E(\phi_1(X_1)\cdots\phi_n(X_n))=\E(\phi_1(X_1))\cdots\E(\phi_n(X_n))$$ 
+
+\subsection{Ungleichungen}
+\textbf{Monotonie}
+\\Seien $X, Y$ ZV mit $X \leq Y$ f.s., dann gilt:
+$$\E(X) \leq \E(Y)$$
+\textbf{Markov Ungleichung}
+\\Sei $X$ eine ZV und ferner $g: X(\Omega) \to [0, +\infty)$ eine wachsende Funktion. Für jedes $c \in \R$ mit $g(c) > 0$ gilt dann
+$$\P(X \geq c) \leq \frac{\E(g(X))}{g(c)}$$
+\\\textit{Einfache Version:}
+\\Sei $X$ eine ZV mit $X\geq 0$ f.s., dann gilt für jedes $t > 0$:
+$$\P(X \geq t) \leq \frac{\E(X)}{t}$$
+\textbf{Chebyshev Ungleichung}
+\\Sei $Y$ eine ZV mit endlicher Varianz. Für jedes $b > 0$ gilt dann
+$$\P(|Y - \E(Y)| \geq b) \leq \frac{\text{Var}(Y)}{b^2}$$
+\textbf{Jensen Ungleichung}
+\\Sei $X$ eine ZV und $\phi: \R \to \R$ eine konvexe Funktion, dann gilt:
+$$\phi(\E(X)) \leq \E(\phi(X))$$
+
+\subsection{Varianz}
+\begin{mainbox}{Varianz}
+    Sei $X$ eine ZV, sodass $\E(X^2)<\infty$. Die \textbf{Varianz} von $X$ ist definiert durch
+    $$\Var(X) = \sigma_X^2 = \E((X - m)^2) = \E(X^2)-\E(X)^2$$
+    wobei $m = \E(X)$. Dabei wird $\sigma_X$ als \textbf{Standardabweichung} von $X$ bezeichnet und beschreibt den Erwartungswert für die Distanz von $X$ zu $\E(X)$.
+\end{mainbox}
+
+\begin{enumerate}
+    \item Sei $X$ ein ZV, sodass $\E(X^2)<\infty$ und $\lambda \in \R$:
+    $$\Var(a\cdot X + b) = a^2 \cdot \Var(X)$$
+    \item Seien $X_1, ..., X_n$ paarweise unabhängig. Dann gilt
+    $$\Var(X_1 + \ldots + X_n) = \Var(X_1)+\ldots +\Var(X_n)$$
+\end{enumerate}
+
+\begin{mainbox}{Kovarianz}
+    Seien $X, Y$ ZV mit $\E(X^2)<\infty, \E(Y^2) < \infty$. Wir definieren die \textbf{Kovarianz} zwischen $X$ und $Y$ durch
+    $$\text{Cov}(X,Y) := \E(XY) - \E(X)\E(Y)$$
+\end{mainbox}
+\begin{enumerate}
+    \item $\text{Cov}(X,X) = \Var(X)$
+    \item $X, Y$ unabhängig $\implies$ $\text{Cov}(X, Y) = 0$ (Die Umkehrung ist falsch!)
+    \item $\Var(X+Y) = \Var(X) + \Var(Y) + 2\text{Cov}(X, Y)$
+\end{enumerate}
+\subsection{Bedingter Erwartungswert}
+Sei $(\Omega, \A, \P)$ ein diskreter Wahrscheinlichkeitsraum und $X:\Omega \to \R$ eine Zufallsvariable. 
+
+Für ein beliebiges $B \in A, \P(B) > 0$ definieren wir den \textbf{bedingten Erwartungswert} $X$ bedingt durch $B$ als
+\begin{align*}
+    \E(X \mid B) = \frac{\E(\mathds{1}_B X)}{\P(B)} &= \sum_{x \in X(\Omega)}x\P(X = x\mid B)\\ 
+    &= \sum_{\omega \in \Omega}X(\omega)\P(\{\omega\}\mid B)
+\end{align*}
+
+\textbf{TODO: Beispielrechnung}
+
+
+\textbf{Bedingter Erwartungswert als Zufallsvariable}\\
+Wir betrachten eine Partition $\mathcal{B} = (B_i)_{i \in I}$ von $\Omega$ ($B_i$ sind disjunkt und nichtleer, $I$ abzählbar). 
+
+Dann definieren wir die \textbf{Zufallsvariable}
+$$\E(X \mid \mathcal{B})(\omega) = \sum_{i \in I, \P(B_i > 0)} \E(X \mid B_i) \mathds{1}_{B_i}(\omega)$$ 
+\begin{enumerate}
+    \item \textbf{Intuition:} Die Information, die durch die Partition gegeben ist, ist dass eines der $B_i$ eintreten wird. Bei der Realisierung durch das Eintreten des Elementarereignisses $\omega$ wird $\E(X \mid \mathcal{B})$ zu dem $\E(X \mid B_i)$ realisiert, bei welchem $\omega \in B_i$.
+    \item \textbf{Bemerkung:} Das $\mathcal{B}$ hat in der Vorlesung 2 verschiedene Bedeutungen. Es wird als Variable für sowohl die Borelsche $\sigma$-Algebra als auch die Partition von $\Omega$ verwendet.
+\end{enumerate}
+\textbf{TODO: Beispielrechnung}

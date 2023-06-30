@@ -70,7 +70,7 @@ Wenn $X_1, \ldots, X_n$ stetige ZV mit Dichten $f_1, \ldots, f_n$, dann sind die
     ein $m$-dimensionaler Zufallsvariable und ferner gilt
     $$\P(H \in A) = \P(X \in g^{-1}(A)).$$
     Wenn $g$ linear und umkehrbar (i.e. $g(x) = m + Bx$ mit det$(B) \neq 0$) und unter Vorraussetzung, dass die Verteilung von $Z$ absolut stetig ist, dann ist $H$ auch absolut stetig und es gilt:
-    $$f_H(x)=\frac{1}{|\text{det}(B)|}f_X(B^{-1}(x-m)).$$
+    $$f_H(x)=\frac{1}{|\text{det}(B)|}f_Z(B^{-1}(x-m)).$$
 \end{subbox}
 \textbf{Beispielrechnung}
 
@@ -83,7 +83,7 @@ Man wäre versucht die Matrix $B$ und den Vektor $m$ wie folgt zu definieren:
         1 & 1
     \end{matrix}\right) 
     \text{ und } 
-    \left(\begin{matrix}
+    m = \left(\begin{matrix}
         0\\
         0
     \end{matrix}\right)\\
@@ -160,7 +160,7 @@ Bestimme die Dichtefunktion $f_V$ der Zufallsvariable $V = XY$.
 Wir definieren $\phi(x, y) = xy$ und berechnen 
 \begin{align*}
     \E(V) = \E(\phi(X,Y)) &= \int_{-\infty}^{\infty}\int_{-\infty}^{\infty}\phi(x,y)f(x,y)\dx\mathop{dy}\\
-    &= \int_{1}^{\infty}\int_{1}^{\infty}\phi(xy)\frac{1}{x^2y^2}\dx\mathop{dy}\\
+    &= \int_{1}^{\infty}\int_{1}^{\infty}\phi(x, y)\frac{1}{x^2y^2}\dx\mathop{dy}\\
     &\text{Substition } v = xy, \mathop{dv} = y\mathop{dx}\\
     &= \int_{1}^{\infty}\int_{y}^{\infty}\frac{v}{y}\frac{1}{v^2}\mathop{dv}\mathop{dy}\\
     A = \{(v, y) \in \R^2 &\mid 1 \leq y < \infty, y \leq v < \infty\}\\

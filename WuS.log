@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 23.5) (preloaded format=pdflatex 2023.5.9)  30 JUN 2023 10:27
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 23.5) (preloaded format=pdflatex 2023.5.9)  2 JUL 2023 12:26
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -599,6 +599,8 @@ Package: derivative 2022/07/09 v1.2 Nice and easy derivatives and differentials 
 \l__deriv_tmpb_int=\count336
 \l__deriv_numerical_int=\count337
 \l__deriv_sort_max_int=\count338
+) (C:\Users\nshar\AppData\Local\Programs\MiKTeX\tex/latex/oberdiek\centernot.sty
+Package: centernot 2016/05/16 v1.4 Centers the not symbol horizontally (HO)
 ) (C:\Users\nshar\AppData\Local\Programs\MiKTeX\tex/latex/tools\tabularx.sty
 Package: tabularx 2020/01/15 v2.11c `tabularx' package (DPC)
  (C:\Users\nshar\AppData\Local\Programs\MiKTeX\tex/latex/tools\array.sty
@@ -763,7 +765,7 @@ Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 28
 )
 \Hy@SectionHShift=\skip115
 )
-Package hyperref Info: Option `colorlinks' set `true' on input line 85.
+Package hyperref Info: Option `colorlinks' set `true' on input line 88.
 ) (WuS.aux)
 \openout1 = `WuS.aux'.
 
@@ -890,22 +892,37 @@ Overfull \hbox (0.1932pt too wide) in paragraph at lines 56--58
 \OT1/cmr/m/n/8 Die \OT1/cmr/bx/n/8 Dich-te-funk-ti-on \OT1/cmr/m/n/8 ei-ner Rand-ver-tei-lung (Rand-dich-te) ent-
  []
 
-) (sections/Grenzwertsätze.tex) [4] (WuS.aux)
+) (sections/Grenzwertsätze.tex
+Underfull \hbox (badness 3449) in paragraph at lines 3--5
+[]\OT1/cmr/m/n/8 Eine Fol-ge von ZV $\OML/cmm/m/it/8 X[]; X[]; []$ \OT1/cmr/m/n/8 ist un-abh[]angig, wenn
+ []
+
+[4]
+Overfull \hbox (2.9792pt too wide) in paragraph at lines 42--44
+[]\OT1/cmr/m/n/8 Wir be-trach-ten den Wahr-schein-lich-keits-raum $([0\OML/cmm/m/it/8 ; \OT1/cmr/m/n/8 1]\OML/cmm/m/it/8 ; \OMS/cmsy/m/n/8 B\OML/cmm/m/it/8 ; \U/msb/m/n/8 P\OT1/cmr/m/n/8 )$. F[]ur
+ []
+
+
+Underfull \hbox (badness 1194) in paragraph at lines 58--59
+[]\OT1/cmr/m/n/8 Sei $\OML/cmm/m/it/8 X[]; X[]; []$ \OT1/cmr/m/n/8 ei-ne Fol-ge von uiv. Zu-falls-va-ria-blen. Sei
+ []
+
+) (sections/Schätzer.tex) [5] (WuS.aux)
 Package rerunfilecheck Info: File `WuS.out' has not changed.
-(rerunfilecheck)             Checksum: 6D88569E7DB10AEE77CF0F328DB1D0CD;3286.
+(rerunfilecheck)             Checksum: BC3C257151400250C1C5AF3C168AB6C1;3785.
  ) 
 Here is how much of TeX's memory you used:
- 31616 strings out of 476315
- 653929 string characters out of 5787197
+ 31660 strings out of 476315
+ 655094 string characters out of 5787197
  1902068 words of memory out of 5000000
- 51468 multiletter control sequences out of 15000+600000
+ 51497 multiletter control sequences out of 15000+600000
  522261 words of font info for 71 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 104i,14n,108p,614b,639s stack positions out of 10000i,1000n,20000p,200000b,200000s
- <C:\Users\nshar\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tcrm0800.pk><C:/Users/nshar/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Users/nshar/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx8.pfb><C:/Users/nshar/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cmextra/cmex8.pfb><C:/Users/nshar/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi5.pfb><C:/Users/nshar/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi6.pfb><C:/Users/nshar/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Users/nshar/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Users/nshar/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr17.pfb><C:/Users/nshar/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr5.pfb><C:/Users/nshar/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr6.pfb><C:/Users/nshar/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Users/nshar/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy5.pfb><C:/Users/nshar/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy6.pfb><C:/Users/nshar/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy8.pfb><C:/Users/nshar/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmti8.pfb><C:/Users/nshar/AppData/Local/Programs/MiKTeX/fonts/type1/public/doublestroke/dsrom8.pfb><C:/Users/nshar/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/symbols/msam7.pfb><C:/Users/nshar/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/symbols/msbm10.pfb><C:/Users/nshar/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/symbols/msbm7.pfb>
-Output written on WuS.pdf (4 pages, 271189 bytes).
+ 104i,15n,108p,614b,639s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ <C:\Users\nshar\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tcrm0800.pk><C:/Users/nshar/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Users/nshar/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx6.pfb><C:/Users/nshar/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx8.pfb><C:/Users/nshar/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cmextra/cmex7.pfb><C:/Users/nshar/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cmextra/cmex8.pfb><C:/Users/nshar/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi5.pfb><C:/Users/nshar/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi6.pfb><C:/Users/nshar/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Users/nshar/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Users/nshar/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr17.pfb><C:/Users/nshar/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr5.pfb><C:/Users/nshar/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr6.pfb><C:/Users/nshar/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Users/nshar/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy5.pfb><C:/Users/nshar/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy6.pfb><C:/Users/nshar/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy8.pfb><C:/Users/nshar/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmti8.pfb><C:/Users/nshar/AppData/Local/Programs/MiKTeX/fonts/type1/public/doublestroke/dsrom8.pfb><C:/Users/nshar/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/symbols/msam7.pfb><C:/Users/nshar/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/symbols/msbm10.pfb><C:/Users/nshar/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/symbols/msbm7.pfb>
+Output written on WuS.pdf (5 pages, 307610 bytes).
 PDF statistics:
- 254 PDF objects out of 1000 (max. 8388607)
- 60 named destinations out of 1000 (max. 500000)
- 173 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 283 PDF objects out of 1000 (max. 8388607)
+ 68 named destinations out of 1000 (max. 500000)
+ 189 words of extra memory for PDF output out of 10000 (max. 10000000)
 

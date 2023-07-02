@@ -1,3 +1,129 @@
-\section{Grenzwertsätze}
-Eine Folge von ZV $X_1, X_2, \ldots$ ist unabhängig, wenn $X_1, \ldots, X_n$ unabhängig ($\forall n \in \N$, nach der Definition in 2.1).
-Sie ist zudem \textbf{uiv.}, falls $F_{X_i} = F_{X_j}, \forall i,j \in \N$.
+\section{Konvergenz in Wahrscheinlichkeitsräumen}
+\begin{subbox}{Unabhängigkeit einer Folge und iid./uiv.}
+    Eine Folge von ZV $X_1, X_2, \ldots$ ist unabhängig, wenn $X_1, \ldots, X_n$ unabhängig ($\forall n \in \N$, nach der Definition in 2.1).
+    Sie ist zudem \textbf{uiv./iid.}, falls $F_{X_i} = F_{X_j}, \forall i,j \in \N$.
+\end{subbox}
+In einem Wahrscheinlichkeitsraum können wir für eine Folge von Zufallsvariablen $X_1, X_2, \ldots$ und einer ZV $Z$ zwischen 3 Arten von Konvergenz unterscheiden:
+\begin{enumerate}
+    \item \textbf{schwache Konvergenz / Konvergenz in Verteilung}\\
+    Wir definieren $X_n \overset{d}{\longrightarrow} Z$ ($d$ for distribution) als
+    $$\limn \P(X_n \leq x) = \limn F_{X_n}(x) = F_Z(x) = \P(Z \leq x)$$
+    für jede Stetigkeitsstelle $x\in \R$ von $F_Z$.
+    \item \textbf{Konvergenz in Wahrscheinlichkeit}\\
+    Wir definieren $X_n \overset{\P}{\longrightarrow} Z$ als
+    $$\forall \varepsilon > 0 \quad \limn \P(|X_n - Z| > \varepsilon) = 0$$
+    \item \textbf{Fast-sichere Konvergenz}\\
+    Wir definieren $X_n \overset{\textbf{f.s.}}{\longrightarrow} Z$ als
+    $$\P(\{\omega \in \Omega \mid \limn X_n(\omega) = Z(\omega)\}) = 1$$
+\end{enumerate}
+Wir haben dann auch $$X_n \overset{\textbf{f.s.}}{\longrightarrow} Z \implies X_n \overset{\P}{\longrightarrow} Z \implies X_n \overset{d}{\longrightarrow} Z$$
+Die Umkehrung der Implikationen gilt nicht, wie folgende Beispiele zeigen:
+\begin{enumerate}
+    \item $X_n \overset{d}{\longrightarrow} Z \centernot\implies X_n \overset{\P}{\longrightarrow} Z$
+    
+    Sei $\Omega = \{0, 1\}$ und für alle $n \in \N$
+    $$\P(X_n = 0) = \P(X_n = 1) = \frac{1}{2}, \ X_n(\omega) = \begin{cases}
+        0 \quad \omega = 0\\
+        1 \quad \omega = 1
+    \end{cases} 
+    $$
+    und $$\P(Z = 0) = \P(Z = 1) = \frac{1}{2}, \ Z(\omega) = \begin{cases}
+        1 \quad \omega = 0\\
+        0 \quad \omega = 1
+    \end{cases} $$. 
+
+    Aus $F_{X_n} = F_Z$ folgt direkt $X_n \overset{d}{\longrightarrow} Z$.
+    
+    Da aber $|X_n(\omega) - Z(\omega)| = 1, \forall \omega \in \Omega$ und demzufolge\\ 
+    $\limn \P(|X_n - Z| > \epsilon) \centernot\longrightarrow 0$ für $n \to \infty$, gilt  
+    $$X_n \overset{\P}{\centernot\longrightarrow} Z$$.
+    \item $X_n \overset{\P}{\longrightarrow} Z \centernot\implies X_n \overset{\textbf{f.s.}}{\longrightarrow} Z$
+    
+    Wir betrachten den Wahrscheinlichkeitsraum $([0,1], \mathcal{B}, \P)$.
+    Für ein beliebiges $n \in \N$ sei $k = \lfloor\log_2(n)\rfloor$ und $j \in \{0, \ldots, 2^k-1\}$, sodass $n = 2^k + j$.
+    
+    Dann definieren wir 
+    $$X_n(\omega) = \mathds{1}_{\left[\frac{j}{2^k}, \frac{j+1}{2^k}\right]}(\omega).$$
+    und
+    $$Z(\omega) = 0 \quad \forall \omega \in \Omega = [0,1]$$
+    Zur Visualisierung würde die Folge so aussehen
+    $$X_1 = \mathds{1}_{[0,1]}, X_2 = \mathds{1}_{\left[0,\frac{1}{2}\right]}, X_3 = \mathds{1}_{\left[\frac{1}{2}, 1\right]}, X_4 = \mathds{1}_{\left[0,\frac{1}{4}\right]} \text{ etc.}$$
+    Wir hätten dann
+    $$\forall \varepsilon > 0 \quad \limn \P(|X_n - Z| > \varepsilon) = 0 \implies X_n \overset{\P}{\longrightarrow} Z$$
+    Aber für jedes $\omega \in [0,1]$ finden wir unendlich viele $X_n$ mit $X_n(\omega) = 1$ und deshalb
+    $$\P(\{\omega \in [0,1] \mid \limn X_n(\omega) = Z(\omega)\}) = 0 \implies X_n \overset{\textbf{f.s.}}{\centernot\longrightarrow} Z$$
+\end{enumerate}
+\subsection{Gesetz der grossen Zahlen}
+\begin{mainbox}{starkes Gesetz der grossen Zahlen}
+    Sei $X_1, X_2, \ldots$ eine Folge von uiv. Zufallsvariablen. Sei $\E(|X_1|)<\infty$ und $\mu = \E(X_1)$. Für
+    $$\overline{X}_n = \frac{1}{n}S_n = \frac{1}{n}\sum_{i = 1}^{n}X_i$$
+    gilt dann
+    $$\overline{X}_n \longrightarrow \mu \textbf{ f.s.}$$
+\end{mainbox}
+Dies ist eine fast-sichere Konvergenz.
+\begin{mainbox}{schwaches Gesetz der grossen Zahlen}
+    Sei $X_1, X_2, ...$ eine Folge von paarweise unkorrelierten Zufallsvariablen, die alle den gleichen Erwartungswert $\E(X_i) = \mu$ und die gleiche Varianz $\text{Var}(X_i) = \sigma^2$ haben.
+    Sei 
+    $$\overline{X}_n = \frac{1}{n}S_n = \frac{1}{n}\sum_{i = 1}^{n}X_i$$
+    Dann konvergiert $\overline{X}_n$ für $n \to \infty$ in Wahrscheinlichkeit gegen $\mu = \E(X_i)$, d.h.
+    $$\forall \varepsilon > 0 \quad \limn \P(|\overline{X}_n - \mu| > \varepsilon) = 0 \text{ i.e. } \overline{X}_n \overset{\P}{\longrightarrow} \mu$$
+\end{mainbox}
+\textbf{Bemerkung: }
+
+Zur Erinnerung: 
+$$X_i, X_j \text{ unkorreliert} \iff \text{ Cov}(X_i, X_j) = 0$$
+Wir haben auch 
+$$X_i, X_j \text{ unabhängig} \implies X_i, X_j \text{ unkorreliert}$$
+
+\subsection{Zentraler Grenzwertsatz}
+\begin{mainbox}{Zentraler Grenzwertsatz}
+    Sei $(X_n)_{n\in \N}$ eine Folge von iid. Zufallsvariablen mit $\E(X_i) = \mu < \infty$ und Var$(X_i) = \sigma^2 < \infty$.
+    Dann gilt 
+    $$\limn \P\left(\frac{S_n - n \mu}{\sigma \sqrt{n}} \leq x\right) = \Phi(x) \quad \forall x \in \R$$
+    also
+    $$\frac{S_n - n \mu}{\sigma \sqrt{n}} \overset{d}{\longrightarrow} \mathcal{N}(0,1)$$
+\end{mainbox}
+\textbf{Bemerkungen: }
+
+Man verwendet auch oft die Form für $\overline{X}_n = \frac{1}{n}S_n$ als
+$$\frac{X_n - \mu}{\sigma / \sqrt{n}} \overset{d}{\longrightarrow} \mathcal{N}(0,1)$$
+beziehungsweise
+$$S_n \overset{d}{\longrightarrow} \mathcal{N}(n\mu, n \sigma^2) \text{ und } \overline{X}_n \overset{d}{\longrightarrow} \mathcal{N}\left(\mu, \frac{1}{n}\sigma^2\right)$$
+\textbf{Beispielrechnung:}
+
+Seien $(X_i)_{i \geq 1}, (Y_i)_{i \geq 1}$ und $(Z_i)_{i \geq 1}$ Folgen von iid. ZV mit
+$$\P(X_1 = 1) = \P(X_1 = -1) = \frac{1}{2}$$
+und analog für $Y_1$ und $Z_1$. Wir definieren
+$$S_n^{(x)} := \sum_{i=1}^n X_i, \quad S_n^{(y)} := \sum_{i=1}^n Y_i, \quad S_n^{(z)} := \sum_{i=1}^n Z_i$$
+Die Folge $\left((S_n^{(x)}, S_n^{(y)}, S_n^{(z)})\right)_{n \geq 1}$ wird zufällige Irrfahrt in $\Z^3$ genannt. Sei $\alpha > \frac{1}{2}$. Zeige, dass
+$$\P\left(\left\lVert(S_n^{(x)}, S_n^{(y)}, S_n^{(z)})\right\rVert_2 \leq n^\alpha\right) \longrightarrow 1 \text{ für } n \to \infty,$$
+wobei $\left\lVert(x,y,z)\right\rVert_2 := \sqrt{x^2+y^2+z^2}$ die euklidische Norm ist.
+
+\textit{Schritt 1: } Für alle $\alpha > 1/2$ zeigen wir $\P(|S_n^{(x)}| \leq n^\alpha) \overset{n \to \infty}{\longrightarrow} 1$.
+
+Da $\E(X_i) = 0$ und Var$(X_i) = 1$ folgt für $a \in \R$ beliebig per ZGS
+$$\P\left(S_n^{(x)} \leq a \sqrt{n}\right) = \P\left(\frac{S_n^{(x)}}{\sqrt{n}} \leq a\right) \overset{n \to \infty}{\longrightarrow} \Phi(a)$$
+und somit auch
+\begin{align*}
+    \P\left(|S_n^{(x)}| \leq a\sqrt{n}\right) &= \P\left(S_n^{(x)} \leq a \sqrt{n}\right) -\P\left(S_n^{(x)} \leq - a \sqrt{n}\right) \\
+    &\overset{n \to \infty}{\longrightarrow} \Phi(a) - \Phi(-a) = 2\Phi(a)-1
+\end{align*}
+Sei $\alpha = 1/2 + \beta, \beta > 0$. Dann instanzieren wir mit $a = n^\beta$.
+\begin{align*}
+    \P\left(|S_n^{(x)}| \leq n^\alpha\right) &= \P\left(|S_n^{(x)}| \leq n^\beta\sqrt{n}\right) \longrightarrow \limn(2 \Phi(n^\beta)-1) = 1
+\end{align*}
+Dies gilt analog für $S_n^{(y)}$ und $S_n^{(z)}$.
+
+\textit{Schritt 2:} $\forall \alpha > 1/2, \P\left(\left\lVert\left(S_n^{(x)}, S_n^{(y)}, S_n^{(z)}\right)\right\rVert_2 \leq n^\alpha\right) \overset{n \to \infty}{\longrightarrow} 1$.
+
+Sei $\alpha' \in (1/2, \alpha)$. Dann folgt 
+\begin{align*}
+    &\left\{|S_n^{(x)}| \leq n^{\alpha'} \land |S_n^{(y)}| \leq n^{\alpha'} \land |S_n^{(z)}| \leq n^{\alpha'}\right\} \\
+    &\subseteq \left\{\left\lVert\left(S_n^{(x)}, S_n^{(y)}, S_n^{(z)}\right)\right\rVert_2 \leq \sqrt{3} \cdot n^{\alpha'}\right\}
+\end{align*}
+Da $n^\alpha \geq \sqrt{3}n^{\alpha'}$ für grosse $n$, folgt
+\begin{align*}
+    &\limn \P\left(\left\lVert\left(S_n^{(x)}, S_n^{(y)}, S_n^{(z)}\right)\right\rVert_2 \leq n^\alpha\right)\\
+     &\geq \limn \P\left(\left\lVert\left(S_n^{(x)}, S_n^{(y)}, S_n^{(z)}\right)\right\rVert_2 \leq \sqrt{3} \cdot n^{\alpha'}\right)\\
+     &\geq \limn \P\left(|S_n^{(x)}| \leq n^{\alpha'}, |S_n^{(y)}| \leq n^{\alpha'}, |S_n^{(z)}| \leq n^{\alpha'}\right) = 1
+\end{align*}

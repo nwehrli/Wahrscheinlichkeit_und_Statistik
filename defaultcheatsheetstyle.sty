@@ -26,11 +26,11 @@
 % a base set, that is then customised
 \tcbset {
   base/.style={
-    boxrule=0.3mm,
+    boxrule=0mm,
     boxsep = 1mm,
     leftrule=1mm,
-    left=0.5mm,
-    arc=0mm, 
+    left=0.8mm,
+    arc=2mm, 
     fonttitle=\bfseries, 
     colbacktitle=black!10!white, 
     coltitle=black, 
@@ -63,7 +63,9 @@
 
 % Tables
 \usepackage{tabularx, multirow}
+\usepackage{makecell}
 \usepackage{booktabs}
+% \renewcommand*{\arraystretch}{2}
 
 % Make enumerations more compact
 \usepackage{enumitem}
@@ -107,3 +109,4 @@
 \def\F{\mathcal{F}}
 \def\E{\mathbb{E}}
 \def\Var{\text{Var}}
+\def\tbf{\textbf}

@@ -1,0 +1,148 @@
+\clearpage
+\section{Tabellen}
+
+\subsection{Grenzwerte}
+\begin{center}
+	\begin{tabularx}{\linewidth}{XX}
+		\toprule
+		$\limxi \frac{e^x}{x^m} = \infty$                      & $\limxn xe^x = 0$                        \\
+		$\limxi (1+x)^{\frac{1}{x}} = 1$                       & $\limxo (1+x)^{\frac{1}{x}} = e$         \\
+		$\limxi (1+\frac{1}{x})^b = 1$                         & $\limxi n^{\frac{1}{n}} = 1$             \\
+		$\limxo \frac{e^x-1}{x} = 1$                           & $\limxi (1-\frac{1}{x})^x = \frac{1}{e}$ \\
+		$\lim_{x\to\pm\infty} (1 + \frac{k}{x})^{mx} = e^{km}$ & $\limxi (\frac{x}{x+k})^x = e^{-k}$      \\
+		$\limxo \frac{\log 1 - x}{x} = -1$                     & $\limxo x \log x = 0$                    \\
+		$\limxo \frac{e^{ax}-1}{x} = a$                        & $\limxo \frac{\ln(x+1)}{x} = 1$          \\
+		$\lim_{x\to 1} \frac{\ln(x)}{x-1} = 1$                 & $\limxi \frac{\log(x)}{x^a} = 0$         \\
+		\bottomrule
+	\end{tabularx}
+\end{center}
+
+\begin{mainbox}{Partielle Integration}
+	\vspace{-12pt}
+	$$\int f'(x) g(x) \mathop{dx} = f(x)g(x) - \int f(x) g'(x) \mathop{dx}$$
+\end{mainbox}
+\begin{itemize}
+	\item Meist gilt: Polynome ableiten ($g(x)$), wo das Integral periodisch ist ($\sin, \cos, e^x$,...) integrieren ($f'(x)$)
+	\item Teils: mit $1$ multiplizieren, um partielle Integration anwenden zu können (z.B. im Fall von $\int \log(x) \mathop{dx}$)
+\end{itemize}
+\begin{mainbox}{Substitution}
+	Um $\int_a^b f(g(x)) \mathop{dx}$ zu berechnen: Ersetze $g(x)$ durch $u$ und integriere $\int_{g(a)}^{g(b)} f(u) \frac{\text{d}u}{g'(x)}$.
+\end{mainbox}
+\begin{itemize}
+	\item $g'(x)$ muss sich herauskürzen, sonst nutzlos.
+	\item Grenzen substituieren nicht vergessen.
+	\item Alternativ: unbestimmtes Integral berechnet werden und dann $u$ wieder durch $x$ substituieren.
+\end{itemize}
+
+\subsection{Ableitungen}
+\begin{center}
+	% the c>{\centering\arraybackslash}X is a workaround to have a column fill up all space and still be centered
+	\begin{tabularx}{\linewidth}{c>{\centering\arraybackslash}Xc}
+		\toprule
+		$\mathbf{F(x)}$                        & $\mathbf{f(x)}$          & $\mathbf{f'(x)}$         \\
+		\midrule
+		$\frac{x^{-a+1}}{-a+1}$                & $\frac{1}{x^a}$          & $\frac{a}{x^{a+1}}$      \\
+		$\frac{x^{a+1}}{a+1}$                  & $x^a \ (a \ne 1)$        & $a \cdot x^{a-1}$        \\
+		$\frac{1}{k \ln(a)}a^{kx}$             & $a^{kx}$                 & $ka^{kx} \ln(a)$         \\
+		$\ln |x|$                              & $\frac{1}{x}$            & $-\frac{1}{x^2}$         \\
+		$\frac{2}{3}x^{3/2}$                   & $\sqrt{x}$               & $\frac{1}{2\sqrt{x}}$    \\
+		$-\cos(x)$                             & $\sin(x)$                & $\cos(x)$                \\
+		$\sin(x)$                              & $\cos(x)$                & $-\sin(x)$               \\
+		$\frac{1}{2}(x-\frac{1}{2}\sin(2x))$   & $\sin^2(x)$              & $2 \sin(x)\cos(x)$       \\
+		$\frac{1}{2}(x + \frac{1}{2}\sin(2x))$ & $\cos^2(x)$              & $-2\sin(x)\cos(x)$       \\
+		\multirow{2}*{$-\ln|\cos(x)|$}         & \multirow{2}*{$\tan(x)$} & $\frac{1}{\cos^2(x)}$    \\
+		                                       &                          & $1 + \tan^2(x)$          \\
+		$\cosh(x)$                             & $\sinh(x)$               & $\cosh(x)$               \\
+		$\log(\cosh(x))$                       & $\tanh(x)$               & $\frac{1}{\cosh^2(x)}$   \\
+		$\ln | \sin(x)|$                       & $\cot(x)$                & $-\frac{1}{\sin^2(x)}$   \\
+		$\frac{1}{c} \cdot e^{cx}$             & $e^{cx}$                 & $c \cdot e^{cx}$         \\
+		$x(\ln |x| - 1)$                       & $\ln |x|$                & $\frac{1}{x}$            \\
+		$\frac{1}{2}(\ln(x))^2$                & $\frac{\ln(x)}{x}$       & $\frac{1 - \ln(x)}{x^2}$ \\
+		$\frac{x}{\ln(a)} (\ln|x| -1)$         & $\log_a |x|$             & $\frac{1}{\ln(a)x}$      \\
+		\bottomrule
+	\end{tabularx}
+\end{center}
+\subsection{Weitere Ableitungen}
+\begin{center}
+	\begin{tabularx}{\linewidth}{>{\centering\arraybackslash}X>{\centering\arraybackslash}X}
+		\toprule
+		$\mathbf{F(x)}$ & $\mathbf{f(x)}$             \\
+		\midrule
+		$\arcsin(x)$    & $\frac{1}{\sqrt{1 - x^2}}$  \\
+		$\arccos(x)$    & $\frac{-1}{\sqrt{1 - x^2}}$ \\
+		$\arctan(x)$    & $\frac{1}{1 + x^2}$         \\
+		$x^x \ (x > 0)$ & $x^x \cdot (1 + \ln x)$     \\
+		\bottomrule
+	\end{tabularx}
+\end{center}
+\subsection{Integrale}
+\begin{center}
+	\begin{tabularx}{\linewidth}{>{\centering\arraybackslash}X>{\centering\arraybackslash}X}
+		\toprule
+		$\mathbf{f(x)}$                              & $\mathbf{F(x)}$                                                  \\
+		\midrule
+		$\int f'(x) f(x) \mathop{dx}$                & $\frac{1}{2}(f(x))^2$                                            \\
+		$\int \frac{f'(x)}{f(x)} \mathop{dx}$        & $\ln|f(x)|$                                                      \\
+		$\int_{-\infty}^\infty e^{-x^2} \mathop{dx}$ & $\sqrt{\pi}$                                                     \\
+		$\int (ax+b)^n \mathop{dx}$                  & $\frac{1}{a(n+1)}(ax+b)^{n+1}$                                   \\
+		$\int x(ax+b)^n \mathop{dx}$                 & $\frac{(ax+b)^{n+2}}{(n+2)a^2} - \frac{b(ax+b)^{n+1}}{(n+1)a^2}$ \\
+		$\int (ax^p+b)^n x^{p-1} \mathop{dx}$        & $\frac{(ax^p+b)^{n+1}}{ap(n+1)}$                                 \\
+		$\int (ax^p + b)^{-1} x^{p-1} \mathop{dx}$   & $\frac{1}{ap} \ln |ax^p + b|$                                    \\
+		$\int \frac{ax+b}{cx+d} \mathop{dx}$         & $\frac{ax}{c} - \frac{ad-bc}{c^2} \ln |cx +d|$                   \\
+		$\int \frac{1}{x^2+a^2} \mathop{dx}$         & $\frac{1}{a} \arctan \frac{x}{a}$                                \\
+		$\int \frac{1}{x^2 - a^2} \mathop{dx}$       & $\frac{1}{2a} \ln\left| \frac{x-a}{x+a} \right|$                 \\
+		$\int \sqrt{a^2+x^2} \mathop{dx} $           & $\frac{x}{2}f(x) + \frac{a^2}{2}\ln(x+f(x))$                     \\
+		\bottomrule
+	\end{tabularx}
+\end{center}
+\clearpage
+
+\renewcommand*{\arraystretch}{2.5}
+\subsection{Diskrete Verteilungen}
+\begin{center}
+	\begin{tabularx}{\textwidth}{llXXXX}
+		\toprule
+		Verteilung       & Parameter                                   & \( \E[X] \) & \( \Var(X) \)       & \( p_X(t) \)         & \( F_X(t) \)                     \\
+		\midrule
+		Gleichverteilung & \makecell[l]{\( n \): Anzahl Ereignisse                                                                                                   \\ \( x_i \): Ereignisse} & \( \frac{1}{n} \sum_{i=1}^{n} x_i \) & \( \frac{1}{n} \sum_{i=1}^{n} x_i^2 - \frac{1}{n^2} \left(\sum_{i=1}^{n} x_i \right)^2 \) & \( \frac{1}{n} \) & \( \frac{|\{k:x_k \leq t\}|}{n} \) \\
+
+		Bernoulli        & \( p: \) ErfolgsWK                          & \( p \)     & \( p \cdot (1-p) \) & \( p^t(1-p)^{1-t} \) & \( 1-p \) für \( 0 \leq t < 1 \) \\
+
+		Binomial         & \makecell[l] {\( n \): Anzahl Versuche                                                                                                    \\ \( p: \) ErfolgsWK } & \( np \) & \( np(1-p) \) & \( \binom{n}{t}p^t(1-p)^{n-t} \) & \( \sum_{k=0}^{t} \binom{n}{k} p^k(1-p)^{n-k} \)  \\
+
+		Geometrisch      & \makecell[l] { \( p \): ErfolgsWK                                                                                                         \\ \( t: \) Anzahl Versuche} & \( \frac{1}{p} \) & \( \frac{1-p}{p^2} \) & \( p(1-p)^{t-1} \) & \( 1-(1-p)^t\) \\
+
+		Poisson          & \makecell[l]{ \( \lambda \): Erwartungswert                                                                                               \\ und Varianz} & \( \lambda \) & \( \lambda \) & \( \frac{\lambda^t}{t!}e^{-\lambda} \) & \( e^{-\lambda} \sum_{k=0}^{t} \frac{\lambda^{k}}{k!} \) \\
+
+		\bottomrule
+	\end{tabularx}
+\end{center}
+
+\bigskip
+\subsection{Stetige Verteilungen}
+\begin{center}
+	\begin{tabularx}{\textwidth}{llXXXX}
+		\toprule
+		Verteilung               & Parameter                            & \( \E[X] \)                      & \( \Var(X) \)                    & \( f_X(t) \)                                                                                                                                  & \( F_X(t) \)                                  \\
+
+		\midrule
+		Gleichverteilung         & \( [a,b] \): Intervall               & \( \frac{a+b}{2} \)              & \( \frac{1}{12}(b-a)^2 \)        & \(\begin{cases} \frac{1}{b-a} &a \le x \le b \\ 0 & \text{sonst}\end{cases}\)                                                                                                                & \(\begin{cases} 0 & x\le a \\ \frac{t-a}{b-a} & a < x < b \\ 1 & x \ge b \end{cases}\)                \\
+
+		Exponentialverteilung    & \( \lambda: \frac{1}{\E[X]} \)       & \( \frac{1}{\lambda} \)          & \( \frac{1}{\lambda^2} \)        & \( \begin{cases} \lambda e^{-\lambda t} & t \geq 0 \\ 0 & t < 0 \end{cases} \)                                                                                                              & \( \begin{cases} 1-e^{-\lambda t} & t>0 \\ 0 & t \leq 0\end{cases}\)               \\
+
+		Normalverteilung         & \makecell[l]{\( \sigma^2 \): Varianz                                                                                                                                                                                                                                                                       \\ \( \mu: \E[X] \)} & \( \mu \) & \( \sigma ^2 \) & \( \frac{1}{\sqrt{2\pi \sigma^2} }e^{-{\frac{(t-\mu)^2}{2\sigma^2} }} \) & \( \frac{1}{\sigma {\sqrt{2\pi}}} \int_{-\infty}^t e^{-\frac{1}{2}\left( \frac{y-\mu}{\sigma} \right) ^2} \mathrm{d} y \) \\
+
+		\( \chi ^2 \)-Verteilung & \( n \): Freiheitsgrad               & \( n \)                          & \( 2n \)                         & \( \frac{1}{2^{\frac{n}{2}}\Gamma (\frac{n}{2})} t^{\frac{n}{2}-1} e^{-\frac{t}{2}} \text{ für } t>0\)                                        & \(P\left( \frac{n}{2}, \frac{t}{2}\right)  \) \\
+
+		t-Verteilung             & \( n \): Freiheitsgrad               & \( \begin{cases} 0 & n>1 \\ \text{undef.} & \text{sonst} \end{cases} \) & \( \begin{cases} \frac{n}{n-2} & n> 2 \\ \infty & 1<n \leq 2 \\ \text{undef.} & \text{sonst} \end{cases} \) & \( \frac{\Gamma \left( \frac{n+1}{2} \right) }{\sqrt{n\pi } \cdot \Gamma (\frac{n}{2})} \left( 1+ \frac{t^2}{n} \right) ^{- \frac{n+1}{2}} \) & I'd rather not                                \\
+
+
+		\bottomrule
+	\end{tabularx}
+\end{center}
+\begin{subbox}{Gamma-Funktion}
+	\begin{align*}
+		\Gamma(v) := \int_0^\infty t^{v-1}e^{-t}\mathop{dt}, v \geq 0.
+	\end{align*}
+	Es gilt $\Gamma(n) = (n-1)!$ für $n \in \N$.
+\end{subbox}

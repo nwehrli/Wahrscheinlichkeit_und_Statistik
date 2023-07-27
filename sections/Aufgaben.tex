@@ -1,0 +1,58 @@
+\section{Aufgaben}
+\subsection{Multiple Choice}
+
+Seien \(X,Y\) zwei ZV mit gemeinsamer Dichte \(f_{X,Y}\). Welche Aussage ist korrekt?
+\begin{itemize}
+	\item[\checkmark] \(X,Y\) sind immer stetig
+	\item[\(\square\)] Die ZV sind nicht notwendigerweise stetig.
+\end{itemize}
+
+\noindent
+Seien \((X_i)_{i = 1}^n\) uiv. mit Verteilungsfunktion \(F_{X_i} = F\). Was ist die Verteilungsfunktion von \(M = \text{max}(X_1,...,X_n)\)?
+\begin{itemize}
+	\item[\checkmark] \(F_M(a) = F(a)^n\)
+	\item[\(\square\)] \(F_M(a) = 1 - F(a)^n\)
+	\item[\(\square\)] \(F_M(a) = (1 - F(a))^n\)
+\end{itemize}
+
+\noindent
+Seien \(X, Y\) unabhängig und lognormalverteilt (\(\ln X, \ln Y\) sind normalverteilt). Welche Aussage ist korrekt?
+\begin{itemize}
+	\item[\checkmark] \(XY\) ist lognormalverteilt
+	\item[\(\square\)] \(XY\) ist normalverteilt
+	\item[\(\square\)] \(e^{X + Y}\) ist normalverteilt
+\end{itemize}
+
+\subsection{Aufgaben Wahrscheinlichkeit}
+\subsubsection*{\texorpdfstring{Dichte von \(\max(X_1,X_2)\)}{Dichte von max()}}
+
+Seien \(X_1, X_2 \sim \mathcal{U}[0,1]\) unabhängige ZV und sei \(X = \max (X_1, X_2)\). Berechne die Dichtefunktion von \(X\) und \(\P[X_1 \leq x \mid X \geq y]\).
+\begin{align*}
+	F_X(t) & = \P[\max(X_1, X_2) \leq t]                                                                                                              \\ &= \P[X_1 \leq t] \cdot \P[X_2 \leq t] = F_{X_1}(t) \cdot F_{X_2}(t) \\
+	f_X(t) & = \frac{d}{dt} F_{X_1}(t) \cdot F_{X_2}(t) = \frac{d}{dt} t^2 \cdot \mathbb{I}_{0 \leq t \leq 1} = 2t \cdot \mathbb{I}_{0 \leq t \leq 1}
+\end{align*}
+
+Für die Wahrscheinlichkeit brauchen wir eine Fallunterscheidung: \smallskip
+
+\begin{enumerate}
+	\item \(x < 0\) oder \(1 < x\):
+	      \[\mathbb{P}[X_1 \leq x \mid X \geq y] = 0\]
+	\item \(0 \leq x \leq y \leq 1\):
+	      \[\frac{\mathbb{P}[X_1 \leq x \cap X \geq y]}{\mathbb{P}[X \geq y]} = \frac{x(1-y)}{1 - y^2}\]
+	\item \(0 \leq y \leq x \leq 1\):
+	      \[\frac{\mathbb{P}[X_1 \leq x \cap X \geq y]}{\mathbb{P}[X \geq y]} = \frac{x - y^2}{1 - y^2}\]
+\end{enumerate}
+
+\subsubsection*{Gemeinsame Dichte}
+
+Bestimme die gemeinsame Dichte von \(P \sim \mathcal{U}[0,1]\) und \(H \sim \mathcal{U}[0,P]\). Wir wissen:
+\[f_P(p) = \mathbb I_{p \in [0,1]} \quad f_{H | P}(h \mid p) = \frac{1}{p} \cdot \mathbb{I}_{h \in [0,p]}\]
+
+\noindent
+Somit ist:
+\[f_{P, H} (p, h) = f_P(p) \cdot f_{H | P}(h \mid p) = \frac{1}{p} \cdot \mathbb I_{0 \leq h \leq p \leq 1}\]
+
+\section{Quellen}
+Dieses Cheatsheet wurde stark vom \href{https://n.ethz.ch/~dcamenisch/summaries}{Cheatsheet von Danny Camenisch} inspiriert. Ausserdem stammen Teile der Tabellen aus dem Buch ``Formeln, Tabellen und Konzepte''. Die Definitionen sind grösstenteils vom offiziellen Vorlesungsskript (V. Tassion) übernommen.
+
+

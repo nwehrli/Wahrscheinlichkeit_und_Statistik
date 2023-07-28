@@ -2,6 +2,7 @@
 \section{Tabellen}
 
 \subsection{Grenzwerte}
+\renewcommand*{\arraystretch}{2}
 \begin{center}
 	\begin{tabularx}{\linewidth}{XX}
 		\toprule
@@ -18,7 +19,7 @@
 \end{center}
 
 \begin{mainbox}{Partielle Integration}
-	\vspace{-12pt}
+	
 	$$\int f'(x) g(x) \mathop{dx} = f(x)g(x) - \int f(x) g'(x) \mathop{dx}$$
 \end{mainbox}
 \begin{itemize}
@@ -32,6 +33,13 @@
 	\item $g'(x)$ muss sich herauskürzen, sonst nutzlos.
 	\item Grenzen substituieren nicht vergessen.
 	\item Alternativ: unbestimmtes Integral berechnet werden und dann $u$ wieder durch $x$ substituieren.
+	\item Man kann auch das Theorem in die andere Richtung anwenden: \[\int_a^b f(u) \mathop{du} = \int_{g^{-1}(a)}^{g^{-1}(b)}f(g(x))g'(x) \dx\]
+	\item Sei $\X, Y$ kompakt, $f: Y \subset \R^n \to \R$ stetig. 
+	
+	Sei $\gamma: \X \to Y$ mit $\X = \X_0 \cup B, Y = Y_0 \cup C$ ($B, C$ Rand von $\X, Y$). 
+	
+	Wenn $\gamma: \X_0 \to Y_0$ bijektiv und $C^1$ mit det$(J_\gamma(x)) \neq 0, \forall x \in \X_0$, dann gilt 
+	\[\int_Y f(y)\mathop{dy} = \int_{\X} f(\gamma(x))|\text{det}(J_\gamma(x))|\dx\]
 \end{itemize}
 
 \subsection{Ableitungen}
@@ -97,7 +105,7 @@
 \end{center}
 \clearpage
 
-\renewcommand*{\arraystretch}{2.5}
+\renewcommand*{\arraystretch}{2}
 \subsection{Diskrete Verteilungen}
 \begin{center}
 	\begin{tabularx}{\textwidth}{llXXXX}
@@ -146,3 +154,7 @@
 	\end{align*}
 	Es gilt $\Gamma(n) = (n-1)!$ für $n \in \N$.
 \end{subbox}
+\section{Quellen}
+Dieses Cheatsheet wurde von vorherigen (Julian Steinmann, Danny Camenisch) inspiriert (vor allem Kapitel 6-10). Definitionen und Aufgaben stammen aus den Slides von Prof. Teichmann, dem Skript (M. Schweizer, 2021) und den Übungsserien vom Frühlingssemester 2023.
+
+

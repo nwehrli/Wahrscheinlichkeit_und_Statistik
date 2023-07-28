@@ -1,37 +1,23 @@
 \section{Konfidenzintervalle}
 \begin{mainbox}{Definition Konfidenzintervall}
-	Sei \(\alpha \in [0,1]\). Ein Konfidenzintervall für \(\theta\) mit Niveau \(1 - \alpha\) ist ein Zufallsintervall \(I=[A,B]\), sodass gilt
+	Sei \(\alpha \in [0,1]\). Ein Konfidenzintervall für \(\theta\) mit Niveau \(1 - \alpha\) ist ein Zufallsintervall \(I(\omega)=[A(\omega),B(\omega)]\), sodass gilt
 	\[\forall \theta \in \Theta \quad \P_\theta[A\le \theta \le B] \ge 1- \alpha\]
 
 	wobei \(A\) und \(B\) Zufallsvariablen der Form \(A = a(X_1, \ldots, X_n), B = b(X_1, \ldots, X_n)\) mit \(a,b: \R^n \to \R\) sind.
 \end{mainbox}
 
-Wenn wir einen Schätzer \(T = T_{ML} \sim \mathcal{N}(m, \frac{1}{n})\) haben, suchen wir ein Konfidenzintervall der Form
-\[I = [T-c/\sqrt{n}, T+c/\sqrt{n}]\]
+Wenn wir einen Schätzer \(T = T_{ML} \sim \mathcal{N}\left(\theta, \text{Var}(X)\right)\) haben, suchen wir ein Konfidenzintervall der Form
+\[I = \left[T-c \sqrt{\Var(X)}, T+c\sqrt{\Var(X)}\right]\]
 Hierbei gilt:
 \begin{align*}
-	\P_\theta[T-c/\sqrt{n} \le m \le T+c/\sqrt{n}] \\
-	= \P_\theta[-c\le Z \le c]
+	\P_\theta&\left(T-c\sqrt{\Var(X)} \le \theta \le T+c\sqrt{\Var(X)}\right) \\
+	&= \P_\theta\left(-c\le Z \le c\right)\\
+	&= \P_{\theta}\left(Z \leq c\right) - \P_{\theta}\left(Z < -c\right)\\
+	&= \P_{\theta}\left(Z \leq c\right) - \left(1-\P_{\theta}\left(Z \leq c\right)\right)\\
+	&= 2\Phi(c)-1
 \end{align*}
-wobei \(Z = \sqrt{n}(T-m)\) ist.
+wobei \(Z = \frac{T-\theta}{\sqrt{\Var(X)}} \sim \mathcal{N}(0,1)\) ist.
 
-\subsection{Häufige Fälle}
-\subsubsection*{\texorpdfstring{Normalverteilt - \(\mu\) unbekannt, \(\sigma^2\) bekannt (z-Test)}{Normalverteilt - μ unbekannt, σ² bekannt (z-Test)}}
-Erwartungstreuer Schätzer: \(\overline{X}_n = \frac{1}{n} \sum_{i=1}^n X_i\)\\
-Verteilung unter \(\P_\theta: \frac{\overline{X}_n - \theta_0}{\sqrt{\sigma^2/n}} \sim \mathcal{N}(0,1)\)
-\begin{enumerate}
-	\item Modell \(X_1, \ldots, X_n \sim \mathcal{N}(\theta, \sigma^2)\) uiv. unter \(\P_\theta\)
-	\item Hypothesen \(H_0 : \theta = \theta_0\), z.B. \(H_A : \theta \ne \theta_0\)
-	\item Test \(T = \frac{\overline{X}_n - \mu}{\sqrt{\sigma^2/n}} \sim \mathcal{N}(0,1)\)
-	\item Verwerfungsbereich \(]-\infty, -c[ \ \cup \ ] c, \infty\) für \(c\ge 0\)
-\end{enumerate}
-
-\subsubsection*{\texorpdfstring{Normalverteilt - \(\mu\), \(\sigma^2\) unbekannt (t-Test)}{Normalverteilt - μ, σ² unbekannt (t-Test)}}
-Wir definieren \(\vec{\theta} = (\mu, \sigma^2)\) und den Varianz-Schätzer \(S^2 = \frac{1}{n-1}\sum_{i=1}^n (X_i - \overline{X}_n)^2\).
-\begin{enumerate}
-	\item Modell \(X_1, \ldots, X_n \sim \mathcal{N}(\theta, \sigma^2)\) uiv. unter \(\P_{\vec{\theta}}\)
-	\item Test \(T = \frac{\overline{X}_n - \mu_0}{\sqrt{S^2/n}} \sim t_{n-1}\)
-\end{enumerate}
 
 \subsection{Approximatives Konfidenzintervall}
 Wir können den zentralen Grenzwertsatz benutzen, um eine standardnormalverteilte ZV zu erhalten, und damit die Konfidenzintervalle zu bestimmen.

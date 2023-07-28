@@ -1302,13 +1302,6 @@ INPUT sections\Tests.tex
 INPUT .\sections\Tests.tex
 INPUT .\sections\Tests.tex
 INPUT sections\Tests.tex
-INPUT .\sections\Konfidenzintervalle.tex
-INPUT .\sections\Konfidenzintervalle.tex
-INPUT .\sections\Konfidenzintervalle.tex
-INPUT sections\Konfidenzintervalle.tex
-INPUT .\sections\Konfidenzintervalle.tex
-INPUT .\sections\Konfidenzintervalle.tex
-INPUT sections\Konfidenzintervalle.tex
 INPUT C:\Users\nshar\AppData\Local\Programs\MiKTeX\fonts\tfm\public\amsfonts\cmextra\cmex7.tfm
 INPUT C:\Users\nshar\AppData\Local\Programs\MiKTeX\fonts\tfm\public\amsfonts\symbols\msam10.tfm
 INPUT C:\Users\nshar\AppData\Local\Programs\MiKTeX\fonts\tfm\public\amsfonts\symbols\msam7.tfm
@@ -1318,6 +1311,13 @@ INPUT C:\Users\nshar\AppData\Local\Programs\MiKTeX\fonts\tfm\public\wasy\wasy10.
 INPUT C:\Users\nshar\AppData\Local\Programs\MiKTeX\fonts\tfm\public\wasy\wasy7.tfm
 INPUT C:\Users\nshar\AppData\Local\Programs\MiKTeX\fonts\tfm\public\doublestroke\dsrom10.tfm
 INPUT C:\Users\nshar\AppData\Local\Programs\MiKTeX\fonts\tfm\public\doublestroke\dsrom8.tfm
+INPUT .\sections\Konfidenzintervalle.tex
+INPUT .\sections\Konfidenzintervalle.tex
+INPUT .\sections\Konfidenzintervalle.tex
+INPUT sections\Konfidenzintervalle.tex
+INPUT .\sections\Konfidenzintervalle.tex
+INPUT .\sections\Konfidenzintervalle.tex
+INPUT sections\Konfidenzintervalle.tex
 INPUT .\sections\Aufgaben.tex
 INPUT .\sections\Aufgaben.tex
 INPUT .\sections\Aufgaben.tex
@@ -1355,6 +1355,8 @@ INPUT C:\Users\nshar\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\c
 INPUT C:\Users\nshar\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmmi5.pfb
 INPUT C:\Users\nshar\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmmi6.pfb
 INPUT C:\Users\nshar\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmmi6.pfb
+INPUT C:\Users\nshar\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmmi7.pfb
+INPUT C:\Users\nshar\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmmi7.pfb
 INPUT C:\Users\nshar\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmmi8.pfb
 INPUT C:\Users\nshar\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmmi8.pfb
 INPUT C:\Users\nshar\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmr10.pfb

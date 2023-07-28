@@ -25,31 +25,83 @@ Wir wollen nun anhand der Daten \((X_1(\omega), \ldots, X_n(\omega))\) entscheid
 \textbf{Bemerkung: } Da $T$ eine ZV und somit bezüglich dem Mass $\P_\theta: \F \to [0,1]$ messbar ist, gilt $\{T \in K\} \in \F$ und somit ist $\P_\theta(T \in K)$ wohldefiniert. 
 \subsection{Signifikanzniveau und Macht}
 Ein Test hat Signifikanzniveau \(a \in [0,1]\) falls
-\[\forall \theta \in \Theta_0 \quad \P_\theta[T \in K] \le a\]
+\[\forall \theta \in \Theta_0 \quad \P_\theta(T \in K) \le a\]
 Es ist meist unser primäres Ziel, die Fehler 1. Art zu minimieren.
 
 Das sekundäre Ziel ist, Fehler 2. Art zu vermeiden. Hierfür definieren wir die Macht eines Tests als Funktion:
-\[\beta : \Theta_A \mapsto [0,1], \quad \theta \mapsto \P_\theta[T \in K]\]
+\[\beta : \Theta_A \mapsto [0,1], \quad \theta \mapsto \P_\theta(T \in K)\]
 Zu beachten ist, dass eine kleine Wahrscheinlichkeit für einen Fehler 2. Art einem \textit{grossen} \(\beta\) entspricht.
 
 \subsection{Konstruktion von Tests}
-Wir nehmen an, dass \(X_1, \ldots, X_n\) diskret oder gemeinsam stetig unter \(\P_{\theta_0}\) und \(\P_{\theta_A}\) sind, wobei \(\theta_0 \ne \theta_A\) einfach sind.
+Wir nehmen an, dass \(X_1, \ldots, X_n\) diskret oder gemeinsam stetig unter \(\P_{\theta_0}\) und \(\P_{\theta_A}\) sind, wobei \(\Theta_0 \cap \Theta_A = \emptyset\) einfach sind (\(\theta_0 \in \Theta_0 \land \theta_A \in \Theta_A\)).
 
 \noindent Der Likelihood-Quotient ist somit wohldefiniert:
 \[R(x_1, \ldots, x_n) = \frac{L(x_1,\ldots, x_n;\theta_A)}{L(x_1, \ldots, x_n;\theta_0)}\]
-(Falls \(L(x_1, \ldots, x_n; \theta_0) = 0\) setzen wir \(R(x_1, \ldots, x_n) = +\infty\).) Wenn \(R \gg 1\), so gilt \(H_A > H_0\) und analog \(R \ll 1 \implies H_A < H_0\).
+(Falls \(L(x_1, \ldots, x_n; \theta_0) = 0\) setzen wir \(R(x_1, \ldots, x_n) = +\infty\).) 
+
+Für zusammengesetzte $\Theta_0$ und $\Theta_A$ können wir den verallg. Likelihood-Quotient definieren:
+\[R(x_1, ..., x_n) := \frac{\sup_{\theta \in \Theta_A}L(x_1, \dots, x_n; \theta)}{\sup_{\theta \in \Theta_0}L(x_1, \dots, x_n; \theta)}\]
+
+
+Wenn \(R \gg 1\), so gilt \(H_A > H_0\) und analog \(R \ll 1 \implies H_A < H_0\).
 
 \begin{subbox}{Likelihood-Quotient-Test}
 	Der Likelihood-Quotient-Test (LQ-Test) mit Parameter \(c \ge 0\) ist definiert durch:
 	\[T = R(x_1, \ldots, x_n) \quad \text{und} \quad K = (c, \infty]\]
 \end{subbox}
-Der LQ-Test ist optimal, da jeder andere Test mit kleinerem Signifikanzniveau auch eine kleinere Macht hat (Neyman-Pearson-Lemma).
+\textbf{Neyman-Pearson-Lemma}
 
+Der LQ-Test ist optimal, da jeder andere Test mit kleinerem (oder gleichem) Signifikanzniveau auch eine kleinere (oder gleiche) Macht hat.
+
+\subsection{Häufige Fälle}
+\subsubsection*{\texorpdfstring{Normalverteilt - \(\mu\) unbekannt, \(\sigma^2\) bekannt (z-Test)}{Normalverteilt - μ unbekannt, σ² bekannt (z-Test)}}
+Erwartungstreuer Schätzer: \(\overline{X}_n = \frac{1}{n} \sum_{i=1}^n X_i\)\\
+Verteilung unter \(\P_\theta: \frac{\overline{X}_n - \theta_0}{\sqrt{\sigma^2/n}} \sim \mathcal{N}(0,1)\)
+\begin{enumerate}
+	\item Modell \(X_1, \ldots, X_n \sim \mathcal{N}(\theta, \sigma^2)\) iid. unter \(\P_\theta\)
+	\item Hypothesen \(H_0 : \theta = \theta_0\) und \(H_A : \theta > \theta_0\), \(H_A : \theta < \theta_0\) (einseitig) oder \(H_A : \theta \ne \theta_0\) (zweiseitig)
+	\item Test \(T = \frac{\overline{X}_n - \mu}{\sqrt{\sigma^2/n}} \sim \mathcal{N}(0,1)\) unter \(\P_{\theta_0}\)
+	\item Verwerfungsbereich \(K_{>} = (c_{>}, \infty)\), \(K_{<} = (-\infty, -c_{<})\) oder \(K_{\neq} = (-\infty, -c_{\neq}) \ \cup \ (c_{\neq}, \infty)\)
+	\item \textbf{Fall 1} \(\alpha = \P_{\theta_0}(T \in K_>) = \P_{\theta_0}(T > c_>)\)\\
+	\textbf{Fall 2} \(\alpha = \P_{\theta_0}(T \in K_<) = \P_{\theta_0}(T < -c_<) = 1 - \P_{\theta_0}(T \leq c_<)\)\\
+	\textbf{Fall 3} \(\alpha = \P_{\theta_0}(T \in K_{\neq}) = \P_{\theta_0}(T < -c_{\neq}) + \P_{\theta_0}(T > c_{\neq}) = \P_{\theta_0}(T < -c_{\neq}) + 1 - \P_{\theta_0}(T \leq c_{\neq})\)
+\end{enumerate}
+
+\subsubsection*{\texorpdfstring{Normalverteilt - \(\mu\), \(\sigma^2\) unbekannt (t-Test)}{Normalverteilt - μ, σ² unbekannt (t-Test)}}
+Wir definieren \(\vec{\theta} = (\mu, \sigma^2)\) und den Varianz-Schätzer \(S^2 = \frac{1}{n-1}\sum_{i=1}^n (X_i - \overline{X}_n)^2\).
+\begin{enumerate}
+	\item Modell \(X_1, \ldots, X_n \sim \mathcal{N}(\theta, \sigma^2)\) iid. unter \(\P_{\vec{\theta}}\)
+	\item Hypothesen: $\Theta_0 = \{\mu_0\} \times (0, \infty)$, für die Alternativhypothese gibt es wieder die drei Fälle mit $\mu_A > \mu_0$, $\mu_A < \mu_0$ und $\mu_A \neq \mu_0$.
+	\item Teststatistik \(T = \frac{\overline{X}_n - \mu_0}{\sqrt{S^2/n}} \sim t_{n-1}\)
+	\item Verewerfungsbereich: \(K_{>}\), \(K_{<}\) oder \(K_{\neq}\)
+	\item Für Signifikanzniveau $\alpha$, können wir die kritischen Werte als $c_{>} = t_{n-1, 1-\alpha}, c_{<} = t_{n-1, 1- \alpha}$ und $c_{\neq} = t_{n-1, 1- \frac{\alpha}{2}}$ wählen.
+	Hierbei bezeichnen wir mit $t_{m, \gamma}$, das $\gamma$-Quantil einer $t_m$-Verteilung (i.e. derjenige Wert $z = t_{m, \gamma}$, so dass für $X \sim t_m$ $\P(X \leq z) = \gamma$ gilt).
+\end{enumerate}
+\subsubsection*{Gepaarter Zweistichprobentest: $\mu_X, \mu_Y$, gleiche Varianz $\sigma^2$}
+Sei $X_1, ..., X_n$ iid. $\sim \mathcal{N}(\mu_X, \sigma^2)$ und $Y_1, \dots, Y_n$ iid. $\sim \mathcal{N}(\mu_Y, \sigma^2)$, wobei $X_i, Y_i$ unabhängig.
+
+Dann ist für $Z_i := X_i - Y_i$ die ZV $Z_1, \dots, Z_n$ iid. $\sim \mathcal{N}(\mu_X -\mu_Y, 2\sigma^2)$. 
+
+Für bekanntes $\sigma$ können wir auf den $Z_i$ dann den z-Test ausführen, wenn unbekannt dann der t-Test.
+\subsubsection*{Ungepaarter Zweistichprobentest: $\mu_X, \mu_Y$, gleiche Varianz $\sigma^2$}
+Sei $X_1, ..., X_n$ iid. $\sim \mathcal{N}(\mu_X, \sigma^2)$ und $Y_1, \dots, Y_m$ iid. $\sim \mathcal{N}(\mu_Y, \sigma^2)$, wobei $m \neq n$, $X_1, ..., X_n$ und  $Y_1, ..., Y_m$ unabhängig.
+\begin{enumerate}
+	\item \textbf{$\sigma^2$ bekannt.} Dann haben wir folgende Teststatistik
+	\[T := \frac{(\overline{X}_n -\overline{Y}_m) - (\mu_X - \mu_Y)}{\sigma\sqrt{\frac{1}{n}+\frac{1}{m}}} \sim \mathcal{N}(0,1) \text{ unter jedem }\P_{\theta}\]
+	Mit dem können wir dann den z-Test ausführen.
+	\item \textbf{$\sigma^2$ unbekannt.} Empirische Varianzen der einzelnen beiden Datensätzen
+	\[S^2_X := \frac{1}{n-1}\sum_{i=1}^n(X_i - \overline{X}_n)^2 \text{ und } S^2_Y := \frac{1}{m-1}\sum_{j=1}^m(Y_j - \overline{Y}_m)^2\]
+	kombinieren wir zu einer empirischen Varianz
+	\[S^2 := \frac{1}{m+n-2}((n-1)S^2_X + (m-1)S_Y^2)\]
+	Daraus die Teststatistik
+	\[T := \frac{(\overline{X}_n -\overline{Y}_m) - (\mu_X - \mu_Y)}{S\sqrt{\frac{1}{n}+\frac{1}{m}}} \sim t_{m+n-2} \text{ unter jedem }\P_{\theta}\]
+	In diesem Fall machen wir damit ein t-Test.
+\end{enumerate}
 \subsection{p-Wert}
 Sei \(T = t(X_1, \ldots, X_n)\) eine Teststatistik und \((T,K_t)_{t\ge 0}\) eine Familie von Tests.
 
 \begin{subbox}{Geordnete Teststatistik}
-	Eine Familie von Tests heisst geordnet bzgl. \(T\) falls \(K_t \subset \R\) und \(s \le t \implies K_t \subset K_S\). Beispiele:
+	Eine Familie von Tests heisst geordnet bzgl. \(T\) falls \(K_t \subset \R\) und \(s \le t \implies K_t \subseteq K_S\). Beispiele:
 	\begin{itemize}
 		\item \(K_t = (t, \infty)\) (rechtsseitiger Test)
 		\item \(K_t = (-\infty, -t)\) (linksseitiger Test)
@@ -58,8 +110,8 @@ Sei \(T = t(X_1, \ldots, X_n)\) eine Teststatistik und \((T,K_t)_{t\ge 0}\) eine
 \end{subbox}
 
 \begin{mainbox}{Definition p-Wert}
-	Sei \(H_0: \theta = \theta_0\) eine einfache Nullhypothese. Sei \((T, K_t)_{t\ge 0}\) eine geordnete Familie von Tests. Der \(p\)-Wert ist definiert als ZV \(G(t)\), wobei
-	\[G: \R_+ \mapsto [0,1], \quad G(t) = \P_{\theta_0}[T \in K_t]\]
+	Sei \(H_0: \theta = \theta_0\) eine einfache Nullhypothese. Sei \((T, K_t)_{t\ge 0}\) eine geordnete Familie von Tests. Der \(p\)-Wert ist definiert als ZV \(G(\omega)\), wobei
+	\[G: \Omega \mapsto [0,1], \quad G(\omega) = \P_{\theta_0}[T \in K_{t(X_1(\omega), ..., X_n(\omega))}]\]
 \end{mainbox}
 Der \(p\)-Wert hat folgende Eigenschaften:
 \begin{enumerate}

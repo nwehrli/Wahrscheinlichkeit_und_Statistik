@@ -64,7 +64,7 @@ Wenn $X_1, \ldots, X_n$ stetige ZV mit Dichten $f_1, \ldots, f_n$, dann sind die
     $$\E(\phi_1(X_1)\cdot \ldots \cdot \phi_n(X_n)) = \E(\phi_1(X_1)) \cdot \ldots \cdot \E(\phi_n(X_n))$$
 \end{itemize}
 \subsection{Transformation von Zufallsvariablen}
-\begin{subbox}{Transformationssatz}
+\begin{subbox}{linearer Transformationssatz}
     Sei $Z$ ein $n$-dimensionaler Zufallsvektor und $g: (\R^n, \mathcal{B}^n) \to (\R^m, \mathcal{B}^m)$ eine messbare Abbildung. Dann ist
     $$H(\omega) = g(Z(\omega))$$
     ein $m$-dimensionaler Zufallsvariable und ferner gilt
@@ -117,7 +117,7 @@ Deshalb wollen wir $B$ so wählen, dass $g((X,Y)) = (X, X + Y)$:
         -1 & 1
     \end{matrix}\right)
 \end{align*}
-Nach dem Transformationssatz gilt
+Nach dem linearen Transformationssatz gilt
 \begin{align*}
     f_{X, X+Y}(x, z) &= \frac{1}{|\text{det}(B)|}f_{X, Y}\left(B^{-1}\cdot 
     \left(\begin{matrix}
@@ -172,3 +172,13 @@ Wir definieren $\phi(x, y) = xy$ und berechnen
 \end{align*}
 $$\implies f_V(t) = \frac{\ln(v)}{v^2}\mathds{1}_{v \in [1,\infty)}$$
 
+\begin{mainbox}{genereller Transformationssatz}
+    Sei $Z$ ein $n$-dimensionaler Zufallsvektor mit Dichtefunktion $f_Z: \R^n \to \R_+$ und $\phi: \R^n \to \R^n$ stetig differenzierbar mit stetig differenzierbarer Umkehrabbildung $\phi^{-1}$. Dann gilt für die Dichte $f_U$ von $U = \phi(Z)$:
+    \[f_U(\vec{u}) = f_Z(\phi^{-1}(\vec{u}))|\text{det}(J_{\phi^{-1}}(\vec{u}))|\]
+\end{mainbox}
+\textbf{Beweisidee.} Für $A \subset \R^n$ gilt
+\[\int_{A}f_U(\vec{u})\mathop{d\vec{u}} = \P(U \in A) = \P(Z \in \phi^{-1}(A)) = \int_{\phi^{-1}(A)}f_Z(\vec{z})\mathop{d\vec{z}}\]
+Aus der mehrdimensionalen Integralrechnung folgt dann
+\[\int_{\phi^{-1}(A)}f_Z(\vec{z})\mathop{d\vec{z}} = \int_{A}f_Z(\phi^{-1}(\vec{u}))|\text{det}(J_{\phi^{-1}}(\vec{u}))|\mathop{d\vec{u}}\]
+$\hfill\blacksquare$
+\subsubsection*{Beispielrechnung.}

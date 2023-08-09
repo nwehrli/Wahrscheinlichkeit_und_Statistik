@@ -101,7 +101,7 @@ Sei $X_1, ..., X_n$ iid. $\sim \mathcal{N}(\mu_X, \sigma^2)$ und $Y_1, \dots, Y_
 Sei \(T = t(X_1, \ldots, X_n)\) eine Teststatistik und \((T,K_t)_{t\ge 0}\) eine Familie von Tests.
 
 \begin{subbox}{Geordnete Teststatistik}
-	Eine Familie von Tests heisst geordnet bzgl. \(T\) falls \(K_t \subset \R\) und \(s \le t \implies K_t \subseteq K_S\). Beispiele:
+	Eine Familie von Tests heisst geordnet bzgl. \(T\) falls \(K_t \subset \R\) und \(s \le t \implies K_t \subseteq K_s\). Beispiele:
 	\begin{itemize}
 		\item \(K_t = (t, \infty)\) (rechtsseitiger Test)
 		\item \(K_t = (-\infty, -t)\) (linksseitiger Test)
@@ -113,6 +113,8 @@ Sei \(T = t(X_1, \ldots, X_n)\) eine Teststatistik und \((T,K_t)_{t\ge 0}\) eine
 	Sei \(H_0: \theta = \theta_0\) eine einfache Nullhypothese. Sei \((T, K_t)_{t\ge 0}\) eine geordnete Familie von Tests. Der \(p\)-Wert ist definiert als ZV \(G(\omega)\), wobei
 	\[G: \Omega \mapsto [0,1], \quad G(\omega) = \P_{\theta_0}[T \in K_{t(X_1(\omega), ..., X_n(\omega))}]\]
 \end{mainbox}
+\textbf{Intuitiv: } Wenn wir den Verwerfungsbereich mit dem realisierten Wert der Teststatistik bestimmen würden; was wäre das Signifikanzniveau (i.e. Fehler 1. Art)?
+
 Der \(p\)-Wert hat folgende Eigenschaften:
 \begin{enumerate}
 	\item Sei \(T\) stetig und \(K_t = (t, \infty)\). Dann ist der \(p\)-Wert unter \(\P_{\theta_0}\) auf \([0,1]\) gleichverteilt.

@@ -1,15 +1,15 @@
 \section{Zufallsvariablen}
-Sei ($\Omega, \A, \P$) ein diskreter Wahrscheinlichkeitsraum.
+Sei ($\Omega, \A, \P$) ein Wahrscheinlichkeitsraum.
 \begin{mainbox}{Zufallsvariable}
     Eine (reellwertige) \textbf{Zufallsvariable} auf $\Omega$ ist eine messbare Funktion $X: \Omega \to \R$.
-    $$X: \Omega \to \R \textbf{ messbar} \iff \forall x \in \R: X^{-1}(\{x\}) \in \A$$
+    $$X: \Omega \to \R \textbf{ messbar} \iff \forall B \subset \R \text { closed. } X^{-1}(B) \in \A$$
  
-    Die Eigenschaft \textbf{messbar} ist bezüglich dem Wahrscheinlichkeitsmass $\P$ relevant (i.e. dann ist $\P(X = x) := \P(\{\omega \in \Omega \mid X(\omega) = x\})$ wohldefiniert).
+    Die Eigenschaft \textbf{messbar} ist bezüglich dem Wahrscheinlichkeitsmass $\P: \A \to [0,1]$ relevant. Dann ist $\P(X \in B) := \P(\{\omega \in \Omega \mid X(\omega) \in B\})$ wohldefiniert.
 \end{mainbox}
-Diese Definition von \textbf{messbar} ist für diskrete $\Omega$ äquivalent zu derjenigen der Vorlesung, die die rechte Seite vom '$\iff$' für alle abgeschlossenen Teilmengen $B \subset \R$ fordert. 
+Bei diskretem $\Omega$, können wir die rechte Seite vom '$\iff$' durch $\forall x \in \R: X^{-1}(\{x\})\in \A \ (1)$ ersetzen. 
 
 Für die Messbarkeit von $X$ ist nur $X(\Omega) \subseteq \R$ entscheidend und jede Teilmenge $A \subseteq X(\Omega)$ ist abzählbar (da $\Omega$ abzählbar). Somit kann $X^{-1}(A)$ als abzählbare Vereinigung von $\bigcup_{x \in A} X^{-1}(\{x\})$ geschrieben werden. 
-\\($\implies X^{-1}(A) \in \A$ per Def. $\sigma$-Algebra)
+\\$(1) \implies X^{-1}(A) \in \A$ per Def. $\sigma$-Algebra
 \subsection{Verteilungsfunktion}
 Die \textbf{Verteilungsfunktion} ist die Abbildung $F_X : \R \to [0,1]$ definiert durch:
 $$F_X(t) := \P(X \leq t), \forall t \in \R$$
@@ -36,7 +36,7 @@ Intuitiv folgt daraus
     \item Falls $F_X$ stetig in einem Punkt $a \in \R$, dann gilt $\P(X = a) = 0$. 
 \end{itemize}
 
-\begin{mainbox}{Unabhängigkeit von Zufallsvariablen}
+\begin{mainbox}{}
     Seien $X_1, ...,X_n$ Zufallsvariablen auf einem Wahrscheinlichkeitsraum $(\Omega, \A, \P)$. Dann heissen $X_1, ...,X_n$ \textbf{unabhängig}, falls
     \begin{align*}
         &\forall x_1, ..., x_n \in \R:\\
@@ -44,9 +44,9 @@ Intuitiv folgt daraus
     \end{align*} 
 \end{mainbox}
 
-\begin{subbox}{Unendlich viele Bernoulli-Experimente}
-    TBD
-\end{subbox}
+% \begin{subbox}{Unendlich viele Bernoulli-Experimente}
+%     TBD
+% \end{subbox}
 
 \subsection{Diskrete Zufallsvariablen}
 Sei $A \in \F$ ein Ereignis.\\
@@ -55,7 +55,7 @@ Wir sagen $A$ tritt \textbf{fast sicher (f.s.)} ein, falls $\P(A)= 1$.
 Seien $X, Y: \Omega \to \R$ Zufallsvariablen: \\$X \leq Y$ f.s. $\iff$ $\P(X \leq Y)=1$
 
 
-\begin{mainbox}{Diskrete Zufallsvariable}
+\begin{mainbox}{}
     Eine Zufallsvariable $X: \Omega \to \R$ heisst \textbf{diskret}, falls eine endliche oder abzählbare Menge $W \subset \R$ existiert, sodass
     $$\P(X \in W) = 1$$
     Falls $\Omega$ endlich oder abzählbar ist, dann ist $X$ immer diskret.
@@ -86,7 +86,7 @@ $$p(k) := \P(X = k) = \frac{\lambda^k}{k!}\cdot e^{-\lambda} \quad \forall k \in
 \end{enumerate}
 
 \subsection{Stetige Zufallsvariablen}
-\begin{mainbox}{Stetige Zufallsvariablen, Dichte}
+\begin{mainbox}{}
     Eine Zufallsvariable $X: \Omega \to \R$ heisst \textbf{stetig}, wenn ihre Verteilungsfunktion $F_X$ wie folgt geschrieben werden kann
     $$F_X(a) = \int_{-\infty}^{a}f(x)\dx = \text{ für alle }a \in \R.$$
     wobei $f: \R \to \R^+$ eine nicht-negative Funktion ist. $f$ wird dann als \textbf{Dichte} von $X$ benannt.\\
@@ -101,7 +101,10 @@ Sei $X$ eine Zufallsvariable mit stetiger Verteilungsfunktion $F_X$ und $F_X$ st
 Dann ist $X$ eine stetige Zufallsvariable und die Dichte $f$ kann wie folgt konstruiert werden:
 $$\forall x \in (x_i, x_{i+1}) \quad f(x) = F'_X(x).$$
 
-\textbf{TODO: Beispielrechnung -Dichte finden}
+\subsubsection*{Bedingte Dichte}
+Seien $X,Y$ ZV auf $(\Omega, \A, \P)$ mit gemeinsamer Dichte $f_{X,Y}(x, y)$ und Randdichte $f_{Y}(y) \neq 0$.
+Dann ist die bedingte Dichte von $X$ bedingt durch $Y$:
+$$f_{X | Y}(x|y) = \frac{f_{X,Y}(x,y)}{f_Y(y)}$$
 
 \subsection{Stetige Verteilungen}
 \textbf{Gleichverteilung} ($X \sim \mathcal{U}([a,b])$): 

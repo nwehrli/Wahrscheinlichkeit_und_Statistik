@@ -1265,6 +1265,7 @@ INPUT C:\Users\nshar\AppData\Local\Programs\MiKTeX\tex\latex\doublestroke\udsrom
 INPUT C:\Users\nshar\AppData\Local\Programs\MiKTeX\fonts\tfm\public\doublestroke\dsrom8.tfm
 INPUT C:\Users\nshar\AppData\Local\Programs\MiKTeX\fonts\tfm\public\doublestroke\dsrom8.tfm
 INPUT C:\Users\nshar\AppData\Local\Programs\MiKTeX\fonts\tfm\public\doublestroke\dsrom8.tfm
+INPUT C:\Users\nshar\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmbx10.tfm
 INPUT .\sections\Erwartungswert.tex
 INPUT .\sections\Erwartungswert.tex
 INPUT .\sections\Erwartungswert.tex
@@ -1280,28 +1281,6 @@ INPUT sections\Mehrere Zufallsvariablen.tex
 INPUT .\sections\Mehrere Zufallsvariablen.tex
 INPUT .\sections\Mehrere Zufallsvariablen.tex
 INPUT sections\Mehrere Zufallsvariablen.tex
-INPUT C:\Users\nshar\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmbx10.tfm
-INPUT .\sections\Grenzwertsätze.tex
-INPUT .\sections\Grenzwertsätze.tex
-INPUT .\sections\Grenzwertsätze.tex
-INPUT sections\Grenzwertsätze.tex
-INPUT .\sections\Grenzwertsätze.tex
-INPUT .\sections\Grenzwertsätze.tex
-INPUT sections\Grenzwertsätze.tex
-INPUT .\sections\Schätzer.tex
-INPUT .\sections\Schätzer.tex
-INPUT .\sections\Schätzer.tex
-INPUT sections\Schätzer.tex
-INPUT .\sections\Schätzer.tex
-INPUT .\sections\Schätzer.tex
-INPUT sections\Schätzer.tex
-INPUT .\sections\Tests.tex
-INPUT .\sections\Tests.tex
-INPUT .\sections\Tests.tex
-INPUT sections\Tests.tex
-INPUT .\sections\Tests.tex
-INPUT .\sections\Tests.tex
-INPUT sections\Tests.tex
 INPUT C:\Users\nshar\AppData\Local\Programs\MiKTeX\fonts\tfm\public\amsfonts\cmextra\cmex7.tfm
 INPUT C:\Users\nshar\AppData\Local\Programs\MiKTeX\fonts\tfm\public\amsfonts\symbols\msam10.tfm
 INPUT C:\Users\nshar\AppData\Local\Programs\MiKTeX\fonts\tfm\public\amsfonts\symbols\msam7.tfm
@@ -1311,6 +1290,27 @@ INPUT C:\Users\nshar\AppData\Local\Programs\MiKTeX\fonts\tfm\public\wasy\wasy10.
 INPUT C:\Users\nshar\AppData\Local\Programs\MiKTeX\fonts\tfm\public\wasy\wasy7.tfm
 INPUT C:\Users\nshar\AppData\Local\Programs\MiKTeX\fonts\tfm\public\doublestroke\dsrom10.tfm
 INPUT C:\Users\nshar\AppData\Local\Programs\MiKTeX\fonts\tfm\public\doublestroke\dsrom8.tfm
+INPUT .\sections\Grenzwertsätze.tex
+INPUT .\sections\Grenzwertsätze.tex
+INPUT .\sections\Grenzwertsätze.tex
+INPUT sections\Grenzwertsätze.tex
+INPUT .\sections\Grenzwertsätze.tex
+INPUT .\sections\Grenzwertsätze.tex
+INPUT sections\Grenzwertsätze.tex
+INPUT .\sections\Schätzer.tex
+INPUT .\sections\Schätzer.tex
+INPUT .\sections\Schätzer.tex
+INPUT sections\Schätzer.tex
+INPUT .\sections\Schätzer.tex
+INPUT .\sections\Schätzer.tex
+INPUT sections\Schätzer.tex
+INPUT .\sections\Tests.tex
+INPUT .\sections\Tests.tex
+INPUT .\sections\Tests.tex
+INPUT sections\Tests.tex
+INPUT .\sections\Tests.tex
+INPUT .\sections\Tests.tex
+INPUT sections\Tests.tex
 INPUT .\sections\Konfidenzintervalle.tex
 INPUT .\sections\Konfidenzintervalle.tex
 INPUT .\sections\Konfidenzintervalle.tex

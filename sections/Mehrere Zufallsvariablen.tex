@@ -1,5 +1,5 @@
 \section{Mehrere Zufallsvariablen}
-\begin{mainbox}{Gemeinsame Verteilung}
+\begin{mainbox}{}
     Die \textbf{gemeinsame Verteilungsfunktion} von $n$ Zufallsvariablen $X_1, \ldots, X_n$ (stetig oder diskret) ist die Abbildung $F: \R^n \to [0,1]$,
     $$(x_1, \ldots, x_n) \mapsto F(x_1, \ldots, x_n) := \P(X_1 \leq x_1, \ldots, X_n \leq x_n)$$
 \end{mainbox}
@@ -13,8 +13,8 @@
         &= \sum_{y_1 \leq x_1, \ldots, y_n \leq x_n}p(y_1, \ldots,y_n)
     \end{align*}    
 
-\begin{subbox}{Konstruktion einer ZV}
-    Seien $X_1, \ldots, X_n$ diskrete Zufallsvariablen in $(\Omega, \F, \P)$, sodass $X_1 \in W_1, \ldots, X_n \in W_n$ f.s. für $W_1, \ldots, W_n \subset \R$ endlich oder abzählbar.
+\begin{subbox}{}
+    Seien $X_1, \ldots, X_n$ \tbf{diskrete} Zufallsvariablen in $(\Omega, \F, \P)$, sodass $X_1 \in W_1, \ldots, X_n \in W_n$ f.s. für $W_1, \ldots, W_n \subset \R$ endlich oder abzählbar.
 
     Für $\phi: \R^n \to \R$ beliebig, ist $Z = \phi(X_1, \ldots, X_n)$ eine diskrete Zufallsvariable mit $Z \in W = \phi(W_1 \times \ldots \times W_n)$ f.s. . 
 
@@ -68,11 +68,11 @@ Wenn $X_1, \ldots, X_n$ stetige ZV mit Dichten $f_1, \ldots, f_n$, dann sind die
     Sei $Z$ ein $n$-dimensionaler Zufallsvektor und $g: (\R^n, \mathcal{B}^n) \to (\R^m, \mathcal{B}^m)$ eine messbare Abbildung. Dann ist
     $$H(\omega) = g(Z(\omega))$$
     ein $m$-dimensionaler Zufallsvariable und ferner gilt
-    $$\P(H \in A) = \P(X \in g^{-1}(A)).$$
+    $$\P(H \in A) = \P(Z \in g^{-1}(A)).$$
     Wenn $g$ linear und umkehrbar (i.e. $g(x) = m + Bx$ mit det$(B) \neq 0$) und unter Vorraussetzung, dass die Verteilung von $Z$ absolut stetig ist, dann ist $H$ auch absolut stetig und es gilt:
     $$f_H(x)=\frac{1}{|\text{det}(B)|}f_Z(B^{-1}(x-m)).$$
 \end{subbox}
-\textbf{Beispielrechnung}
+\subsubsection*{Beispielrechnung}
 
 $Z = (X, Y)$ $2$-dim Zufallsvektor. Wir wollen die Dichte von $X + Y$ berechnen.
 
@@ -140,15 +140,27 @@ Aus der gemeinsamen Dichte $f_{X, X + Y}$ können wir die Dichte $f_{X + Y}$ bes
     \text{Falls $X$ und $Y$ unabhängig}\\
     &= \int_{-\infty}^{\infty}f_X(x)\cdot f_Y(z-x) \dx
 \end{align*}
-\begin{subbox}{Transformation von Zufallsvariablen}
+\subsubsection{Charakterisierung der Dichte durch \(\mathbb{E}\)}
     Sei $\phi: \R^n \to \R$ eine Abbildung und $X_1, \ldots, X_n$ ZV mit gemeinsamer Dichte $f$. 
     Dann lässt sich $\E(Z)$ für die Zufallsvariable $Z=\phi(X_1, \ldots, X_n)$ mit 
     $$\E(Z) =\idotsint\limits_{\R^n}\phi(x_1, \ldots, x_n)\cdot f(x_1, \ldots, x_n)\mathop{dx_n}\ldots\mathop{dx_1}$$
     berechnen.
-\end{subbox}
-\textbf{Beispielrechnung}
 
-Wir können diese Art den Erwartungswert zu berechnen nutzen, um die Dichte einer transformierten Zufallsvariable zu berechnen.
+Dies reicht aber nicht, um die Dichte einer transformierten ZV zu berechnen. Mehrere Zufallsvariablen mit unterschiedlichen Dichten können den gleichen Erwartungswert haben.
+
+\begin{subbox}{}
+    Sei $f: \R \to \R_+$ eine Abblidung, sodass $\int_{-\infty}^{\infty}f(z)\mathop{dz} = 1$. Dann sind folgende Aussagen äquivalent
+    \begin{itemize}
+        \item $Z$ ist stetig mit Dichte $f$
+        \item Für jede stückweise stetige, beschränkte Abbildung $\psi: \R \to \R$ gilt 
+        \[\E(\psi(Z)) = \int_{-\infty}^{\infty}\psi(z)f(z)\mathop{dz}\]
+    \end{itemize}
+\end{subbox}
+
+
+\subsubsection*{Beispielrechnung}
+
+Wir können diese Erkenntnis nutzen, um die Dichte einer transformierten Zufallsvariable zu berechnen.
 
 Seien $X$ und $Y$ zwei Zufallsvariablen mit gemeinsamer Dichtefunktion
 $$f(x,y) = \begin{cases}
@@ -157,28 +169,62 @@ $$f(x,y) = \begin{cases}
 \end{cases}$$
 Bestimme die Dichtefunktion $f_V$ der Zufallsvariable $V = XY$.
 
-Wir definieren $\phi(x, y) = xy$ und berechnen 
+Sei $\psi: \R \to \R$ stückweise stetig und beschränkt.
+Wir definieren $\phi(x, y) = \psi(xy) = \psi(v)$ und berechnen 
 \begin{align*}
-    \E(V) = \E(\phi(X,Y)) &= \int_{-\infty}^{\infty}\int_{-\infty}^{\infty}\phi(x,y)f(x,y)\dx\mathop{dy}\\
-    &= \int_{1}^{\infty}\int_{1}^{\infty}\phi(x, y)\frac{1}{x^2y^2}\dx\mathop{dy}\\
+    \E(\psi(V)) = \E(\phi(X,Y)) &= \int_{-\infty}^{\infty}\int_{-\infty}^{\infty}\phi(x,y)f(x,y)\dx\mathop{dy}\\
+    &= \int_{1}^{\infty}\int_{1}^{\infty}\psi(xy)\frac{1}{x^2y^2}\dx\mathop{dy}\\
     &\text{Substition } v = xy, \mathop{dv} = y\mathop{dx}\\
-    &= \int_{1}^{\infty}\int_{y}^{\infty}\frac{v}{y}\frac{1}{v^2}\mathop{dv}\mathop{dy}\\
+    &= \int_{1}^{\infty}\int_{y}^{\infty}\psi(v)\frac{1}{v^2}\frac{\mathop{dv}}{y}\mathop{dy}\\
     A = \{(v, y) \in \R^2 &\mid 1 \leq y < \infty, y \leq v < \infty\}\\
     = \{(v, y) \in \R^2 &\mid 1 \leq y \leq v, 1 \leq v < \infty\}\\
     \text{Zeichnung hilft ;)}\\
-    &= \int_{1}^{\infty}\int_{1}^{v}\frac{1}{vy}\mathop{dy}\mathop{dv}\\
-    &= \int_{1}^{\infty}\frac{\ln(v)}{v}\mathop{dv}\\
-    &= \int_{-\infty}^{\infty}v \cdot \frac{\ln(v)}{v^2}\mathds{1}_{v \in [1,\infty)}\mathop{dv}
+    &= \int_{1}^{\infty}\int_{1}^{v}\psi(v)\frac{1}{v^2y}\mathop{dy}\mathop{dv}\\
+    &= \int_{1}^{\infty}\psi(v)\frac{\ln(v)}{v^2}\mathop{dv}\\
+    &= \int_{-\infty}^{\infty}\psi(v) \cdot \frac{\ln(v)}{v^2}\mathds{1}_{v \in [1,\infty)}\mathop{dv}
 \end{align*}
 $$\implies f_V(t) = \frac{\ln(v)}{v^2}\mathds{1}_{v \in [1,\infty)}$$
 
 \begin{mainbox}{genereller Transformationssatz}
     Sei $Z$ ein $n$-dimensionaler Zufallsvektor mit Dichtefunktion $f_Z: \R^n \to \R_+$ und $\phi: \R^n \to \R^n$ stetig differenzierbar mit stetig differenzierbarer Umkehrabbildung $\phi^{-1}$. Dann gilt für die Dichte $f_U$ von $U = \phi(Z)$:
-    \[f_U(\vec{u}) = f_Z(\phi^{-1}(\vec{u}))|\text{det}(J_{\phi^{-1}}(\vec{u}))|\]
+    \[f_U(\vec{u}) = f_Z\left(\phi^{-1}\left(\vec{u}\right)\right) \cdot |\text{det}(J_{\phi^{-1}}(\vec{u}))|\]
 \end{mainbox}
 \textbf{Beweisidee.} Für $A \subset \R^n$ gilt
 \[\int_{A}f_U(\vec{u})\mathop{d\vec{u}} = \P(U \in A) = \P(Z \in \phi^{-1}(A)) = \int_{\phi^{-1}(A)}f_Z(\vec{z})\mathop{d\vec{z}}\]
 Aus der mehrdimensionalen Integralrechnung folgt dann
-\[\int_{\phi^{-1}(A)}f_Z(\vec{z})\mathop{d\vec{z}} = \int_{A}f_Z(\phi^{-1}(\vec{u}))|\text{det}(J_{\phi^{-1}}(\vec{u}))|\mathop{d\vec{u}}\]
+\[\int_{\phi^{-1}(A)}f_Z(\vec{z})\mathop{d\vec{z}} = \int_{A}f_Z\left(\phi^{-1}\left(\vec{u}\right)\right) \cdot |\text{det}(J_{\phi^{-1}}(\vec{u}))|\mathop{d\vec{u}}\]
 $\hfill\blacksquare$
-\subsubsection*{Beispielrechnung.}
+\subsubsection*{Beispielrechnung}
+Wir haben $Z = (X, Y)$, wobei $X, Y$ unabhängig und exponentialverteilt mit $\lambda > 0$. Berechne die Dichtefunktion $f_U$ von $$U:= \frac{X}{X+Y}$$
+Wir definieren $\phi$, so dass $(U, Y) = \phi(X, Y)$.
+\[\phi(x, y) = \left(\begin{matrix}
+    \frac{x}{x+y}\\
+    y
+\end{matrix}\right) \text{ und } \phi^{-1}(u, y) = \left(\begin{matrix}
+    \frac{uy}{1-u}\\
+    y
+\end{matrix}\right)\]
+Check: $\phi^{-1}\left(\frac{x}{x+y}, y\right) = \left(\frac{\frac{x}{x+y}y}{1-\frac{x}{x+y}}, y\right) = \left(\frac{xy}{x+y-x}, y\right) = \left(x, y\right).$ 
+
+We then have 
+\begin{align*}
+    \left|\text{det}\left(J_{\phi^{-1}}(u,y)\right)\right| &= \left\vert\text{det}\left(\begin{matrix}
+        \frac{y}{1-u}+\frac{uy}{(1-u)^2} & 0\\
+        \frac{u}{1-u} & 1
+    \end{matrix}\right) \right\vert\\
+    &= \left|\frac{y(1-u)+uy}{(1-u)^2}\right| = \left|\frac{y}{(1-u)^2}\right|
+\end{align*}
+Per genereller Transformationssatz gilt
+\begin{align*}
+    f_{U,Y}(u,y) &= f_{X, Y}\left(\frac{uy}{1-u}, y\right)\left\vert\frac{y}{(1-u)^2}\right\vert\\
+                &= \begin{cases}
+                    \lambda^2 e^{-\lambda\left(\frac{uy}{1-u}+y\right)}\left\vert\frac{y}{(1-u)^2}\right\vert &\text{if } \frac{uy}{1-u} \geq 0 \land y \geq 0\\
+                    0 \cdot \left\vert\frac{y}{(1-u)^2}\right\vert & \text{sonst.}
+                \end{cases}
+\end{align*}
+\begin{align*}
+    f_U(u) &= \int_{-\infty}^\infty f_{U,Y}(u,y) \mathop{dy}\\
+            &= \int_{0}^\infty \frac{\lambda^2}{(1-u)^2}e^{-\frac{\lambda}{1-u}y}y \mathds{1}_{u\in[0,1]}\mathop{dy}\\
+            \text{per partielle Integration}\\
+            &= \mathds{1}_{u \in [0,1]}
+\end{align*}

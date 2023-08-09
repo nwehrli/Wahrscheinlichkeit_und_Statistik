@@ -41,7 +41,8 @@ Sei $A_1,A_2, \dots \in \A$, dann gilt:\\
 \textbf{Siebformel}
     $$\P\left(\bigcup_{i=1}^{n}A_i\right) = \sum_{k = 1}^{n}\sum_{1\leq i_1 < \dots < i_k \leq n} \P(A_{i_1} \cap \dots \cap A_{i_k})$$
 
-    \begin{subbox}{Atome}
+    \textbf{Atome}
+
         Sei $\Omega$ nicht leer und diskret. Sei $\F$ eine beliebige $\sigma$-Algebra über $\Omega$. 
     
         Eine nichtleere Menge $A \in \F$ heisst \textbf{atomare} Mengee von $\F$ falls für alle $B \in \F$ gilt:
@@ -51,7 +52,6 @@ Sei $A_1,A_2, \dots \in \A$, dann gilt:\\
         Die Menge der atomaren Mengen von $\F$ bezeichnen wir mit Atom$(\F)$.
     
         Jedes Element von $\F$ lässt sich als abzählbare Vereinigung von Elementen aus Atom$(\F)$ schreiben.
-    \end{subbox}
     
 \subsection{Bedingte Wahrscheinlichkeiten}
  Sei $(\Omega, \A, \P)$ ein Wahrscheinlichkeitsraum.
@@ -80,7 +80,7 @@ In der Bayesschen Statistik versucht man die Hypothese zu finden, so dass $\P(B_
 
 (Wurde in der Vorlesung nicht weiter behandelt)
 \subsection{Unabhängigkeit} 
-\begin{mainbox}{Unabhängigkeit von zwei Ereignissen}
+\begin{mainbox}{}
     Zwei Ereignisse $A, B \in \A$ heissen \textbf{unabhängig}, wenn 
     $$\P(A\cap B) = \P(A) \cdot \P(B)$$
 \end{mainbox}
@@ -94,7 +94,7 @@ Wenn $\P(A) > 0, \P(B) > 0$ gilt:\\
 \\
 \\
 Wir können die Definition der Unabhängigkeit auf beliebige Mengen von Ereignissen erweitern.
-\begin{mainbox}{Allgemeine Unabhängigkeit}
+\begin{mainbox}{}
     Eine Kollektion von Ereignissen $(A_i; i \in I)$ heisst \textbf{(stochastisch) unabhängig}, wenn 
     $$J \subseteq I \text{ endlich} \implies \P\left(\bigcap_{i\in J} A_i\right) = \prod_{i \in J} \P(A_i)$$
 \end{mainbox}

@@ -7,21 +7,21 @@ Seien \(X,Y\) zwei ZV mit gemeinsamer Dichte \(f_{X,Y}\). Welche Aussage ist kor
 	\item[\(\square\)] Die ZV sind nicht notwendigerweise stetig.
 \end{itemize}
 
-\noindent
-Seien \((X_i)_{i = 1}^n\) uiv. mit Verteilungsfunktion \(F_{X_i} = F\). Was ist die Verteilungsfunktion von \(M = \text{max}(X_1,...,X_n)\)?
-\begin{itemize}
-	\item[\checkmark] \(F_M(a) = F(a)^n\)
-	\item[\(\square\)] \(F_M(a) = 1 - F(a)^n\)
-	\item[\(\square\)] \(F_M(a) = (1 - F(a))^n\)
-\end{itemize}
+% \noindent
+% Seien \((X_i)_{i = 1}^n\) uiv. mit Verteilungsfunktion \(F_{X_i} = F\). Was ist die Verteilungsfunktion von \(M = \text{max}(X_1,...,X_n)\)?
+% \begin{itemize}
+% 	\item[\checkmark] \(F_M(a) = F(a)^n\)
+% 	\item[\(\square\)] \(F_M(a) = 1 - F(a)^n\)
+% 	\item[\(\square\)] \(F_M(a) = (1 - F(a))^n\)
+% \end{itemize}
 
-\noindent
-Seien \(X, Y\) unabhängig und lognormalverteilt (\(\ln X, \ln Y\) sind normalverteilt). Welche Aussage ist korrekt?
-\begin{itemize}
-	\item[\checkmark] \(XY\) ist lognormalverteilt
-	\item[\(\square\)] \(XY\) ist normalverteilt
-	\item[\(\square\)] \(e^{X + Y}\) ist normalverteilt
-\end{itemize}
+% \noindent
+% Seien \(X, Y\) unabhängig und lognormalverteilt (\(\ln X, \ln Y\) sind normalverteilt). Welche Aussage ist korrekt?
+% \begin{itemize}
+% 	\item[\checkmark] \(XY\) ist lognormalverteilt
+% 	\item[\(\square\)] \(XY\) ist normalverteilt
+% 	\item[\(\square\)] \(e^{X + Y}\) ist normalverteilt
+% \end{itemize}
 
 \subsection{Aufgaben Wahrscheinlichkeit}
 \subsubsection*{\texorpdfstring{Dichte von \(\max(X_1,X_2)\)}{Dichte von max()}}
@@ -52,3 +52,26 @@ Bestimme die gemeinsame Dichte von \(P \sim \mathcal{U}[0,1]\) und \(H \sim \mat
 Somit ist:
 \[f_{P, H} (p, h) = f_P(p) \cdot f_{H | P}(h \mid p) = \frac{1}{p} \cdot \mathbb I_{0 \leq h \leq p \leq 1}\]
 
+\subsubsection*{Maximum und Minimum gleichverteilter ZVen}
+Seien $U_1, U_2, U_3$ unabhängige, $\mathcal{U}([0,1])$-verteilte Zufallsvariablen. 
+Wir betrachten die stetigen ZV $L := \min(U_1, U_2, U_3)$ und $M:=\max(U_1, U_2, U_3)$.
+
+Zeige für beliebige $\phi, \psi: \R \to \R$ stückweise stetig und beschränkt, dass 
+\[\E\left(\phi(M)\cdot\psi(L)\right) = \int\limits_{-\infty}\limits^\infty \int\limits_{-\infty}\limits^\infty \phi(m) \cdot \psi(l) \cdot6(m-l)\mathds{1}_{0\leq l\leq m \leq 1}\mathop{dl}\mathop{dm}\]
+Wegen Unabhängigkeit ist die gemeinsame Dichte durch $f(u_1, u_2, u_3) = \mathds{1}_{u_1 \in [0,1]}\mathds{1}_{u_2 \in [0,1]}\mathds{1}_{u_3 \in [0,1]}$ bestimmt.
+
+\begin{align*}
+	&\E(\phi(M)\psi(L)) \\
+	&= \int_{\R^3} \phi(\max(u_1, u_2, u_3))\psi(\min(u_1, u_2, u_3)) f(u_1, u_2, u_3) \mathop{du_1}\mathop{du_2}\mathop{du_3}\\
+	&= \int\limits_0\limits^1 \int\limits_0\limits^1 \int\limits_0\limits^1 \phi(\max(u_1, u_2, u_3))\psi(\min(u_1, u_2, u_3)) \mathop{du_1}\mathop{du_2}\mathop{du_3}
+\end{align*}
+Wir zerteilen jetzt dieses Integral in 6 Cases mit Indikatorfunktionen (die einzelnen Integrale summiert ergeben das gesuchte Integral). 
+Beispielrechnung mit $\mathds{1}_{u_1 \leq u_2 \leq u_3}$ (andere Fälle analog).
+\begin{align*}
+	&= \int\limits_0\limits^1 \int\limits_0\limits^1 \int\limits_0\limits^1 \phi(\max(u_1, u_2, u_3))\psi(\min(u_1, u_2, u_3)) \mathds{1}_{u_1 \leq u_2 \leq u_3} \mathop{du_1}\mathop{du_2}\mathop{du_3}\\
+	&= \int\limits_0\limits^1 \int\limits_0\limits^1 \int\limits_0\limits^1 \phi(u_3)\psi(u_1) \mathds{1}_{u_1 \leq u_2 \leq u_3} \mathop{du_1}\mathop{du_2}\mathop{du_3}\\
+	&= \int_0^1 \phi(u_3) \left(\int_0^{u_3}\psi(u_1)\left(\int_{u_1}^{u_3}\mathop{du_2}\right)\mathop{du_1}\right)\mathop{du_3}\\
+	&= \int_0^1\int_0^1 \phi(u_3)\psi(u_1)(u_3-u_1)\mathds{1}_{u_1\leq u_3}\mathop{du_1}\mathop{du_3}
+\end{align*}
+Die anderen 5 Fälle sind analog und deshalb folgt
+\[\E\left(\phi(M)\cdot\psi(L)\right) = \int\limits_{-\infty}\limits^\infty \int\limits_{-\infty}\limits^\infty \phi(m) \cdot \psi(l) \cdot6(m-l)\mathds{1}_{0\leq l\leq m \leq 1}\mathop{dl}\mathop{dm}\]

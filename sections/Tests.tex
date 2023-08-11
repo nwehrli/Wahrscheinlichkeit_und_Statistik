@@ -1,6 +1,6 @@
 \section{Tests}
-\begin{subbox}{Null- und Alternativhypothese}
-	Die Nullhypothese \(H_0\) und die Alternativhypothese \(H_A\) sind zwei Teilmengen \(\Theta_0 \subseteq \Theta, \Theta_A \subseteq \Theta\) wobei \(\Theta_0 \cap \Theta_A = \varnothing\). 
+\begin{subbox}{}
+	Die \tbf{Nullhypothese} \(H_0\) und die \tbf{Alternativhypothese} \(H_A\) sind zwei Teilmengen \(\Theta_0 \subseteq \Theta, \Theta_A \subseteq \Theta\) wobei \(\Theta_0 \cap \Theta_A = \varnothing\). 
 
 	Falls keine explizite Alternativhypothese spezifiziert ist, so hat man $\Theta_A = \Theta \setminus \Theta_0$. 
 
@@ -16,10 +16,10 @@ Wir wollen nun anhand der Daten \((X_1(\omega), \ldots, X_n(\omega))\) entscheid
 	\item Die Hypothese \(H_0\) wird \textit{verworfen}, falls \(T(\omega) \in K\).
 	\item Die Hypothese \(H_0\) wird \textit{akzeptiert}, falls \(T(\omega) \notin K\).
 \end{itemize}
-\begin{subbox}{Fehler 1. und 2. Art}
-	Ein Fehler 1. Art ist, wenn \(H_0\) fälschlicherweise verworfen wird, obwohl sie richtig ist.
+\begin{subbox}{}
+	Ein \tbf{Fehler 1. Art} ist, wenn \(H_0\) fälschlicherweise verworfen wird, obwohl sie richtig ist.
 	\[\P_\theta(T \in K), \quad \theta \in \Theta_0\]
-	\noindent Ein Fehler 2. Art ist, wenn \(H_0\) fälschlicherweise akzeptiert wird, obwohl sie falsch ist.
+	\noindent Ein \tbf{Fehler 2. Art} ist, wenn \(H_0\) fälschlicherweise akzeptiert wird, obwohl sie falsch ist.
 	\[\P_\theta(T\notin K) = 1 - \P_\theta(T \in K), \quad \theta \in \Theta_A\]
 \end{subbox}
 \textbf{Bemerkung: } Da $T$ eine ZV und somit bezüglich dem Mass $\P_\theta: \F \to [0,1]$ messbar ist, gilt $\{T \in K\} \in \F$ und somit ist $\P_\theta(T \in K)$ wohldefiniert. 
@@ -45,8 +45,8 @@ Für zusammengesetzte $\Theta_0$ und $\Theta_A$ können wir den verallg. Likelih
 
 Wenn \(R \gg 1\), so gilt \(H_A > H_0\) und analog \(R \ll 1 \implies H_A < H_0\).
 
-\begin{subbox}{Likelihood-Quotient-Test}
-	Der Likelihood-Quotient-Test (LQ-Test) mit Parameter \(c \ge 0\) ist definiert durch:
+\begin{subbox}{}
+	Der \tbf{Likelihood-Quotient-Test (LQ-Test)} mit Parameter \(c \ge 0\) ist definiert durch:
 	\[T = R(x_1, \ldots, x_n) \quad \text{und} \quad K = (c, \infty]\]
 \end{subbox}
 \textbf{Neyman-Pearson-Lemma}

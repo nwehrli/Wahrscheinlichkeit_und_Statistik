@@ -8,8 +8,8 @@ Wir treffen folgende Annahmen:
 	\item Zufallsvariablen \(X_1, \ldots, X_n\) auf \((\Omega, \F)\)
 \end{itemize}
 Wir nennen die Gesamtheit der beobachteten Daten \(x_1, \ldots, x_n\) (wobei $x_i = X_i(\omega)$) und die ZV \(X_1, \ldots, X_n\) Stichprobe.
-\begin{mainbox}{Definition Schätzer}
-	Ein Schätzer ist eine Zufallsvariable \(T: \Omega \mapsto \R\) von der Form
+\begin{mainbox}{}
+	Ein \tbf{Schätzer} ist eine Zufallsvariable \(T: \Omega \mapsto \R\) von der Form
 	\[T = t(X_1, \ldots, X_n), \quad t: \R^n \mapsto \R\]
 \end{mainbox}
 Ein Schätzer \(T\) ist \textbf{erwartungstreu}, falls für alle \(\theta \in \Theta\) gilt:
@@ -43,7 +43,7 @@ Die Maximum-Likelihood-Methode ist ein Weg, um systematisch einen Schätzer zu b
 	\item $f''(\theta) < 0$ oder anderes Argument, dass wir das Maximum gefunden haben (evtl. Randstellen überprüfen!).
 \end{enumerate}
 
-\tbf{Beispielrechnung mit Randstelle:}\\
+\subsubsection*{Beispielrechnung mit Randstelle}
 Wir betrachten den Parameterraum $\Theta = \R_+ \times R_+$ mit $\theta = (\theta_1, \theta_2)$ und die Modellfamilie $(\P_\theta)_{\theta\in \Theta}$, wobei die ZV $X_1, \ldots, X_n$ iid. mit $f_{\theta_1, \theta_2}(x) = \begin{cases}
     \theta_2e^{\theta_1\theta_2 - \theta_2x} & \text{falls }x \geq \theta_1,\\
     0 & \text{sonst.}

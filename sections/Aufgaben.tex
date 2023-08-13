@@ -45,11 +45,11 @@ Für die Wahrscheinlichkeit brauchen wir eine Fallunterscheidung: \smallskip
 
 \begin{enumerate}
 	\item \(x < 0\) oder \(1 < x\):
-	      \[\mathbb{P}[X_1 \leq x \mid X \geq y] = 0\]
+	      \[\mathbb{P}(X_1 \leq x \mid X \geq y) = 0 \text{ bzw. } 1\]
 	\item \(0 \leq x \leq y \leq 1\):
-	      \[\frac{\mathbb{P}[X_1 \leq x \cap X \geq y]}{\mathbb{P}[X \geq y]} = \frac{x(1-y)}{1 - y^2}\]
+	      \[\frac{\mathbb{P}(X_1 \leq x, X_2 \geq y)}{\mathbb{P}(X \geq y)} = \frac{x(1-y)}{1 - y^2}\]
 	\item \(0 \leq y \leq x \leq 1\):
-	      \[\frac{\mathbb{P}[X_1 \leq x \cap X \geq y]}{\mathbb{P}[X \geq y]} = \frac{x - y^2}{1 - y^2}\]
+	      \[\frac{\mathbb{P}(X_1 < y, X_2 \geq y) + \P(y \leq X_1 \leq x)}{\mathbb{P}(X \geq y)} = \frac{x - y^2}{1 - y^2}\]
 \end{enumerate}
 
 \subsubsection*{Gemeinsame Dichte}
@@ -63,6 +63,7 @@ Somit ist:
 
 \subsubsection*{Maximum und Minimum gleichverteilter ZVen}
 Seien $U_1, U_2, U_3$ unabhängige, $\mathcal{U}([0,1])$-verteilte Zufallsvariablen. 
+
 Wir betrachten die stetigen ZV $L := \min(U_1, U_2, U_3)$ und $M:=\max(U_1, U_2, U_3)$.
 
 Zeige für beliebige $\phi, \psi: \R \to \R$ stückweise stetig und beschränkt, dass 

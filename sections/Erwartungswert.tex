@@ -69,6 +69,18 @@ $$\phi(\E(X)) \leq \E(\phi(X))$$
     \item $X, Y$ unabhängig $\implies$ $\text{Cov}(X, Y) = 0$ (Die Umkehrung ist falsch!)
     \item $\Var(X+Y) = \Var(X) + \Var(Y) + 2\text{Cov}(X, Y)$
 \end{enumerate}
+
+\begin{subbox}{}
+    \begin{itemize}
+        \item Momenterzeugende Funktion: $M_X(t):=\E\left(e^{tX}\right).$ 
+        \item Die $k$-te Ableitung ist das $k$-te Moment von $X$: $m_k := \E(X^k).$ 
+        \item Das $k$-te zentrale Moment von $X$: $\mu_k := \E\left((X-\mu)^k\right).$ 
+        \item Für $X$ stetig gilt deshalb $M_X(t) = \int_{-\infty}^\infty e^{tx} f(x) dx.$ 
+        \item Das $k$-te empirische Moment der Realisierung $(x_{1\dots n}): \hat m_k(x_{1\dots n}) := \frac1n \sum_{i=1}^n x_i^k.$ 
+    \end{itemize}
+    
+\end{subbox}
+
 \subsection{Bedingter Erwartungswert}
 Sei $(\Omega, \A, \P)$ ein diskreter Wahrscheinlichkeitsraum und $X:\Omega \to \R$ eine Zufallsvariable. 
 

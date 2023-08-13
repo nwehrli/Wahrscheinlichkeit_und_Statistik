@@ -9,8 +9,8 @@ Wir treffen folgende Annahmen:
 \end{itemize}
 Wir nennen die Gesamtheit der beobachteten Daten \(x_1, \ldots, x_n\) (wobei $x_i = X_i(\omega)$) und die ZV \(X_1, \ldots, X_n\) Stichprobe.
 \begin{mainbox}{}
-	Ein \tbf{Schätzer} ist eine Zufallsvariable \(T: \Omega \mapsto \R\) von der Form
-	\[T = t(X_1, \ldots, X_n), \quad t: \R^n \mapsto \R\]
+	Ein \tbf{Schätzer} ist eine Zufallsvariable \(T: \Omega \mapsto \R^m\) von der Form
+	\[T = t(X_1, \ldots, X_n), \quad t: \R^n \mapsto \R^m\]
 \end{mainbox}
 Ein Schätzer \(T\) ist \textbf{erwartungstreu}, falls für alle \(\theta \in \Theta\) gilt:
 \[\E_\theta [T] = \theta\]
@@ -84,3 +84,10 @@ Daraus erhalten wir die Maximimum-Likelihood-Schätzer für $\theta_1$ und $\the
     T_1 = \min_{1\leq i \leq n}X_i \text{ und } T_2 = \frac{n}{\sum_{i=1}^n X_i - nT_1}
 \end{align*}
 
+\subsection{Momentenmethode /-schätzer:} 
+\begin{enumerate}
+	\item Sei $X_1, ..., X_n$ iid. eine Stichprobe. 
+	\item Sei $\Theta$ ein $m$-dimensionaler Parameterraum. 
+	\item Stelle für $\theta = (\theta_1,\dots \theta_m)$ ein Gleichungssystem auf, in dem das $k$-te empirische Moment dem $k$-ten Moment gleichgesetzt wird: $\hat m_k(x_1,\dots x_n) = g_k(\theta_1,\dots \theta_m), k \in \{1,\dots m\}.$ 
+	\item Der Vektor $\hat \theta(X_1,\dots X_m)$ heisst Momentenschätzer des Parameters $\theta.$ 
+\end{enumerate}

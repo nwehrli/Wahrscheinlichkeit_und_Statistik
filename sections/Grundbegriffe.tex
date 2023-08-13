@@ -39,13 +39,13 @@ Sei $A_1,A_2, \dots \in \A$, dann gilt:\\
 \textbf{Union Bound}
     $$\P\left(\bigcup_{i=1}^{\infty} A_i \right) \leq \sum_{i=1}^{\infty}\P(A_i)$$
 \textbf{Siebformel}
-    $$\P\left(\bigcup_{i=1}^{n}A_i\right) = \sum_{k = 1}^{n}\sum_{1\leq i_1 < \dots < i_k \leq n} \P(A_{i_1} \cap \dots \cap A_{i_k})$$
+    $$\P\left(\bigcup_{i=1}^{n}A_i\right) = \sum_{k = 1}^{n}(-1)^{k+1}\sum_{1\leq i_1 < \dots < i_k \leq n} \P(A_{i_1} \cap \dots \cap A_{i_k})$$
 
     \textbf{Atome}
 
         Sei $\Omega$ nicht leer und diskret. Sei $\F$ eine beliebige $\sigma$-Algebra über $\Omega$. 
     
-        Eine nichtleere Menge $A \in \F$ heisst \textbf{atomare} Mengee von $\F$ falls für alle $B \in \F$ gilt:
+        Eine nichtleere Menge $A \in \F$ heisst \textbf{atomare} Menge von $\F$ falls für alle $B \in \F$ gilt:
         $$B \subseteq A \implies B = \emptyset \lor B = A$$
         (Intuitiv: $A$ ist die kleinste nichtleere Menge bezüglich der Inklusion in $\F$)
     

@@ -1,5 +1,5 @@
 \clearpage
-\section{Tabellen}
+\section{Tabellen \& Diverses}
 
 \subsection{Grenzwerte}
 \renewcommand*{\arraystretch}{2}
@@ -83,26 +83,58 @@
 		\bottomrule
 	\end{tabularx}
 \end{center}
-\subsection{Integrale}
-\begin{center}
-	\begin{tabularx}{\linewidth}{>{\centering\arraybackslash}X>{\centering\arraybackslash}X}
-		\toprule
-		$\mathbf{f(x)}$                              & $\mathbf{F(x)}$                                                  \\
-		\midrule
-		$\int f'(x) f(x) \mathop{dx}$                & $\frac{1}{2}(f(x))^2$                                            \\
-		$\int \frac{f'(x)}{f(x)} \mathop{dx}$        & $\ln|f(x)|$                                                      \\
-		$\int_{-\infty}^\infty e^{-x^2} \mathop{dx}$ & $\sqrt{\pi}$                                                     \\
-		$\int (ax+b)^n \mathop{dx}$                  & $\frac{1}{a(n+1)}(ax+b)^{n+1}$                                   \\
-		$\int x(ax+b)^n \mathop{dx}$                 & $\frac{(ax+b)^{n+2}}{(n+2)a^2} - \frac{b(ax+b)^{n+1}}{(n+1)a^2}$ \\
-		$\int (ax^p+b)^n x^{p-1} \mathop{dx}$        & $\frac{(ax^p+b)^{n+1}}{ap(n+1)}$                                 \\
-		$\int (ax^p + b)^{-1} x^{p-1} \mathop{dx}$   & $\frac{1}{ap} \ln |ax^p + b|$                                    \\
-		$\int \frac{ax+b}{cx+d} \mathop{dx}$         & $\frac{ax}{c} - \frac{ad-bc}{c^2} \ln |cx +d|$                   \\
-		$\int \frac{1}{x^2+a^2} \mathop{dx}$         & $\frac{1}{a} \arctan \frac{x}{a}$                                \\
-		$\int \frac{1}{x^2 - a^2} \mathop{dx}$       & $\frac{1}{2a} \ln\left| \frac{x-a}{x+a} \right|$                 \\
-		$\int \sqrt{a^2+x^2} \mathop{dx} $           & $\frac{x}{2}f(x) + \frac{a^2}{2}\ln(x+f(x))$                     \\
-		\bottomrule
-	\end{tabularx}
-\end{center}
+% \subsection{Integrale}
+% \begin{center}
+% 	\begin{tabularx}{\linewidth}{>{\centering\arraybackslash}X>{\centering\arraybackslash}X}
+% 		\toprule
+% 		$\mathbf{f(x)}$                              & $\mathbf{F(x)}$                                                  \\
+% 		\midrule
+% 		$\int f'(x) f(x) \mathop{dx}$                & $\frac{1}{2}(f(x))^2$                                            \\
+% 		$\int \frac{f'(x)}{f(x)} \mathop{dx}$        & $\ln|f(x)|$                                                      \\
+% 		$\int_{-\infty}^\infty e^{-x^2} \mathop{dx}$ & $\sqrt{\pi}$                                                     \\
+% 		$\int (ax+b)^n \mathop{dx}$                  & $\frac{1}{a(n+1)}(ax+b)^{n+1}$                                   \\
+% 		$\int x(ax+b)^n \mathop{dx}$                 & $\frac{(ax+b)^{n+2}}{(n+2)a^2} - \frac{b(ax+b)^{n+1}}{(n+1)a^2}$ \\
+% 		$\int (ax^p+b)^n x^{p-1} \mathop{dx}$        & $\frac{(ax^p+b)^{n+1}}{ap(n+1)}$                                 \\
+% 		$\int (ax^p + b)^{-1} x^{p-1} \mathop{dx}$   & $\frac{1}{ap} \ln |ax^p + b|$                                    \\
+% 		$\int \frac{ax+b}{cx+d} \mathop{dx}$         & $\frac{ax}{c} - \frac{ad-bc}{c^2} \ln |cx +d|$                   \\
+% 		$\int \frac{1}{x^2+a^2} \mathop{dx}$         & $\frac{1}{a} \arctan \frac{x}{a}$                                \\
+% 		$\int \frac{1}{x^2 - a^2} \mathop{dx}$       & $\frac{1}{2a} \ln\left| \frac{x-a}{x+a} \right|$                 \\
+% 		$\int \sqrt{a^2+x^2} \mathop{dx} $           & $\frac{x}{2}f(x) + \frac{a^2}{2}\ln(x+f(x))$                     \\
+% 		\bottomrule
+% 	\end{tabularx}
+% \end{center}
+\begin{subbox}{Gamma-Verteilung}
+	Die Gamma-Verteilung ist eine stetige Verteilung mit der Dichtefunktion
+	\[f(z) = \frac{1}{\Gamma(\alpha)}\lambda^{\alpha}z^{\alpha-1}e^{-\lambda z} \text{ für } z \geq 0, \alpha >0, \lambda > 0\]
+	\begin{enumerate}
+		\item Wir schreiben $Z \sim Ga(\alpha, \lambda)$ für eine gamma-verteilte Zufallsvariable $Z$ mit Parametern $\alpha$ und $\lambda$.
+		\item Die Summe von $n \in \N$ unabhängigen $Exp(\lambda)$-verteilten Zufallsvariablen ist $Ga(n, \lambda)$-verteilt.
+		\item Die $\chi^2$-Verteilung mit $k$ Freiheitsgraden ist $Ga\left(\frac{k}{2}, \frac{1}{2}\right)$-verteilt. 
+	\end{enumerate}
+\end{subbox}
+Sei $(X_i)_{i \geq 1} \sim \mathcal{N}(0,1)$ iid. eine Folge von Zufallsvariablen. 
+\begin{enumerate}
+	\item $\sum_{i = 1}^{n} X_i^2 \sim \chi^2_n$
+	\item $\frac{1}{n}\sum_{i = 1}^n X_i \sim \chi_1^2$
+	\item $X_1^2 + X_2^2 \sim Exp\left(\frac{1}{2}\right)$
+	\item Sei $Y \sim \chi_m^2$ unabhängig von $X \sim \mathcal{N}(0,1)$. Dann gilt \[\frac{X}{\sqrt{\frac{1}{m}Y}} \sim t_m\] 
+\end{enumerate}
+Seien $X_1, \ldots, X_n$ iid. $\sim \mathcal{N}(\mu, \sigma^2)$.
+Wir erinneren uns an die Notationen für Stichprobenmittel $\overline{X}_n$ und Stichprobenvarianz $S^2 = \frac{1}{n-1}\sum_{i = 1}^n(X_i - \overline{X}_n)^2$.
+\begin{enumerate}
+	\item $\frac{n-1}{\sigma^2}S^2 \sim \chi_{n-1}^2$
+	\item $\overline{X}_n$ und $S^2$ sind unabhängig.
+	\item \[\frac{\overline{X}_n - \mu}{S/\sqrt{n}} = \frac{\frac{\overline{X}_n - \mu}{\sigma / \sqrt{n}}}{\sqrt{S^2/\sigma^2}} \sim t_{n-1}\]
+\end{enumerate}
+
+\subsection{MLE Schätzer}
+\begin{itemize}
+	\item $X_1, ..., X_n \sim Exp(\theta)$ iid.: $T = \frac{\sum_{i=1}^nX_i}{n} = \overline{X}_n$
+	\item $X_1, ..., X_n \sim Geo(\theta)$ iid.: $T = \frac{n}{\sum_{i=1}^n X_i} = \frac{1}{\overline{X}_n}$
+	\item $X_1, ..., X_n \sim Bin(N, \theta)$ iid.: $T = \frac{1}{N}\frac{\sum_{i = 1}^n X_i}{n}$
+	\item $X_1, ..., X_n \sim P(\theta)$ iid.: $T = \frac{sum_{i = 1}^n X_i}{n} = \overline{X}_n$
+	\item $X_1, ..., X_n \sim \mathcal{U}([\theta_1, \theta_2])$ iid.: $T_{\theta_1} = \max(X_i), T_{\theta_2} = \min(X_i)$
+\end{itemize}
 \clearpage
 
 \renewcommand*{\arraystretch}{2}
@@ -130,7 +162,7 @@
 		
 				Normalverteilung         & \makecell[l]{\( \sigma^2 \): Varianz                                                                                                                                                                                                                                                                       \\ \( \mu: \E[X] \)} & \( \mu \) & \( \sigma ^2 \) & \( \frac{1}{\sqrt{2\pi \sigma^2} }e^{-{\frac{(t-\mu)^2}{2\sigma^2} }} \) & \( \frac{1}{\sigma {\sqrt{2\pi}}} \int_{-\infty}^t e^{-\frac{1}{2}\left( \frac{y-\mu}{\sigma} \right) ^2} \mathrm{d} y \) \\
 		
-				\( \chi ^2 \)-Verteilung & \( n \): Freiheitsgrad               & \( n \)                          & \( 2n \)                         & \( \frac{1}{2^{\frac{n}{2}}\Gamma (\frac{n}{2})} t^{\frac{n}{2}-1} e^{-\frac{t}{2}} \text{ für } t>0\)                                        & \(P\left( \frac{n}{2}, \frac{t}{2}\right)  \) \\
+				\( \chi ^2 \)-Verteilung & \( n \): Freiheitsgrad               & \( n \)                          & \( 2n \)                         & \( \frac{1}{2^{\frac{n}{2}}\Gamma (\frac{n}{2})} t^{\frac{n}{2}-1} e^{-\frac{t}{2}} \text{ für } t>0\)                                        & \(P\left( \frac{n}{2}, \frac{t}{2}\right) \) \\
 		
 				t-Verteilung             & \( n \): Freiheitsgrad               & \( \begin{cases} 0 & n>1 \\ \text{undef.} & \text{sonst} \end{cases} \) & \( \begin{cases} \frac{n}{n-2} & n> 2 \\ \infty & 1<n \leq 2 \\ \text{undef.} & \text{sonst} \end{cases} \) & \( \frac{\Gamma \left( \frac{n+1}{2} \right) }{\sqrt{n\pi } \cdot \Gamma (\frac{n}{2})} \left( 1+ \frac{t^2}{n} \right) ^{- \frac{n+1}{2}} \) & I'd rather not                                \\
 		
@@ -141,6 +173,8 @@
 
     \end{table*}
 \end{center}
+
+\vspace*{-1.1cm}
 \begin{subbox}{Gamma-Funktion}
 	\begin{align*}
 		\Gamma(v) := \int_0^\infty t^{v-1}e^{-t}\mathop{dt}, v \geq 0.

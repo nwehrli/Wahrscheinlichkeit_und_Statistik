@@ -130,7 +130,7 @@ Wir erinneren uns an die Notationen für Stichprobenmittel $\overline{X}_n$ und 
 
 \subsection{MLE Schätzer}
 \begin{itemize}
-	\item $X_1, ..., X_n \sim Exp(\theta)$ iid.: $T = \frac{\sum_{i=1}^nX_i}{n} = \overline{X}_n$
+	\item $X_1, ..., X_n \sim Exp(\theta)$ iid.: $T = \frac{n}{\sum_{i=1}^n X_i} = \frac{1}{\overline{X}_n}$
 	\item $X_1, ..., X_n \sim Geo(\theta)$ iid.: $T = \frac{n}{\sum_{i=1}^n X_i} = \frac{1}{\overline{X}_n}$
 	\item $X_1, ..., X_n \sim Bin(N, \theta)$ iid.: $T = \frac{1}{N}\frac{\sum_{i = 1}^n X_i}{n}$
 	\item $X_1, ..., X_n \sim P(\theta)$ iid.: $T = \frac{\sum_{i = 1}^n X_i}{n} = \overline{X}_n$

@@ -1,5 +1,5 @@
 # Fdb version 4
-["pdflatex"] 1721818292 "c:/Users/nshar/OneDrive/Dokumente/GitHub/Wahrscheinlichkeit_und_Statistik/WuS.tex" "WuS.pdf" "WuS" 1721818297 0
+["pdflatex"] 1721824668 "c:/Users/nshar/OneDrive/Dokumente/GitHub/Wahrscheinlichkeit_und_Statistik/WuS.tex" "WuS.pdf" "WuS" 1721824672 0
   "C:/Users/nshar/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map" 1721722656 357986 9ab516dc9be2b4c8da0f30f42ee61d88 ""
   "C:/Users/nshar/AppData/Local/MiKTeX/fonts/pk/ljfour/jknappen/ec/dpi600/tcrm0800.pk" 1656925663 9292 abd0b353f0da25fc955a1ca5d7338b47 ""
   "C:/Users/nshar/AppData/Local/MiKTeX/miktex/data/le/pdftex/pdflatex.fmt" 1683668698 23183116 2bb07d07a4440a907519af35e9aaa554 ""
@@ -242,8 +242,8 @@
   "C:/Users/nshar/AppData/Local/Programs/MiKTeX/tex/latex/xcolor/xcolor.sty" 1656236890 56148 51a9a8571c07b9921892ae11063ae853 ""
   "C:/Users/nshar/AppData/Local/Programs/MiKTeX/tex/latex/xfor/xfor.sty" 1233853356 2689 44855b72da58344b1c1d9b3087bce6ca ""
   "C:/Users/nshar/AppData/Local/Programs/MiKTeX/tex/latex/xkeyval/xkeyval.sty" 1656236919 4937 4ce600ce9bd4ec84d0250eb6892fcf4f ""
-  "WuS.aux" 1721818297 6352 25f5b81c0f2be052dd8e8d0f5e5d86df "pdflatex"
-  "WuS.out" 1721818297 7233 aa98862628c0dbf19b915d13894ea2eb "pdflatex"
+  "WuS.aux" 1721824672 6352 25f5b81c0f2be052dd8e8d0f5e5d86df "pdflatex"
+  "WuS.out" 1721824672 7233 aa98862628c0dbf19b915d13894ea2eb "pdflatex"
   "WuS.tex" 1690490578 683 5d21830da0677a7c2860e366e7cb9b25 ""
   "c:/Users/nshar/OneDrive/Dokumente/GitHub/Wahrscheinlichkeit_und_Statistik/WuS.tex" 1690490578 683 5d21830da0677a7c2860e366e7cb9b25 ""
   "defaultcheatsheetstyle.sty" 1691703035 2644 13403755c4f8a7b2122bf26ed102e553 ""
@@ -254,7 +254,7 @@
   "sections/Konfidenzintervalle.tex" 1690565154 1303 768dae873ea4c9d7d86bd7161776c766 ""
   "sections/Mehrere Zufallsvariablen.tex" 1691522175 11971 20cf0d7d3388d95793afe25a7d5ab215 ""
   "sections/Schätzer.tex" 1691962517 5657 9e74338be5d64afab0e9df0b12ce5958 ""
-  "sections/Tabellen.tex" 1721818290 14190 ce5491bfe01c5efefe8f94b7ad396024 ""
+  "sections/Tabellen.tex" 1721824668 14194 06fbb991ee912a3acbce7118234f31dd ""
   "sections/Tests.tex" 1691934893 9230 8b95ada054d5f53ed704611ea8c60bcd ""
   "sections/Zufallsvariablen.tex" 1691926117 7209 a052890e47bcced2e69bd5f29ebf4ced ""
   (generated)

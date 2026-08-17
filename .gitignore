@@ -1,20 +1,24 @@
-# Latex stuff
+# LaTeX build artifacts
 *.aux
+*.bbl
+*.bcf
+*.blg
+*.fdb_latexmk
+*.fls
+*.fmt
+*.fot
 *.lof
 *.log
 *.lot
-*.fls
 *.out
+*.run.xml
+*.synctex.gz
+*.synctex\(busy\)
+*.thm
 *.toc
-*.fmt
-*.fot
 *.cb
 *.cb2
-.*.lb
-*.fdb_latexmk
-*.gz
-*.thm
-*.pdf
+*.lb
 
 # Miscellaneous
 .vscode/

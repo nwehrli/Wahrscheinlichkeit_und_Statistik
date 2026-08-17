@@ -38,7 +38,7 @@ $\exists \lambda > 0. \ Y \sim Exp(\lambda) \iff \P(Y > s) = \P(Y > s + t \mid Y
 Seien \(X_1, X_2 \sim \mathcal{U}[0,1]\) unabhängige ZV und sei \(X = \max (X_1, X_2)\). Berechne die Dichtefunktion von \(X\) und \(\P[X_1 \leq x \mid X \geq y]\).
 \begin{align*}
 	F_X(t) & = \P[\max(X_1, X_2) \leq t]                                                                                                              \\ &= \P[X_1 \leq t] \cdot \P[X_2 \leq t] = F_{X_1}(t) \cdot F_{X_2}(t) \\
-	f_X(t) & = \frac{d}{dt} F_{X_1}(t) \cdot F_{X_2}(t) = \frac{d}{dt} t^2 \cdot \mathbb{I}_{0 \leq t \leq 1} = 2t \cdot \mathbb{I}_{0 \leq t \leq 1}
+	f_X(t) & = \frac{d}{dt} F_{X_1}(t) \cdot F_{X_2}(t) = \frac{d}{dt} t^2 \cdot \mathds{1}_{0 \leq t \leq 1} = 2t \cdot \mathds{1}_{0 \leq t \leq 1}
 \end{align*}
 
 Für die Wahrscheinlichkeit brauchen wir eine Fallunterscheidung: \smallskip
@@ -55,11 +55,11 @@ Für die Wahrscheinlichkeit brauchen wir eine Fallunterscheidung: \smallskip
 \subsubsection*{Gemeinsame Dichte}
 
 Bestimme die gemeinsame Dichte von \(P \sim \mathcal{U}[0,1]\) und \(H \sim \mathcal{U}[0,P]\). Wir wissen:
-\[f_P(p) = \mathbb I_{p \in [0,1]} \quad f_{H | P}(h \mid p) = \frac{1}{p} \cdot \mathbb{I}_{h \in [0,p]}\]
+\[f_P(p) = \mathds{1}_{p \in [0,1]} \quad f_{H | P}(h \mid p) = \frac{1}{p} \cdot \mathds{1}_{h \in [0,p]}\]
 
 \noindent
 Somit ist:
-\[f_{P, H} (p, h) = f_P(p) \cdot f_{H | P}(h \mid p) = \frac{1}{p} \cdot \mathbb I_{0 \leq h \leq p \leq 1}\]
+\[f_{P, H} (p, h) = f_P(p) \cdot f_{H | P}(h \mid p) = \frac{1}{p} \cdot \mathds{1}_{0 \leq h \leq p \leq 1}\]
 
 \subsubsection*{Maximum und Minimum gleichverteilter ZVen}
 Seien $U_1, U_2, U_3$ unabhängige, $\mathcal{U}([0,1])$-verteilte Zufallsvariablen. 

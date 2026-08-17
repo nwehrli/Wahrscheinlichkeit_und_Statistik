@@ -8,10 +8,10 @@
 		\toprule
 		$\limxi \frac{e^x}{x^m} = \infty$                      & $\limxn xe^x = 0$                        \\
 		$\limxi (1+x)^{\frac{1}{x}} = 1$                       & $\limxo (1+x)^{\frac{1}{x}} = e$         \\
-		$\limxi (1+\frac{1}{x})^b = 1$                         & $\limxi n^{\frac{1}{n}} = 1$             \\
+		$\limxi (1+\frac{1}{x})^b = 1$                         & $\limn n^{\frac{1}{n}} = 1$             \\
 		$\limxo \frac{e^x-1}{x} = 1$                           & $\limxi (1-\frac{1}{x})^x = \frac{1}{e}$ \\
 		$\lim_{x\to\pm\infty} (1 + \frac{k}{x})^{mx} = e^{km}$ & $\limxi (\frac{x}{x+k})^x = e^{-k}$      \\
-		$\limxo \frac{\log 1 - x}{x} = -1$                     & $\limxo x \log x = 0$                    \\
+		$\limxo \frac{\log(1 - x)}{x} = -1$                     & $\limxo x \log x = 0$                    \\
 		$\limxo \frac{e^{ax}-1}{x} = a$                        & $\limxo \frac{\ln(x+1)}{x} = 1$          \\
 		$\lim_{x\to 1} \frac{\ln(x)}{x-1} = 1$                 & $\limxi \frac{\log(x)}{x^a} = 0$         \\
 		\bottomrule
@@ -34,12 +34,12 @@
 	\item Grenzen substituieren nicht vergessen.
 	\item Alternativ: unbestimmtes Integral berechnet werden und dann $u$ wieder durch $x$ substituieren.
 	\item Man kann auch das Theorem in die andere Richtung anwenden: \[\int_a^b f(u) \mathop{du} = \int_{g^{-1}(a)}^{g^{-1}(b)}f(g(x))g'(x) \dx\]
-	\item Sei $\X, Y$ kompakt, $f: Y \subset \R^n \to \R$ stetig. 
+	\item Sei $\mathcal{X}, Y$ kompakt, $f: Y \subset \R^n \to \R$ stetig. 
 	
-	Sei $\gamma: \X \to Y$ mit $\X = \X_0 \cup B, Y = Y_0 \cup C$ ($B, C$ Rand von $\X, Y$). 
+	Sei $\gamma: \mathcal{X} \to Y$ mit $\mathcal{X} = \mathcal{X}_0 \cup B, Y = Y_0 \cup C$ ($B, C$ Rand von $\mathcal{X}, Y$). 
 	
-	Wenn $\gamma: \X_0 \to Y_0$ bijektiv und $C^1$ mit det$(J_\gamma(x)) \neq 0, \forall x \in \X_0$, dann gilt 
-	\[\int_Y f(y)\mathop{dy} = \int_{\X} f(\gamma(x))|\text{det}(J_\gamma(x))|\dx\]
+	Wenn $\gamma: \mathcal{X}_0 \to Y_0$ bijektiv und $C^1$ mit det$(J_\gamma(x)) \neq 0, \forall x \in \mathcal{X}_0$, dann gilt 
+	\[\int_Y f(y)\mathop{dy} = \int_{\mathcal{X}} f(\gamma(x))|\text{det}(J_\gamma(x))|\dx\]
 \end{itemize}
 
 \subsection{Ableitungen}
@@ -49,8 +49,8 @@
 		\toprule
 		$\mathbf{F(x)}$                        & $\mathbf{f(x)}$          & $\mathbf{f'(x)}$         \\
 		\midrule
-		$\frac{x^{-a+1}}{-a+1}$                & $\frac{1}{x^a}$          & $\frac{a}{x^{a+1}}$      \\
-		$\frac{x^{a+1}}{a+1}$                  & $x^a \ (a \ne 1)$        & $a \cdot x^{a-1}$        \\
+		$\frac{x^{-a+1}}{-a+1}$                & $\frac{1}{x^a}$          & $-\frac{a}{x^{a+1}}$     \\
+		$\frac{x^{a+1}}{a+1}$                  & $x^a \ (a \ne -1)$       & $a \cdot x^{a-1}$        \\
 		$\frac{1}{k \ln(a)}a^{kx}$             & $a^{kx}$                 & $ka^{kx} \ln(a)$         \\
 		$\ln |x|$                              & $\frac{1}{x}$            & $-\frac{1}{x^2}$         \\
 		$\frac{2}{3}x^{3/2}$                   & $\sqrt{x}$               & $\frac{1}{2\sqrt{x}}$    \\
@@ -135,7 +135,7 @@ Wir erinneren uns an die Notationen für Stichprobenmittel $\overline{X}_n$ und 
 	\item $X_1, ..., X_n \sim Bin(N, \theta)$ iid.: $T = \frac{1}{N}\frac{\sum_{i = 1}^n X_i}{n}$
 	\item $X_1, ..., X_n \sim P(\theta)$ iid.: $T = \frac{\sum_{i = 1}^n X_i}{n} = \overline{X}_n$
 	\item $X_1, ..., X_n \sim \mathcal{U}([\theta_1, \theta_2])$ iid.: $T_{\theta_1} = \min(X_i), T_{\theta_2} = \max(X_i)$
-	\item $X_1, ..., X_n \sim \mathcal{N}(\theta_1, \theta_2)$ iid. : $T_{\theta_1} = \overline{X}_n, \ T_{\theta_2} = S^2$
+	\item $X_1, ..., X_n \sim \mathcal{N}(\theta_1, \theta_2)$ iid. : $T_{\theta_1} = \overline{X}_n, \ T_{\theta_2} = \frac{1}{n}\sum_{i=1}^n (X_i - \overline{X}_n)^2$
 \end{itemize}
 
 \clearpage
@@ -159,7 +159,7 @@ Wir erinneren uns an die Notationen für Stichprobenmittel $\overline{X}_n$ und 
 	
 			Poisson          & \makecell[l]{ \( \lambda \): Erwartungswert                                                                                               \\ und Varianz} & \( \lambda \) & \( \lambda \) & \( \frac{\lambda^t}{t!}e^{-\lambda} \) & \( e^{-\lambda} \sum_{k=0}^{t} \frac{\lambda^{k}}{k!} \) \\
 			
-			Gleichverteilung         & \( [a,b] \): Intervall               & \( \frac{a+b}{2} \)              & \( \frac{1}{12}(b-a)^2 \)        & \(\begin{cases} \frac{1}{b-a} &a \le x \le b \\ 0 & \text{sonst}\end{cases}\)                                                                                                                & \(\begin{cases} 0 & x\le a \\ \frac{t-a}{b-a} & a < x < b \\ 1 & x \ge b \end{cases}\)                \\
+			Gleichverteilung         & \( [a,b] \): Intervall               & \( \frac{a+b}{2} \)              & \( \frac{1}{12}(b-a)^2 \)        & \(\begin{cases} \frac{1}{b-a} &a \le t \le b \\ 0 & \text{sonst}\end{cases}\)                                                                                                                & \(\begin{cases} 0 & t\le a \\ \frac{t-a}{b-a} & a < t < b \\ 1 & t \ge b \end{cases}\)                \\
 		
 				Exponentialverteilung    & \( \lambda: \frac{1}{\E[X]} \)       & \( \frac{1}{\lambda} \)          & \( \frac{1}{\lambda^2} \)        & \( \begin{cases} \lambda e^{-\lambda t} & t \geq 0 \\ 0 & t < 0 \end{cases} \)                                                                                                              & \( \begin{cases} 1-e^{-\lambda t} & t>0 \\ 0 & t \leq 0\end{cases}\)               \\
 		

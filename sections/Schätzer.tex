@@ -9,8 +9,8 @@ Wir treffen folgende Annahmen:
 \end{itemize}
 Wir nennen die Gesamtheit der beobachteten Daten \(x_1, \ldots, x_n\) (wobei $x_i = X_i(\omega)$) und die ZV \(X_1, \ldots, X_n\) Stichprobe.
 \begin{mainbox}{}
-	Ein \tbf{Schätzer} ist eine Zufallsvariable \(T: \Omega \mapsto \R^m\) von der Form
-	\[T = t(X_1, \ldots, X_n), \quad t: \R^n \mapsto \R^m\]
+	Ein \tbf{Schätzer} ist eine Zufallsvariable \(T: \Omega \to \R^m\) von der Form
+	\[T = t(X_1, \ldots, X_n), \quad t: \R^n \to \R^m\]
 \end{mainbox}
 Ein Schätzer \(T\) ist \textbf{erwartungstreu}, falls für alle \(\theta \in \Theta\) gilt:
 \[\E_\theta [T] = \theta\]
@@ -30,7 +30,7 @@ Die Likelihood-Funktion ist definiert als
 		f(x_1, \ldots, x_n; \theta) & \text{(stetig)}
 	\end{cases} \]
 
-\noindent Für jedes \(x_1, \ldots, x_n \in W\) sei \(t_{ML}(x_1, \ldots, x_n)\) der Wert, welcher die Funktion \(\Theta \mapsto L(x_1, \ldots, x_n; \theta)\) maximiert. Ein Maximum-Likelihood-Schätzer ist dann definiert als
+\noindent Für jedes \(x_1, \ldots, x_n \in W\) sei \(t_{ML}(x_1, \ldots, x_n)\) der Wert, welcher die Funktion \(\theta \mapsto L(x_1, \ldots, x_n; \theta)\) maximiert. Ein Maximum-Likelihood-Schätzer ist dann definiert als
 \[T_{ML} = t_{ML}(X_1, \ldots, X_n)\]
 
 \subsubsection{Anwendung der Methode}
@@ -44,7 +44,7 @@ Die Maximum-Likelihood-Methode ist ein Weg, um systematisch einen Schätzer zu b
 \end{enumerate}
 
 \subsubsection*{Beispielrechnung mit Randstelle}
-Wir betrachten den Parameterraum $\Theta = \R_+ \times R_+$ mit $\theta = (\theta_1, \theta_2)$ und die Modellfamilie $(\P_\theta)_{\theta\in \Theta}$, wobei die ZV $X_1, \ldots, X_n$ iid. mit $f_{\theta_1, \theta_2}(x) = \begin{cases}
+Wir betrachten den Parameterraum $\Theta = \R_+ \times \R_+$ mit $\theta = (\theta_1, \theta_2)$ und die Modellfamilie $(\P_\theta)_{\theta\in \Theta}$, wobei die ZV $X_1, \ldots, X_n$ iid. mit $f_{\theta_1, \theta_2}(x) = \begin{cases}
     \theta_2e^{\theta_1\theta_2 - \theta_2x} & \text{falls }x \geq \theta_1,\\
     0 & \text{sonst.}
 \end{cases}$
@@ -70,16 +70,16 @@ $$f(\theta_1, \theta_2) = \log\left(L(x_1, ..., x_n; \theta_1, \theta_2)\right) 
 Da $\theta_2 > 0$ ist (unter der Einschränkung) die Log-Likelihood Funktion für $\theta_1 = \min_{1 \leq i \leq n}(x_i)$ maximal (unabhängig von $\theta_2$).
 Somit können wir $\theta_1$ so fixieren und $\log(L)$ separat nach $\theta_2$ maximieren. 
 \begin{align*}
-    \frac{\delta f}{\delta \theta_2} = \frac{n}{\theta_2} + n\theta_1 - \sum_{i = 1}^n x_i&= 0\\
+    \frac{\partial f}{\partial \theta_2} = \frac{n}{\theta_2} + n\theta_1 - \sum_{i = 1}^n x_i&= 0\\
     n\theta_1 - \sum_{i = 1}^n x_i&= -\frac{n}{\theta_2}\\
     \theta_2 &= \frac{n}{\sum_{i = 1}^n x_i - n \theta_1}
 \end{align*}
 Überprüfen des kritischen Punktes:
 \begin{align*}
-     \frac{\delta^2}{\delta^2\theta_2^2}f\left(\theta_1, \frac{n}{\sum_{i = 1}^n x_i - n\theta_1}\right) &= -\frac{n}{\frac{n}{\left(\sum_{i = 1}^n x_i - n\theta_1\right)^2}}\\
-     = -\left(\sum_{i = 1}^n x_i - n \theta_1\right)^2 &< 0
+     \frac{\partial^2 f}{\partial \theta_2^2}\left(\theta_1, \frac{n}{\sum_{i = 1}^n x_i - n\theta_1}\right) &= -\frac{n}{\frac{n^2}{\left(\sum_{i = 1}^n x_i - n\theta_1\right)^2}}\\
+     = -\frac{\left(\sum_{i = 1}^n x_i - n \theta_1\right)^2}{n} &< 0
 \end{align*}
-Daraus erhalten wir die Maximimum-Likelihood-Schätzer für $\theta_1$ und $\theta_2$:
+Daraus erhalten wir die Maximum-Likelihood-Schätzer für $\theta_1$ und $\theta_2$:
 \begin{align*}
     T_1 = \min_{1\leq i \leq n}X_i \text{ und } T_2 = \frac{n}{\sum_{i=1}^n X_i - nT_1}
 \end{align*}

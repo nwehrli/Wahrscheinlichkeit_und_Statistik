@@ -35,7 +35,7 @@ Die Umkehrung der Implikationen gilt nicht, wie folgende Beispiele zeigen:
     Aus $F_{X_n} = F_Z$ folgt direkt $X_n \overset{d}{\longrightarrow} Z$.
     
     Da aber $|X_n(\omega) - Z(\omega)| = 1, \forall \omega \in \Omega$ und demzufolge\\ 
-    $\limn \P(|X_n - Z| > \epsilon) \centernot\longrightarrow 0$ für $n \to \infty$, gilt  
+    $\limn \P(|X_n - Z| > \varepsilon) \centernot\longrightarrow 0$ für $n \to \infty$, gilt  
     $$X_n \overset{\P}{\centernot\longrightarrow} Z$$
     \item $X_n \overset{\P}{\longrightarrow} Z \centernot\implies X_n \overset{\textbf{f.s.}}{\longrightarrow} Z$
     
@@ -62,7 +62,7 @@ Die Umkehrung der Implikationen gilt nicht, wie folgende Beispiele zeigen:
 \end{mainbox}
 Dies ist eine fast-sichere Konvergenz.
 \begin{mainbox}{schwaches Gesetz der grossen Zahlen}
-    Sei $X_1, X_2, ...$ eine Folge von paarweise unkorrelierten Zufallsvariablen, die alle den gleichen Erwartungswert $\E(X_i) = \mu$ und die gleiche Varianz $\text{Var}(X_i) = \sigma^2$ haben.
+    Sei $X_1, X_2, ...$ eine Folge von paarweise unkorrelierten Zufallsvariablen, die alle den gleichen Erwartungswert $\E(X_i) = \mu$ und die gleiche Varianz $\Var(X_i) = \sigma^2$ haben.
     Sei 
     $$\overline{X}_n = \frac{1}{n}S_n = \frac{1}{n}\sum_{i = 1}^{n}X_i$$
     Dann konvergiert $\overline{X}_n$ für $n \to \infty$ in Wahrscheinlichkeit gegen $\mu = \E(X_i)$, d.h.
@@ -77,7 +77,7 @@ $$X_i, X_j \text{ unabhängig} \implies X_i, X_j \text{ unkorreliert}$$
 
 \subsection{Zentraler Grenzwertsatz}
 \begin{mainbox}{Zentraler Grenzwertsatz}
-    Sei $(X_n)_{n\in \N}$ eine Folge von iid. Zufallsvariablen mit $\E(X_i) = \mu < \infty$ und Var$(X_i) = \sigma^2 < \infty$.
+    Sei $(X_n)_{n\in \N}$ eine Folge von iid. Zufallsvariablen mit $\E(X_i) = \mu < \infty$ und $\Var(X_i) = \sigma^2 < \infty$.
     Dann gilt 
     $$\limn \P\left(\frac{S_n - n \mu}{\sigma \sqrt{n}} \leq x\right) = \Phi(x) \quad \forall x \in \R$$
     also
@@ -88,7 +88,7 @@ $$X_i, X_j \text{ unabhängig} \implies X_i, X_j \text{ unkorreliert}$$
 Man verwendet auch oft die Form für $\overline{X}_n = \frac{1}{n}S_n$ als
 $$\frac{\overline{X}_n - \mu}{\sigma / \sqrt{n}} \overset{d}{\longrightarrow} \mathcal{N}(0,1)$$
 beziehungsweise
-$$S_n \overset{d}{\longrightarrow} \mathcal{N}(n\mu, n \sigma^2) \text{ und } \overline{X}_n \overset{d}{\longrightarrow} \mathcal{N}\left(\mu, \frac{1}{n}\sigma^2\right)$$
+$$S_n \approx \mathcal{N}(n\mu, n \sigma^2) \text{ und } \overline{X}_n \approx \mathcal{N}\left(\mu, \frac{1}{n}\sigma^2\right) \quad \text{(approximativ für grosse } n)$$
 \subsubsection*{Beispielrechnung}
 
 Seien $(X_i)_{i \geq 1}, (Y_i)_{i \geq 1}$ und $(Z_i)_{i \geq 1}$ Folgen von iid. ZV mit
@@ -101,7 +101,7 @@ wobei $\left\lVert(x,y,z)\right\rVert_2 := \sqrt{x^2+y^2+z^2}$ die euklidische N
 
 \textit{Schritt 1: } Für alle $\alpha > 1/2$ zeigen wir $\P(|S_n^{(x)}| \leq n^\alpha) \overset{n \to \infty}{\longrightarrow} 1$.
 
-Da $\E(X_i) = 0$ und Var$(X_i) = 1$ folgt für $a \in \R$ beliebig per ZGS
+Da $\E(X_i) = 0$ und $\Var(X_i) = 1$ folgt für $a \in \R$ beliebig per ZGS
 $$\P\left(S_n^{(x)} \leq a \sqrt{n}\right) = \P\left(\frac{S_n^{(x)}}{\sqrt{n}} \leq a\right) \overset{n \to \infty}{\longrightarrow} \Phi(a)$$
 und somit auch
 \begin{align*}

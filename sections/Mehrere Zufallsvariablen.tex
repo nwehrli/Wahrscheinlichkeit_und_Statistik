@@ -26,9 +26,9 @@
     $$\phi(x_1, \ldots, x_n) = x_i$$
     \item Der Erwartungswert des Bildes der Funktion $\phi: \R^n \to \R$ ist
     $$\E(\phi(X_1, \ldots, X_n)) = \sum_{x_1, \ldots, x_n}\phi(x_1, \ldots, x_n)p(x_1, \ldots, x_n)$$
-    \item Wir haben eine Äquvalenz: 
+    \item Wir haben eine Äquivalenz: 
     \begin{align*}
-        &X_1, \ldots, X_n \text{unabhängig}\\
+        &X_1, \ldots, X_n \text{ unabhängig}\\
         &\quad \iff \\
         &\forall x_1 \in W_1, \ldots, x_n \in W_n\\
         &p(x_1, \ldots, x_n) = \P(X_1 = x_1) \cdot \ldots \cdot \P(X_n = x_n)
@@ -52,7 +52,7 @@
     \item Haben $X, Y$ die gemeinsame Verteilungsfunktion $F_{X,Y}$, so ist $F_X: \R \to [0,1]$,
     $$F_X(x) := \P(X \leq x) = \P(X \leq x, Y \leq \infty) = \lim_{y \to \infty}F_{X,Y}(x,y)$$
     die Verteilungsfunktion der \textit{Randverteilung} von $X$. Analoges gilt für $F_Y$.
-    \item Falls $X,Y$ eine gemeinsame Dichte $f(x,y)$ haben, so haben auch die Randverteilungen von $X$ und $Y$ Dichten $f_X: \R \to [0, \infty)$ und $F_Y: \R \to [0, \infty)$.
+    \item Falls $X,Y$ eine gemeinsame Dichte $f(x,y)$ haben, so haben auch die Randverteilungen von $X$ und $Y$ Dichten $f_X: \R \to [0, \infty)$ und $f_Y: \R \to [0, \infty)$.
     $$f_X(x) = \int_{-\infty}^{\infty}f(x,y)\mathop{dy} \text{ bzw. } f_Y(y)=\int_{-\infty}^{\infty}f(x,y)\dx$$
     Die \textbf{Dichtefunktion} einer Randverteilung (Randdichte) entsteht aus der gemeinsamen Dichtefunktion durch ''Wegintegrieren'' der anderen Variable(n).
 \end{enumerate}
@@ -67,9 +67,9 @@ Wenn $X_1, \ldots, X_n$ stetige ZV mit Dichten $f_1, \ldots, f_n$, dann sind die
 \begin{subbox}{linearer Transformationssatz}
     Sei $Z$ ein $n$-dimensionaler Zufallsvektor und $g: (\R^n, \mathcal{B}^n) \to (\R^m, \mathcal{B}^m)$ eine messbare Abbildung. Dann ist
     $$H(\omega) = g(Z(\omega))$$
-    ein $m$-dimensionaler Zufallsvariable und ferner gilt
+    ein $m$-dimensionaler Zufallsvektor und ferner gilt
     $$\P(H \in A) = \P(Z \in g^{-1}(A)).$$
-    Wenn $g$ linear und umkehrbar (i.e. $g(x) = m + Bx$ mit det$(B) \neq 0$) und unter Vorraussetzung, dass die Verteilung von $Z$ absolut stetig ist, dann ist $H$ auch absolut stetig und es gilt:
+    Wenn $g$ linear und umkehrbar (i.e. $g(x) = m + Bx$ mit det$(B) \neq 0$) und unter Voraussetzung, dass die Verteilung von $Z$ absolut stetig ist, dann ist $H$ auch absolut stetig und es gilt:
     $$f_H(x)=\frac{1}{|\text{det}(B)|}f_Z(B^{-1}(x-m)).$$
 \end{subbox}
 \subsubsection*{Beispielrechnung}
@@ -149,7 +149,7 @@ Aus der gemeinsamen Dichte $f_{X, X + Y}$ können wir die Dichte $f_{X + Y}$ bes
 Dies reicht aber nicht, um die Dichte einer transformierten ZV zu berechnen. Mehrere Zufallsvariablen mit unterschiedlichen Dichten können den gleichen Erwartungswert haben.
 
 \begin{subbox}{}
-    Sei $f: \R \to \R_+$ eine Abblidung, sodass $\int_{-\infty}^{\infty}f(z)\mathop{dz} = 1$. Dann sind folgende Aussagen äquivalent
+    Sei $f: \R \to \R_+$ eine Abbildung, sodass $\int_{-\infty}^{\infty}f(z)\mathop{dz} = 1$. Dann sind folgende Aussagen äquivalent
     \begin{itemize}
         \item $Z$ ist stetig mit Dichte $f$
         \item Für jede stückweise stetige, beschränkte Abbildung $\psi: \R \to \R$ gilt 
@@ -174,7 +174,7 @@ Wir definieren $\phi(x, y) = \psi(xy) = \psi(v)$ und berechnen
 \begin{align*}
     \E(\psi(V)) = \E(\phi(X,Y)) &= \int_{-\infty}^{\infty}\int_{-\infty}^{\infty}\phi(x,y)f(x,y)\dx\mathop{dy}\\
     &= \int_{1}^{\infty}\int_{1}^{\infty}\psi(xy)\frac{1}{x^2y^2}\dx\mathop{dy}\\
-    &\text{Substition } v = xy, \mathop{dv} = y\mathop{dx}\\
+    &\text{Substitution } v = xy, \mathop{dv} = y\mathop{dx}\\
     &= \int_{1}^{\infty}\int_{y}^{\infty}\psi(v)\frac{1}{v^2}\frac{\mathop{dv}}{y}\mathop{dy}\\
     A = \{(v, y) \in \R^2 &\mid 1 \leq y < \infty, y \leq v < \infty\}\\
     = \{(v, y) \in \R^2 &\mid 1 \leq y \leq v, 1 \leq v < \infty\}\\
@@ -183,7 +183,7 @@ Wir definieren $\phi(x, y) = \psi(xy) = \psi(v)$ und berechnen
     &= \int_{1}^{\infty}\psi(v)\frac{\ln(v)}{v^2}\mathop{dv}\\
     &= \int_{-\infty}^{\infty}\psi(v) \cdot \frac{\ln(v)}{v^2}\mathds{1}_{v \in [1,\infty)}\mathop{dv}
 \end{align*}
-$$\implies f_V(t) = \frac{\ln(v)}{v^2}\mathds{1}_{v \in [1,\infty)}$$
+$$\implies f_V(v) = \frac{\ln(v)}{v^2}\mathds{1}_{v \in [1,\infty)}$$
 
 \begin{mainbox}{genereller Transformationssatz}
     Sei $Z$ ein $n$-dimensionaler Zufallsvektor mit Dichtefunktion $f_Z: \R^n \to \R_+$ und $\phi: \R^n \to \R^n$ stetig differenzierbar mit stetig differenzierbarer Umkehrabbildung $\phi^{-1}$. Dann gilt für die Dichte $f_U$ von $U = \phi(Z)$:

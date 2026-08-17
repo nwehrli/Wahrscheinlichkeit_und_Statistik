@@ -24,12 +24,12 @@ Wir wollen nun anhand der Daten \((X_1(\omega), \ldots, X_n(\omega))\) entscheid
 \end{subbox}
 \textbf{Bemerkung: } Da $T$ eine ZV und somit bezüglich dem Mass $\P_\theta: \F \to [0,1]$ messbar ist, gilt $\{T \in K\} \in \F$ und somit ist $\P_\theta(T \in K)$ wohldefiniert. 
 \subsection{Signifikanzniveau und Macht}
-Ein Test hat Signifikanzniveau \(a \in [0,1]\) falls
-\[\forall \theta \in \Theta_0 \quad \P_\theta(T \in K) \le a\]
+Ein Test hat Signifikanzniveau \(\alpha \in (0,1)\) falls
+\[\forall \theta \in \Theta_0 \quad \P_\theta(T \in K) \le \alpha\]
 Es ist meist unser primäres Ziel, die Fehler 1. Art zu minimieren.
 
 Das sekundäre Ziel ist, Fehler 2. Art zu vermeiden. Hierfür definieren wir die Macht eines Tests als Funktion:
-\[\beta : \Theta_A \mapsto [0,1], \quad \theta \mapsto \P_\theta(T \in K)\]
+\[\beta : \Theta_A \to [0,1], \quad \theta \mapsto \P_\theta(T \in K)\]
 Zu beachten ist, dass eine kleine Wahrscheinlichkeit für einen Fehler 2. Art einem \textit{grossen} \(\beta\) entspricht.
 
 \subsection{Konstruktion von Tests}
@@ -43,7 +43,7 @@ Für zusammengesetzte $\Theta_0$ und $\Theta_A$ können wir den verallg. Likelih
 \[R(x_1, ..., x_n) := \frac{\sup_{\theta \in \Theta_A}L(x_1, \dots, x_n; \theta)}{\sup_{\theta \in \Theta_0}L(x_1, \dots, x_n; \theta)}\]
 
 
-Wenn \(R \gg 1\), so gilt \(H_A > H_0\) und analog \(R \ll 1 \implies H_A < H_0\).
+Wenn \(R \gg 1\), sprechen die Daten eher für \(H_A\) als für \(H_0\); analog spricht \(R \ll 1\) eher für \(H_0\).
 
 \begin{subbox}{}
 	Der \tbf{Likelihood-Quotient-Test (LQ-Test)} mit Parameter \(c \ge 0\) ist definiert durch:
@@ -60,7 +60,7 @@ Verteilung unter \(\P_\theta: \frac{\overline{X}_n - \theta_0}{\sqrt{\sigma^2/n}
 \begin{enumerate}
 	\item Modell \(X_1, \ldots, X_n \sim \mathcal{N}(\theta, \sigma^2)\) iid. unter \(\P_\theta\)
 	\item Hypothesen \(H_0 : \theta = \theta_0\) und \(H_A : \theta > \theta_0\), \(H_A : \theta < \theta_0\) (einseitig) oder \(H_A : \theta \ne \theta_0\) (zweiseitig)
-	\item Test \(T = \frac{\overline{X}_n - \mu}{\sqrt{\sigma^2/n}} \sim \mathcal{N}(0,1)\) unter \(\P_{\theta_0}\)
+	\item Test \(T = \frac{\overline{X}_n - \theta_0}{\sqrt{\sigma^2/n}} \sim \mathcal{N}(0,1)\) unter \(\P_{\theta_0}\)
 	\item Verwerfungsbereich \(K_{>} = (c_{>}, \infty)\), \(K_{<} = (-\infty, -c_{<})\) oder \(K_{\neq} = (-\infty, -c_{\neq}) \ \cup \ (c_{\neq}, \infty)\)
 	\item \textbf{Fall 1} \(\alpha = \P_{\theta_0}(T \in K_>) = \P_{\theta_0}(T > c_>)\)\\
 	\textbf{Fall 2} \(\alpha = \P_{\theta_0}(T \in K_<) = \P_{\theta_0}(T < -c_<) = 1 - \P_{\theta_0}(T \leq c_<)\)\\
@@ -73,7 +73,7 @@ Wir definieren \(\vec{\theta} = (\mu, \sigma^2)\) und den Varianz-Schätzer \(S^
 	\item Modell \(X_1, \ldots, X_n \sim \mathcal{N}(\theta, \sigma^2)\) iid. unter \(\P_{\vec{\theta}}\)
 	\item Hypothesen: $\Theta_0 = \{\mu_0\} \times (0, \infty)$, für die Alternativhypothese gibt es wieder die drei Fälle mit $\mu_A > \mu_0$, $\mu_A < \mu_0$ und $\mu_A \neq \mu_0$.
 	\item Teststatistik \(T = \frac{\overline{X}_n - \mu_0}{\sqrt{S^2/n}} \sim t_{n-1}\)
-	\item Verewerfungsbereich: \(K_{>}\), \(K_{<}\) oder \(K_{\neq}\)
+	\item Verwerfungsbereich: \(K_{>}\), \(K_{<}\) oder \(K_{\neq}\)
 	\item Für Signifikanzniveau $\alpha$, können wir die kritischen Werte als $c_{>} = t_{n-1, 1-\alpha}, c_{<} = t_{n-1, 1- \alpha}$ und $c_{\neq} = t_{n-1, 1- \frac{\alpha}{2}}$ wählen.
 	Hierbei bezeichnen wir mit $t_{m, \gamma}$, das $\gamma$-Quantil einer $t_m$-Verteilung (i.e. derjenige Wert $z = t_{m, \gamma}$, so dass für $X \sim t_m$ $\P(X \leq z) = \gamma$ gilt).
 \end{enumerate}
@@ -89,7 +89,7 @@ Sei $X_1, ..., X_n$ iid. $\sim \mathcal{N}(\mu_X, \sigma^2)$ und $Y_1, \dots, Y_
 	\item \textbf{$\sigma^2$ bekannt.} Dann haben wir folgende Teststatistik
 	\[T := \frac{(\overline{X}_n -\overline{Y}_m) - (\mu_X - \mu_Y)}{\sigma\sqrt{\frac{1}{n}+\frac{1}{m}}} \sim \mathcal{N}(0,1) \text{ unter jedem }\P_{\theta}\]
 	Mit dem können wir dann den z-Test ausführen.
-	\item \textbf{$\sigma^2$ unbekannt.} Empirische Varianzen der einzelnen beiden Datensätzen
+	\item \textbf{$\sigma^2$ unbekannt.} Empirische Varianzen der beiden einzelnen Datensätze
 	\[S^2_X := \frac{1}{n-1}\sum_{i=1}^n(X_i - \overline{X}_n)^2 \text{ und } S^2_Y := \frac{1}{m-1}\sum_{j=1}^m(Y_j - \overline{Y}_m)^2\]
 	kombinieren wir zu einer empirischen Varianz
 	\[S^2 := \frac{1}{m+n-2}((n-1)S^2_X + (m-1)S_Y^2)\]
@@ -111,7 +111,7 @@ Sei \(T = t(X_1, \ldots, X_n)\) eine Teststatistik und \((T,K_t)_{t\ge 0}\) eine
 
 \begin{mainbox}{Definition p-Wert}
 	Sei \(H_0: \theta = \theta_0\) eine einfache Nullhypothese. Sei \((T, K_t)_{t\ge 0}\) eine geordnete Familie von Tests. Der \(p\)-Wert ist definiert als ZV \(G(\omega)\), wobei
-	\[G: \Omega \mapsto [0,1], \quad G(\omega) = \P_{\theta_0}[T \in K_{t(X_1(\omega), ..., X_n(\omega))}]\]
+	\[G: \Omega \to [0,1], \quad G(\omega) = \P_{\theta_0}[T \in K_{t(X_1(\omega), ..., X_n(\omega))}]\]
 \end{mainbox}
 \textbf{Intuitiv: } Wenn wir den Verwerfungsbereich mit dem realisierten Wert der Teststatistik bestimmen würden; was wäre das Signifikanzniveau (i.e. Fehler 1. Art)?
 

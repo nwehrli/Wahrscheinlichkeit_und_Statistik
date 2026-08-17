@@ -6,18 +6,19 @@
 	wobei \(A\) und \(B\) Zufallsvariablen der Form \(A = a(X_1, \ldots, X_n), B = b(X_1, \ldots, X_n)\) mit \(a,b: \R^n \to \R\) sind.
 \end{mainbox}
 
-Wenn wir einen Schätzer \(T = T_{ML} \sim \mathcal{N}\left(\theta, \text{Var}(X)\right)\) haben, suchen wir ein Konfidenzintervall der Form
-\[I = \left[T-c \sqrt{\Var(X)}, T+c\sqrt{\Var(X)}\right]\]
+Wenn wir einen Schätzer \(T = T_{ML} \sim \mathcal{N}\left(\theta, \Var(T)\right)\) haben
+(für \(T = \overline{X}_n\) mit \(X_i\) iid. ist \(\Var(T) = \frac{\Var(X)}{n}\)),
+suchen wir ein Konfidenzintervall der Form
+\[I = \left[T-c \sqrt{\Var(T)}, T+c\sqrt{\Var(T)}\right]\]
 Hierbei gilt:
 \begin{align*}
-	\P_\theta&\left(T-c\sqrt{\Var(X)} \le \theta \le T+c\sqrt{\Var(X)}\right) \\
+	\P_\theta&\left(T-c\sqrt{\Var(T)} \le \theta \le T+c\sqrt{\Var(T)}\right) \\
 	&= \P_\theta\left(-c\le Z \le c\right)\\
 	&= \P_{\theta}\left(Z \leq c\right) - \P_{\theta}\left(Z < -c\right)\\
 	&= \P_{\theta}\left(Z \leq c\right) - \left(1-\P_{\theta}\left(Z \leq c\right)\right)\\
 	&= 2\Phi(c)-1
 \end{align*}
-wobei \(Z = \frac{T-\theta}{\sqrt{\Var(X)}} \sim \mathcal{N}(0,1)\) ist.
-
+wobei \(Z = \frac{T-\theta}{\sqrt{\Var(T)}} \sim \mathcal{N}(0,1)\) ist.
 
 \subsection{Approximatives Konfidenzintervall}
 Wir können den zentralen Grenzwertsatz benutzen, um eine standardnormalverteilte ZV zu erhalten, und damit die Konfidenzintervalle zu bestimmen.
